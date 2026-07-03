@@ -131,4 +131,29 @@ document.addEventListener("keydown",(e)=>{
             }
         });
     });
+
+    $('.movie-big-carousel').owlCarousel({
+        center:true,
+        loop:true,
+        margin:-180,
+        nav:true,
+        dots:false,
+
+        responsive:{
+
+            0:{
+                items:1
+            },
+
+            768:{
+                items:3
+            },
+
+            1200:{
+                items:3
+            }
+
+        }
+
+    });
 })();
