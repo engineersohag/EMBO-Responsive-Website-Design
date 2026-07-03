@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME | EMBO</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -331,37 +332,35 @@
     <!-- -- big carosel -- -->
     <section class="big-carosel">
         <div class="container">
-            <div class="bg">
-                <div class="layer">
-                    <section class="movie-slider py-5">
-                        <div class="container">
-
-                            <div class="owl-carousel movie-big-carousel">
-
-                                <div class="movie-item">
-                                    <img src="assets/img/home/card-1.png">
-                                </div>
-
-                                <div class="movie-item">
-                                    <img src="assets/img/home/card-2.png">
-                                </div>
-
-                                <div class="movie-item">
-                                    <img src="assets/img/home/card-3.png">
-                                </div>
-
-                                <div class="movie-item">
-                                    <img src="assets/img/home/card-4.png">
-                                </div>
-
-                                <div class="movie-item">
-                                    <img src="assets/img/home/card-5.png">
-                                </div>
-
-                            </div>
-
+            <div class="big-carousel-shell">
+                <div class="big-carousel-stage">
+                    <div class="big-carousel-track">
+                        <div class="big-carousel-card position-left-2" data-index="0">
+                            <!-- <img src="assets/img/home/card-1.png" alt="Movie Poster"> -->
+                             <h2>Hello</h2>
                         </div>
-                    </section>
+                        <div class="big-carousel-card position-left" data-index="1">
+                            <img src="assets/img/home/card-2.png" alt="Movie Poster">
+                        </div>
+                        <div class="big-carousel-card position-center" data-index="2">
+                            <img src="assets/img/home/card-3.png" alt="Movie Poster">
+                        </div>
+                        <div class="big-carousel-card position-right" data-index="3">
+                            <img src="assets/img/home/card-4.png" alt="Movie Poster">
+                        </div>
+                        <div class="big-carousel-card position-right-2" data-index="4">
+                            <img src="assets/img/home/card-5.png" alt="Movie Poster">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="big-carousel-controls">
+                    <button type="button" class="big-carousel-btn big-carousel-prev" aria-label="Previous">
+                        <i class="fa-solid fa-angle-left"></i>
+                    </button>
+                    <button type="button" class="big-carousel-btn big-carousel-next" aria-label="Next">
+                        <i class="fa-solid fa-angle-right"></i>
+                    </button>
                 </div>
             </div>
         </div>

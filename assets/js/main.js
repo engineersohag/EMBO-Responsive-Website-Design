@@ -132,28 +132,85 @@ document.addEventListener("keydown",(e)=>{
         });
     });
 
-    $('.movie-big-carousel').owlCarousel({
-        center:true,
-        loop:true,
-        margin:-180,
-        nav:true,
-        dots:false,
+    const coverCarousel = document.querySelector('.big-carousel-track');
+    const cards = Array.from(document.querySelectorAll('.big-carousel-card'));
+    const prevBtn = document.querySelector('.big-carousel-prev');
+    const nextBtn = document.querySelector('.big-carousel-next');
 
-        responsive:{
+    if (coverCarousel && cards.length) {
+        const positions = ['position-left-2', 'position-left', 'position-center', 'position-right', 'position-right-2'];
+        let activeIndex = 2;
 
-            0:{
-                items:1
-            },
+        function renderCarousel() {
+            cards.forEach((card, index) => {
+                const offset = (index - activeIndex + cards.length) % cards.length;
+                let positionClass = 'position-center';
 
-            768:{
-                items:3
-            },
+                if (offset === 1 || offset === -4) {
+                    positionClass = 'position-right';
+                } else if (offset === 2 || offset === -3) {
+                    positionClass = 'position-right-2';
+                } else if (offset === 4 || offset === -1) {
+                    positionClass = 'position-left';
+                } else if (offset === 3 || offset === -2) {
+                    positionClass = 'position-left-2';
+                }
 
-            1200:{
-                items:3
-            }
-
+                card.classList.remove(...positions);
+                card.classList.add(positionClass);
+            });
         }
 
-    });
+        function nextSlide() {
+            activeIndex = (activeIndex + 1) % cards.length;
+            renderCarousel();
+        }
+
+        function prevSlide() {
+            activeIndex = (activeIndex - 1 + cards.length) % cards.length;
+            renderCarousel();
+        }
+
+        renderCarousel();
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            }
+            if (event.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        coverCarousel.addEventListener('touchstart', (event) => {
+            touchStartX = event.changedTouches[0].screenX;
+        }, { passive: true });
+
+        coverCarousel.addEventListener('touchend', (event) => {
+            touchEndX = event.changedTouches[0].screenX;
+            if (touchEndX - touchStartX < -40) {
+                nextSlide();
+            }
+            if (touchEndX - touchStartX > 40) {
+                prevSlide();
+            }
+        }, { passive: true });
+
+        let autoRotate = setInterval(nextSlide, 5000);
+        coverCarousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
+        coverCarousel.addEventListener('mouseleave', () => {
+            autoRotate = setInterval(nextSlide, 5000);
+        });
+    }
 })();
