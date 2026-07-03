@@ -139,7 +139,23 @@ document.addEventListener("keydown",(e)=>{
 
     if (coverCarousel && cards.length) {
         const positions = ['position-left-2', 'position-left', 'position-center', 'position-right', 'position-right-2'];
+        const shell = document.querySelector('.big-carousel-shell');
         let activeIndex = 2;
+
+        function updateShellBackground() {
+            const activeCard = document.querySelector('.big-carousel-card.position-center');
+
+            if (!shell || !activeCard) {
+                return;
+            }
+
+            const bg = window.getComputedStyle(activeCard).backgroundImage;
+
+            shell.style.backgroundImage = bg;
+            shell.style.backgroundSize = 'cover';
+            shell.style.backgroundPosition = 'center';
+            shell.style.backgroundRepeat = 'no-repeat';
+        }
 
         function renderCarousel() {
             cards.forEach((card, index) => {
@@ -159,6 +175,8 @@ document.addEventListener("keydown",(e)=>{
                 card.classList.remove(...positions);
                 card.classList.add(positionClass);
             });
+
+            updateShellBackground();
         }
 
         function nextSlide() {
