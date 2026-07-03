@@ -1,0 +1,16 @@
+/* ==========================
+   Medium Devices (Tablet)
+   ========================== */
+@media only screen and (max-width: 810px) {
+    .home{
+        height: 50vh;
+    }
+}
+
+
+/* ==========================
+   Small Devices (Mobile)
+   ========================== */
+@media only screen and (max-width: 413px) {
+
+}
