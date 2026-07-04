@@ -13,6 +13,22 @@
         width: 100%;
         height: 100%;
     }
+    .movie-pagination {
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .movie-pagination .page-link {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .movie-pagination .prev-next {
+        min-width: 58px;
+        padding: 0 14px;
+    }
+
     
 }
 
