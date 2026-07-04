@@ -20,7 +20,6 @@ document.addEventListener("keydown",(e)=>{
         searchWrapper.classList.remove("active");
     }
 });
-
 (function () {
     const homeSection = document.querySelector('.home');
     const heroCarousel = $('.hero-thumbnail-carousel');
@@ -29,8 +28,12 @@ document.addEventListener("keydown",(e)=>{
         return;
     }
 
-    // Desktop এ কয়টা Item দেখাবে তা Class দেখে নির্ধারণ করা হবে
-    const desktopItems = heroCarousel.hasClass('hero-thumbnail-carousel-2') ? 7 : 4;
+    // কোন পেজ?
+    const isTVPage = heroCarousel.hasClass('hero-thumbnail-carousel-tv');
+    const isCategoryPage = heroCarousel.hasClass('hero-thumbnail-carousel-2');
+
+    // Desktop Items
+    const desktopItems = isTVPage ? 1 : (isCategoryPage ? 7 : 4);
 
     function syncHomeBackground(event) {
         const currentIndex =
@@ -57,21 +60,25 @@ document.addEventListener("keydown",(e)=>{
         loop: true,
         center: true,
         margin: 10,
-        nav: true,
-        dots: false,
-        autoplay: true,
+
+        // TV Page
+        nav: !isTVPage,
+        dots: isTVPage,
+
+        autoplay: false,
         autoplayTimeout: 4000,
         autoplayHoverPause: true,
         smartSpeed: 400,
+
         responsive: {
             0: {
-                items: 1
+                items: isTVPage ? 1 : 1
             },
             480: {
-                items: 2
+                items: isTVPage ? 1 : 2
             },
             768: {
-                items: 3
+                items: isTVPage ? 1 : 3
             },
             992: {
                 items: desktopItems

@@ -696,3 +696,28 @@ Search
     opacity: .45;
     pointer-events: none;
 }
+
+.hero-thumbnail-carousel-tv{
+    margin-top: -90px;
+}
+.hero-thumbnail-carousel-tv .hero-thumb-item img{
+    height: 400px;
+}
+
+.hero-thumbnail-carousel-tv .owl-dots {
+    display: block !important;
+    text-align: center;
+    margin-top: 10px;
+}
+.hero-thumbnail-carousel-tv .owl-dots .owl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--white);
+    margin: 0 6px;
+    transition: background 0.25s ease;
+}
+
+.hero-thumbnail-carousel .owl-nav.disabled{
+    display: none !important;
+}
