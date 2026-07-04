@@ -736,3 +736,63 @@ Search
 .big-carosel .big-carousel-controls{
     padding: 0 20px;
 }
+
+/* User Dropdown */
+
+.user-dropdown-toggle{
+    gap:12px;
+    color:var(--white);
+}
+
+.user-dropdown-toggle img{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,.15);
+    transition:.3s;
+}
+
+.user-dropdown-toggle:hover img{
+    border-color:var(--primary);
+}
+
+.user-dropdown-toggle i{
+    font-size:14px;
+    color:var(--white);
+}
+
+.user-dropdown-toggle::after{
+    display:none;
+}
+
+/* Dropdown */
+
+.user-dropdown-menu{
+    margin-top:15px;
+    min-width:220px;
+    border:none;
+    border-radius:12px;
+    background:var(--dark);
+    padding:10px;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.user-dropdown-menu .dropdown-item{
+    color: var(--semi-white);
+    border-radius:8px;
+    padding:11px 14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    transition:.3s;
+}
+
+.user-dropdown-menu .dropdown-item:hover{
+    background:var(--primary);
+    color:var(--white);
+}
+
+.user-dropdown-menu .dropdown-divider{
+    border-color:rgba(255,255,255,.08);
+}
