@@ -29,8 +29,15 @@ document.addEventListener("keydown",(e)=>{
         return;
     }
 
+    // Desktop এ কয়টা Item দেখাবে তা Class দেখে নির্ধারণ করা হবে
+    const desktopItems = heroCarousel.hasClass('hero-thumbnail-carousel-2') ? 7 : 4;
+
     function syncHomeBackground(event) {
-        const currentIndex = event && event.item && typeof event.item.index === 'number' ? event.item.index : 0;
+        const currentIndex =
+            event && event.item && typeof event.item.index === 'number'
+                ? event.item.index
+                : 0;
+
         let currentSlide = heroCarousel.find('.owl-item').not('.cloned').eq(currentIndex);
 
         if (!currentSlide.length) {
@@ -45,6 +52,7 @@ document.addEventListener("keydown",(e)=>{
     }
 
     heroCarousel.on('initialized.owl.carousel changed.owl.carousel', syncHomeBackground);
+
     heroCarousel.owlCarousel({
         loop: true,
         center: true,
@@ -66,10 +74,11 @@ document.addEventListener("keydown",(e)=>{
                 items: 3
             },
             992: {
-                items: 4
+                items: desktopItems
             }
         }
     });
+
 })();
 
 (function () {

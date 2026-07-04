@@ -180,6 +180,9 @@ Search
     margin-top: 28px;
     max-width: 640px;
 }
+.hero-thumbnail-carousel-2 {
+    max-width: 90%;
+}
 
 .hero-thumbnail-carousel .hero-thumb-item {
     position: relative;
