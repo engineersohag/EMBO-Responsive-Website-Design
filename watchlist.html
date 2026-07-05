@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/profile-pin.css">
     <link rel="stylesheet" href="assets/css/active-tv-modal.css">
     <link rel="stylesheet" href="assets/css/search.css">
+    <link rel="stylesheet" href="assets/css/watchlist.css">
 </head>
 
 <body>
@@ -112,7 +113,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="watchlist.html">
                                             <i class="fa-solid fa-bookmark"></i>
                                             Watchlist
                                         </a>
@@ -177,122 +178,109 @@
     </section>
     
    
-    <main class="search-result">
+    <main class="watchlist-page">
         <div class="container">
-            <div class="search-shell">
-                <div class="search-results-panel">
-                    <div class="search-results-heading">
-                        <div class="search-results-label">Search Results</div>
-                        <h2>Search result for "Action"</h2>
-                    </div>
-
-                    <a href="play-details.html" class="search-result-card">
-                        <div class="search-result-card__thumb">
-                            <img src="assets/img/home/card-1.png" alt="Avatar: The Way Of Water">
-                        </div>
-                        <div class="search-result-card__content">
-                            <div class="search-result-card__title">Avatar: The Way Of Water</div>
-                            <div class="search-result-card__meta">
-                                <span>Sam Worthington, Zoe Saldana</span><br>
-                                Sci-Fi / Adventure • 2022 • Epic • 3h 12m
-                            </div>
-                            <div class="search-result-card__desc">
-                                Jake Sully returns to Pandora to protect his family against a new threat and survive
-                                the rising tide of danger.
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="play-details.html" class="search-result-card">
-                        <div class="search-result-card__thumb">
-                            <img src="assets/img/home/card-3.png" alt="The Dark Knight">
-                        </div>
-                        <div class="search-result-card__content">
-                            <div class="search-result-card__title">The Dark Knight</div>
-                            <div class="search-result-card__meta">
-                                <span>Christian Bale, Heath Ledger</span><br>
-                                Action / Crime • 2008 • Superhero • 2h 32m
-                            </div>
-                            <div class="search-result-card__desc">
-                                Batman faces the Joker in a city that is falling into chaos.
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="play-details.html" class="search-result-card">
-                        <div class="search-result-card__thumb">
-                            <img src="assets/img/home/card-7.png" alt="Dune">
-                        </div>
-                        <div class="search-result-card__content">
-                            <div class="search-result-card__title">Dune</div>
-                            <div class="search-result-card__meta">
-                                <span>Timothee Chalamet, Rebecca Ferguson</span><br>
-                                Sci-Fi / Adventure • 2021 • Epic • 2h 35m
-                            </div>
-                            <div class="search-result-card__desc">
-                                A young nobleman becomes entangled in a war over a desert planet.
-                            </div>
-                        </div>
-                    </a>
-
-                    <a href="play-details.html" class="search-result-card">
-                        <div class="search-result-card__thumb">
-                            <img src="assets/img/home/card-8.png" alt="Joker">
-                        </div>
-                        <div class="search-result-card__content">
-                            <div class="search-result-card__title">Joker</div>
-                            <div class="search-result-card__meta">
-                                <span>Joaquin Phoenix, Robert De Niro</span><br>
-                                Crime / Thriller • 2019 • Drama • 2h 2m
-                            </div>
-                            <div class="search-result-card__desc">
-                                An aspiring stand-up comedian descends into madness and violence.
-                            </div>
-                        </div>
-                    </a>
+            <div class="watchlist-header d-flex align-items-center justify-content-between flex-wrap gap-3">
+                <div class="watchlist-title-wrap d-flex align-items-center">
+                    <span class="watchlist-title-bar"></span>
+                    <h1 class="watchlist-title mb-0">Watchlist</h1>
                 </div>
+                <a href="#" class="btn btn-outline-light watchlist-clear-btn" data-bs-toggle="modal"
+                    data-bs-target="#deleteWatchlistModal">
+                    Clear Watchlist
+                </a>
+            </div>
 
-                <aside class="search-sidebar-panel">
-                    <div class="search-sidebar-title">Blockbuster Movies</div>
-                    <div class="search-sidebar-list search-sidebar-list--scroll">
-                        <a href="play-details.html" class="search-sidebar-item">
-                            <div class="search-sidebar-item__thumb">
-                                <img src="assets/img/home/card-7.png" alt="Dune">
+            <div class="watchlist-list d-grid gap-3">
+                <article class="watchlist-card">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-lg-3 col-md-4 col-5">
+                            <div class="watchlist-thumb-wrap">
+                                <img src="assets/img/home/card-1.png" alt="Avatar: The Way Of Water"
+                                    class="img-fluid watchlist-thumb">
+                                <a href="play-details.html" class="btn watchlist-watch-btn">Watch Now</a>
                             </div>
-                            <div class="search-sidebar-item__body">
-                                <div class="search-sidebar-item__title">Dune</div>
-                                <div class="search-sidebar-item__meta">Timothee Chalamet</div>
+                        </div>
+                        <div class="col-lg-8 col-md-7 col-6">
+                            <div class="watchlist-content">
+                                <h3 class="watchlist-card-title">Avatar: The Way Of Water</h3>
+                                <p class="watchlist-card-desc">Jake Sully returns to Pandora to protect his family
+                                    against a new threat and survive the rising tide of danger.</p>
                             </div>
-                        </a>
-                        <a href="play-details.html" class="search-sidebar-item">
-                            <div class="search-sidebar-item__thumb">
-                                <img src="assets/img/home/card-8.png" alt="Joker">
-                            </div>
-                            <div class="search-sidebar-item__body">
-                                <div class="search-sidebar-item__title">Joker</div>
-                                <div class="search-sidebar-item__meta">Joaquin Phoenix</div>
-                            </div>
-                        </a>
-                        <a href="play-details.html" class="search-sidebar-item">
-                            <div class="search-sidebar-item__thumb">
-                                <img src="assets/img/home/card-2.png" alt="The Matrix">
-                            </div>
-                            <div class="search-sidebar-item__body">
-                                <div class="search-sidebar-item__title">The Matrix</div>
-                                <div class="search-sidebar-item__meta">Keanu Reeves</div>
-                            </div>
-                        </a>
-                        <a href="play-details.html" class="search-sidebar-item">
-                            <div class="search-sidebar-item__thumb">
-                                <img src="assets/img/home/card-6.png" alt="Interstellar">
-                            </div>
-                            <div class="search-sidebar-item__body">
-                                <div class="search-sidebar-item__title">Interstellar</div>
-                                <div class="search-sidebar-item__meta">Matthew McConaughey</div>
-                            </div>
-                        </a>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-1 text-end">
+                            <a href="#" class="watchlist-remove" data-bs-toggle="modal"
+                                data-bs-target="#deleteWatchlistModal" aria-label="Remove item">
+                                <i class="fa-solid fa-xmark"></i>
+                            </a>
+                        </div>
                     </div>
-                </aside>
+                </article>
+
+                <article class="watchlist-card">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-lg-3 col-md-4 col-5">
+                            <div class="watchlist-thumb-wrap">
+                                <img src="assets/img/home/card-3.png" alt="The Dark Knight"
+                                    class="img-fluid watchlist-thumb">
+                                <a href="play-details.html" class="btn watchlist-watch-btn">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-7 col-6">
+                            <div class="watchlist-content">
+                                <h3 class="watchlist-card-title">The Dark Knight</h3>
+                                <p class="watchlist-card-desc">Batman faces the Joker in a city pushed to the edge by
+                                    chaos, fear, and impossible choices.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-1 text-end">
+                            <a href="#" class="watchlist-remove" data-bs-toggle="modal"
+                                data-bs-target="#deleteWatchlistModal" aria-label="Remove item">
+                                <i class="fa-solid fa-xmark"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="watchlist-card">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-lg-3 col-md-4 col-5">
+                            <div class="watchlist-thumb-wrap">
+                                <img src="assets/img/home/card-7.png" alt="Dune" class="img-fluid watchlist-thumb">
+                                <a href="play-details.html" class="btn watchlist-watch-btn">Watch Now</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-7 col-6">
+                            <div class="watchlist-content">
+                                <h3 class="watchlist-card-title">Dune</h3>
+                                <p class="watchlist-card-desc">A young nobleman becomes entangled in a war over a
+                                    desert planet, destiny, and survival.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-1 text-end">
+                            <a href="#" class="watchlist-remove" data-bs-toggle="modal"
+                                data-bs-target="#deleteWatchlistModal" aria-label="Remove item">
+                                <i class="fa-solid fa-xmark"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="modal fade" id="deleteWatchlistModal" tabindex="-1" aria-labelledby="deleteWatchlistModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-sm">
+                    <div class="modal-content watchlist-delete-modal">
+                        <div class="modal-body text-center">
+                            <h5 class="watchlist-delete-title" id="deleteWatchlistModalLabel">Delete Watchlist</h5>
+                            <p class="watchlist-delete-desc">Do you want to delete all content form watchlist?</p>
+                            <div class="d-flex gap-2 justify-content-center watchlist-delete-actions">
+                                <button type="button" class="btn watchlist-cancel-btn" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn watchlist-delete-btn">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

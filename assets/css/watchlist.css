@@ -1,0 +1,234 @@
+.watchlist-page {
+    padding: 48px 0 72px;
+    background:
+        radial-gradient(circle at top left, rgba(28, 74, 166, 0.2), transparent 30%),
+        linear-gradient(180deg, rgba(5, 8, 14, 0.98), rgba(11, 15, 24, 1));
+}
+
+.watchlist-header {
+    margin-bottom: 24px;
+}
+
+.watchlist-title-wrap {
+    gap: 14px;
+}
+
+.watchlist-title-bar {
+    width: 4px;
+    height: 34px;
+    border-radius: 999px;
+    background: #2f7bff;
+    box-shadow: 0 0 18px rgba(47, 123, 255, 0.45);
+}
+
+.watchlist-title {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.watchlist-clear-btn {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.02);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.watchlist-clear-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+    color: #fff;
+}
+
+.watchlist-list {
+    margin-top: 8px;
+}
+
+.watchlist-card {
+    padding: 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.watchlist-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.055);
+}
+
+.watchlist-thumb-wrap {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 150px;
+}
+
+.watchlist-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.watchlist-thumb-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.45));
+    pointer-events: none;
+}
+
+.watchlist-watch-btn {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    z-index: 1;
+    border: 0;
+    border-radius: 999px;
+    padding: 9px 16px;
+    background: rgba(47, 123, 255, 0.95);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 14px 28px rgba(47, 123, 255, 0.28);
+}
+
+.watchlist-watch-btn:hover {
+    background: #1f67f0;
+    color: #fff;
+}
+
+.watchlist-content {
+    padding: 8px 18px;
+}
+
+.watchlist-card-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.watchlist-card-desc {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.watchlist-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.watchlist-remove:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    transform: scale(1.04);
+}
+
+.watchlist-delete-modal {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    background: #0c111a;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45);
+}
+
+.watchlist-delete-modal .modal-body {
+    padding: 28px 24px 24px;
+}
+
+.watchlist-delete-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.watchlist-delete-desc {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.watchlist-delete-actions .btn {
+    min-width: 96px;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.watchlist-cancel-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #d7dbe3;
+}
+
+.watchlist-cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+}
+
+.watchlist-delete-btn {
+    background: #e54545;
+    border: 1px solid #e54545;
+    color: #fff;
+}
+
+.watchlist-delete-btn:hover {
+    background: #cf3737;
+    border-color: #cf3737;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .watchlist-content {
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .watchlist-page {
+        padding: 36px 0 64px;
+    }
+
+    .watchlist-title {
+        font-size: 24px;
+    }
+
+    .watchlist-card {
+        padding: 14px;
+    }
+
+    .watchlist-thumb-wrap {
+        min-height: 128px;
+    }
+
+    .watchlist-card-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .watchlist-card-desc {
+        font-size: 13px;
+    }
+}
+

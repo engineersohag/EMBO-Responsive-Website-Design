@@ -250,8 +250,6 @@ function initSearchExperience() {
     if (window.__emboSearchInitialized) return;
     window.__emboSearchInitialized = true;
 
-    renderSearchResults();
-
     const searchWrapper = document.querySelector('.search-wrapper');
     const searchToggle = document.querySelector('.search-toggle');
     const searchInput = document.querySelector('.search-form input');
