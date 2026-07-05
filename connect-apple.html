@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Apple | EMBO</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dropdown-ui.css">
+    <link rel="stylesheet" href="assets/css/profile-switcher.css">
+    <link rel="stylesheet" href="assets/css/profile-pin.css">
+    <link rel="stylesheet" href="assets/css/active-tv-modal.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+    <link rel="stylesheet" href="assets/css/account.css">
+    <link rel="stylesheet" href="assets/css/invoice-modal.css">
+</head>
+
+<body>
+
+    <section class="all-movies">
+        <div class="over-layer">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand me-lg-5" href="index.html">
+                        <img src="assets/img/logo.png" alt="Logo" class="img-fluid">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                        aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars text-white"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="nav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Movies
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="movie-category.html">Latest Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Trending Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Popular Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Romance</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Series
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="series-category.html">Latest Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Trending Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Top Rated</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Comedy</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="embo-originals.html">Embo Originals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="redeem.html">Redeem</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center navbar-actions">
+                            <div class="search-wrapper d-lg-block d-none">
+                                <button type="button" class="search-toggle">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+
+                                <form class="search-form">
+                                    <input type="text" placeholder="Search for videos">
+                                    <button type="submit">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div class="dropdown user-dropdown ms-3">
+                                <a href="#" class="user-dropdown-toggle d-flex align-items-center text-decoration-none"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+
+                                    <img src="assets/img/logo.png" alt="User">
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end user-dropdown-menu">
+                                    <li>
+                                        <div class="user-dropdown-profile">
+                                            <div class="user-dropdown-profile-avatar">
+                                                <img src="assets/img/logo.png" alt="User avatar">
+                                            </div>
+                                            <div class="user-dropdown-profile-text">
+                                                <strong>Hello,</strong>
+                                                <span>Bilash Roy</span>
+                                            </div>
+                                            <button type="button" class="user-dropdown-profile-arrow" aria-label="Open profile switcher">
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                            Watchlist
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-history"></i>
+                                            History
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="account.html">
+                                            <i class="fa-solid fa-user-gear"></i>
+                                            My Account
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-user-group"></i>
+                                            Manage Profile
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item active-tv-trigger" href="#">
+                                            <i class="fa-solid fa-tv"></i>
+                                            Active TV
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                            Log Out
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <div class="user-dropdown-footer">
+                                            <a href="#">Privacy Policy</a>
+                                            <span>•</span>
+                                            <a href="#">Terms Of Use</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- --- Nav end --- -->
+        </div>
+    </section>
+    
+   
+    <main class="account-page">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-3">
+                    <div class="account-profile-card text-center">
+                        <div class="account-profile-avatar mx-auto">
+                            <img src="assets/img/logo.png" alt="Bilash Roy" class="img-fluid">
+                        </div>
+                        <h2 class="account-profile-name mb-0">Bilash Roy</h2>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <div class="account-details-card">
+                       <section class="account-section">
+                            <h3 class="account-section-title">Connect</h3>
+
+                            <div class="account-google-connect single">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Apple_logo_white.svg" alt="Apple">
+                                <span>Connected by Apple</span>
+                            </div>
+                        </section>
+
+                        <section class="account-section">
+                            <h3 class="account-section-title">Membership & Billing</h3>
+                            <a href="#" class="account-link-row" data-bs-toggle="modal" data-bs-target="#invoiceModal">
+                                <div class="account-row-left">
+                                    <div class="account-mini-box">Active Plan</div>
+                                    <div class="account-row-text">
+                                        <span>E-Box</span>
+                                    </div>
+                                </div>
+                                <div class="account-row-right">
+                                    <span>Billing History</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </section>
+
+                        <section class="account-section">
+                            <h3 class="account-section-title">Device Management</h3>
+                            <a href="#" class="account-link-row" data-bs-toggle="modal" data-bs-target="#deviceManagementModal">
+                                <div class="account-row-left">
+                                    <div class="account-mini-box">Num Device</div>
+                                    <div class="account-row-text">
+                                        <span>2</span>
+                                    </div>
+                                </div>
+                                <div class="account-row-right">
+                                    <span>Manage</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </div>
+                            </a>
+                        </section>
+
+                        <section class="account-section account-section--last">
+                            <h3 class="account-section-title">Settings</h3>
+                            <div class="account-settings-list">
+                                <a href="#" class="account-settings-item">
+                                    <span>Change Email</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                                <a href="#" class="account-settings-item">
+                                    <span>Change Password</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                                <a href="#" class="account-settings-item account-settings-item--danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+                                    <span>Delete Account</span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-sm">
+                    <div class="modal-content account-modal">
+                        <div class="modal-header account-modal-header">
+                            <h5 class="modal-title account-modal-title" id="deleteAccountModalLabel">Delete Account</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body account-modal-body">
+                            <p class="account-modal-desc">Are you sure to delete your account?</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <button type="button" class="btn account-modal-cancel" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn account-modal-delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="deviceManagementModal" tabindex="-1" aria-labelledby="deviceManagementModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content account-device-modal">
+                        <div class="modal-header account-device-modal-header">
+                            <div>
+                                <h5 class="modal-title account-device-modal-title" id="deviceManagementModalLabel">Devices</h5>
+                            </div>
+                            <button type="button" class="btn account-device-logout-all">Log Out Of All Devices</button>
+                        </div>
+                        <div class="modal-body account-device-modal-body">
+                            <div class="row g-3">
+                                <div class="col-lg-6">
+                                    <div class="account-device-card">
+                                        <div class="account-device-card__top">
+                                            <div>
+                                                <div class="account-device-name">
+                                                    <i class="fa-brands fa-windows"></i>
+                                                    Windows - Google Chrome
+                                                </div>
+                                                <div class="account-device-country">Bangladesh</div>
+                                            </div>
+                                            <button type="button" class="btn account-device-logout-btn">Log Out</button>
+                                        </div>
+                                        <div class="account-device-status">
+                                            <i class="fa-solid fa-circle account-device-icon account-device-icon--active"></i>
+                                            <div>
+                                                <div class="account-device-status-title">Current device</div>
+                                                <div class="account-device-status-meta">Active 5m ago</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="account-device-card">
+                                        <div class="account-device-card__top">
+                                            <div>
+                                                <div class="account-device-name">
+                                                    <i class="fa-brands fa-apple"></i>
+                                                    Mac - Edge
+                                                </div>
+                                                <div class="account-device-country">Bangladesh</div>
+                                            </div>
+                                            <button type="button" class="btn account-device-logout-btn">Log Out</button>
+                                        </div>
+                                        <div class="account-device-status">
+                                            <i class="fa-solid fa-circle account-device-icon account-device-icon--active"></i>
+                                            <div>
+                                                <div class="account-device-status-title">Active device</div>
+                                                <div class="account-device-status-meta">Active 1h ago</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="account-device-card">
+                                        <div class="account-device-card__top">
+                                            <div>
+                                                <div class="account-device-name">
+                                                    <i class="fa-brands fa-windows"></i>
+                                                    Windows - Google Chrome
+                                                </div>
+                                                <div class="account-device-country">Bangladesh</div>
+                                            </div>
+                                            <button type="button" class="btn account-device-logout-btn">Log Out</button>
+                                        </div>
+                                        <div class="account-device-status">
+                                            <i class="fa-solid fa-circle account-device-icon account-device-icon--inactive"></i>
+                                            <div>
+                                                <div class="account-device-status-title">Inactive device</div>
+                                                <div class="account-device-status-meta">Inactive for 12 days</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="account-device-card">
+                                        <div class="account-device-card__top">
+                                            <div>
+                                                <div class="account-device-name">
+                                                    <i class="fa-brands fa-apple"></i>
+                                                    Mac - Edge
+                                                </div>
+                                                <div class="account-device-country">Bangladesh</div>
+                                            </div>
+                                            <button type="button" class="btn account-device-logout-btn">Log Out</button>
+                                        </div>
+                                        <div class="account-device-status">
+                                            <i class="fa-solid fa-circle account-device-icon account-device-icon--active"></i>
+                                            <div>
+                                                <div class="account-device-status-title">Current device</div>
+                                                <div class="account-device-status-meta">Active 5m ago</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="account-device-card">
+                                        <div class="account-device-card__top">
+                                            <div>
+                                                <div class="account-device-name">
+                                                    <i class="fa-brands fa-windows"></i>
+                                                    Windows - Google Chrome
+                                                </div>
+                                                <div class="account-device-country">Bangladesh</div>
+                                            </div>
+                                            <button type="button" class="btn account-device-logout-btn">Log Out</button>
+                                        </div>
+                                        <div class="account-device-status">
+                                            <i class="fa-solid fa-circle account-device-icon account-device-icon--active"></i>
+                                            <div>
+                                                <div class="account-device-status-title">Active device</div>
+                                                <div class="account-device-status-meta">Active 1h ago</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="account-device-card">
+                                        <div class="account-device-card__top">
+                                            <div>
+                                                <div class="account-device-name">
+                                                    <i class="fa-brands fa-apple"></i>
+                                                    Mac - Edge
+                                                </div>
+                                                <div class="account-device-country">Bangladesh</div>
+                                            </div>
+                                            <button type="button" class="btn account-device-logout-btn">Log Out</button>
+                                        </div>
+                                        <div class="account-device-status">
+                                            <i class="fa-solid fa-circle account-device-icon account-device-icon--inactive"></i>
+                                            <div>
+                                                <div class="account-device-status-title">Inactive device</div>
+                                                <div class="account-device-status-meta">Inactive for 12 days</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content invoice-modal">
+                        <div class="modal-header invoice-modal-header">
+                            <h5 class="modal-title invoice-modal-title" id="invoiceModalLabel">Invoices</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body invoice-modal-body">
+                            <div class="table-responsive invoice-table-wrap">
+                                <table class="table invoice-table align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Package</th>
+                                            <th>Reference</th>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Download</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Standard</td>
+                                            <td>#254675</td>
+                                            <td>22-06-2024</td>
+                                            <td>$15.00 USD</td>
+                                            <td><i class="fa-solid fa-check invoice-status-check"></i></td>
+                                            <td><button type="button" class="btn invoice-download-btn"><i class="fa-solid fa-download"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-Box</td>
+                                            <td>#333333</td>
+                                            <td>11-07-2024</td>
+                                            <td>$16.00 USD</td>
+                                            <td><i class="fa-solid fa-check invoice-status-check"></i></td>
+                                            <td><button type="button" class="btn invoice-download-btn"><i class="fa-solid fa-download"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-Business</td>
+                                            <td>#579974</td>
+                                            <td>14-07-2024</td>
+                                            <td>$200.00 USD</td>
+                                            <td><i class="fa-solid fa-check invoice-status-check"></i></td>
+                                            <td><button type="button" class="btn invoice-download-btn"><i class="fa-solid fa-download"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-Box</td>
+                                            <td>#567854</td>
+                                            <td>16-08-2024</td>
+                                            <td>$16.00 USD</td>
+                                            <td><i class="fa-solid fa-check invoice-status-check"></i></td>
+                                            <td><button type="button" class="btn invoice-download-btn"><i class="fa-solid fa-download"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-Business</td>
+                                            <td>#684576</td>
+                                            <td>30-11-2024</td>
+                                            <td>$260.00 USD</td>
+                                            <td><i class="fa-solid fa-check invoice-status-check"></i></td>
+                                            <td><button type="button" class="btn invoice-download-btn"><i class="fa-solid fa-download"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="container mt-2 pt-3">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="assets/img/logo.png" alt="Logo" class="img-fluid mb-3">
+                    <p class="text-muted">Ensuring an immersive experience for people across the globe, Embo always
+                        prioritizes quality and innovation.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <h5>Quick Links</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Pricing Plan</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5>Movies To Watch</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Top Trending</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Recommended</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Popular</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5>About Company</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Contact Us</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Terms & Conditions</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5>Follow Us:</h5>
+                            <div class="social-icons">
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                            <h5 class="mt-3" style="font-size: 18px;">Download Stream Apps</h5>
+                            <div class="d-flex align-items-center mt-2">
+                                <img src="assets/img/play-store.png" alt="Play Store" class="img-fluid me-2">
+                                <img src="assets/img/apple.png" alt="App Store" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 d-flex justify-content-center">
+                    <p>© 2024 Embo. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/profile-switcher.js"></script>
+    <script src="assets/js/profile-pin-modal.js"></script>
+    <script src="assets/js/active-tv-modal.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/main.js"></script>
+    <div class="profile-switcher-overlay" aria-hidden="true">
+        <div class="profile-switcher-modal" role="dialog" aria-modal="true">
+            <div class="profile-switcher-modal-header">
+                <button type="button" class="profile-switcher-back" aria-label="Close profile switcher">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+            <div class="profile-switcher-grid">
+                <div class="profile-switcher-card is-active" data-avatar="assets/img/logo.png" data-name="Bilash Roy">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/logo.png" alt="Bilash Roy">
+                    </div>
+                    <div class="profile-switcher-name">Bilash Roy</div>
+                </div>
+                <div class="profile-switcher-card" data-avatar="assets/img/home/card-2.png" data-name="Nadia Khan">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/home/card-2.png" alt="Nadia Khan">
+                    </div>
+                    <div class="profile-switcher-name">Nadia Khan</div>
+                </div>
+                <div class="profile-switcher-card" data-avatar="assets/img/home/card-3.png" data-name="Rafi Rahman">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/home/card-3.png" alt="Rafi Rahman">
+                    </div>
+                    <div class="profile-switcher-name">Rafi Rahman</div>
+                </div>
+                <div class="profile-switcher-card" data-avatar="assets/img/home/card-4.png" data-name="Mina Alam">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/home/card-4.png" alt="Mina Alam">
+                    </div>
+                    <div class="profile-switcher-name">Mina Alam</div>
+                </div>
+                <div class="profile-switcher-card" data-avatar="assets/img/home/frame-1.png" data-name="Arman Joy">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/home/frame-1.png" alt="Arman Joy">
+                    </div>
+                    <div class="profile-switcher-name">Arman Joy</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="active-tv-overlay" aria-hidden="true">
+        <div class="active-tv-modal" role="dialog" aria-modal="true">
+            <button type="button" class="active-tv-close" aria-label="Close active TV modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="active-tv-title">Active Device</h3>
+            <p class="active-tv-desc">Enter the code that you see on the TV screen and click on Activate.</p>
+            <form class="active-tv-form">
+                <label class="active-tv-label" for="activeTvCode">TV Code</label>
+                <input class="active-tv-input" id="activeTvCode" type="text" placeholder="Enter code">
+                <div class="active-tv-error"></div>
+                <div class="active-tv-success"></div>
+                <button type="submit" class="btn btn-primary active-tv-btn">Activate</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="profile-pin-overlay" aria-hidden="true">
+        <div class="profile-pin-modal" role="dialog" aria-modal="true">
+            <div class="profile-switcher-modal-header">
+                <button type="button" class="profile-switcher-back profile-pin-back" aria-label="Back to profile switcher">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+            <h3 class="profile-pin-title">Please enter your PIN for change to kid profile</h3>
+            <p class="profile-pin-subtitle">Use the secure PIN to switch your active profile.</p>
+            <div class="profile-pin-inputs">
+                <input class="profile-pin-input" type="text" inputmode="numeric" maxlength="1" aria-label="PIN 1">
+                <input class="profile-pin-input" type="text" inputmode="numeric" maxlength="1" aria-label="PIN 2">
+                <input class="profile-pin-input" type="text" inputmode="numeric" maxlength="1" aria-label="PIN 3">
+                <input class="profile-pin-input" type="text" inputmode="numeric" maxlength="1" aria-label="PIN 4">
+            </div>
+            <div class="profile-pin-error"></div>
+            <button type="button" class="btn btn-primary profile-pin-btn">Switch Profiles</button>
+        </div>
+    </div>
+</body>
+
+</html>

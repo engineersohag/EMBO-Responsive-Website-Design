@@ -1,0 +1,91 @@
+.invoice-modal {
+    background: #0c111a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 26px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.invoice-modal-header {
+    padding: 20px 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+}
+
+.invoice-modal-title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.invoice-modal-body {
+    padding: 0;
+}
+
+.invoice-table-wrap {
+    max-height: 75vh;
+    overflow: auto;
+}
+
+.invoice-table {
+    min-width: 880px;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.invoice-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #111826;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+}
+
+.invoice-table tbody td {
+    padding: 16px 18px;
+    border-color: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.02);
+    white-space: nowrap;
+}
+
+.invoice-table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.invoice-status-check {
+    color: #3f8cff;
+    font-size: 16px;
+}
+
+.invoice-download-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.invoice-download-btn:hover {
+    background: rgba(63, 140, 255, 0.16);
+    border-color: rgba(63, 140, 255, 0.5);
+    color: #3f8cff;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 991px) {
+    .invoice-modal {
+        border-radius: 22px;
+    }
+}
+
