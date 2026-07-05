@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="assets/css/dropdown-ui.css">
     <link rel="stylesheet" href="assets/css/profile-switcher.css">
     <link rel="stylesheet" href="assets/css/profile-pin.css">
+    <link rel="stylesheet" href="assets/css/active-tv-modal.css">
 </head>
 
 <body>
@@ -139,7 +140,7 @@
                                     </li>
 
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item active-tv-trigger" href="#">
                                             <i class="fa-solid fa-tv"></i>
                                             Active TV
                                         </a>
@@ -364,6 +365,7 @@
     <script src="assets/js/player.js"></script>
     <script src="assets/js/profile-switcher.js"></script>
     <script src="assets/js/profile-pin-modal.js"></script>
+    <script src="assets/js/active-tv-modal.js"></script>
     <script src="assets/js/main.js"></script>
     <div class="profile-switcher-overlay" aria-hidden="true">
         <div class="profile-switcher-modal" role="dialog" aria-modal="true">
@@ -404,6 +406,23 @@
                     <div class="profile-switcher-name">Arman Joy</div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="active-tv-overlay" aria-hidden="true">
+        <div class="active-tv-modal" role="dialog" aria-modal="true">
+            <button type="button" class="active-tv-close" aria-label="Close active TV modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="active-tv-title">Active Device</h3>
+            <p class="active-tv-desc">Enter the code that you see on the TV screen and click on Activate.</p>
+            <form class="active-tv-form">
+                <label class="active-tv-label" for="activeTvCode">TV Code</label>
+                <input class="active-tv-input" id="activeTvCode" type="text" placeholder="Enter code">
+                <div class="active-tv-error"></div>
+                <div class="active-tv-success"></div>
+                <button type="submit" class="btn btn-primary active-tv-btn">Activate</button>
+            </form>
         </div>
     </div>
 
