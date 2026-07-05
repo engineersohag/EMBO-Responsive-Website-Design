@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | EMBO</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.7/dist/plyr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+    <section class="main">
+        <div class="over-layer">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand me-lg-5" href="index.html">
+                        <img src="assets/img/logo.png" alt="Logo" class="img-fluid">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                        aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars text-white"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="nav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Movies
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="movie-category.html">Latest Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Trending Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Popular Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Romance</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Series
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="series-category.html">Latest Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Trending Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Top Rated</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Comedy</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="embo-originals.html">Embo Originals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="redeem.html">Redeem</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center navbar-actions">
+                            <div class="search-wrapper d-lg-block d-none">
+                                <button type="button" class="search-toggle">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+
+                                <form class="search-form">
+                                    <input type="text" placeholder="Search for videos">
+                                    <button type="submit">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <a href="#" class="btn btn-primary ms-3">
+                                Subscribe Now
+                            </a>
+
+                            <a href="#" class="btn btn-outline-light ms-3">
+                                Login
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section class="video-player py-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="player-shell">
+                        <div class="player-wrapper">
+                            <div class="player-poster" id="playerPoster">
+                                <img src="assets/img/home/card-1.png" alt="Movie Poster">
+                                <button type="button" class="player-play-trigger" id="playTrigger" aria-label="Play movie">
+                                    <i class="fa-solid fa-play"></i>
+                                </button>
+                            </div>
+
+                            <video id="premiumVideo" class="player-video" playsinline controls poster="assets/img/home/card-1.png"
+                                data-source="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"></video>
+
+                            <div class="player-quality-wrap">
+                                <select id="videoQualitySelect" class="player-quality-select" aria-label="Video quality">
+                                    <option value="auto">Auto</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="player-meta">
+                            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-start gap-3">
+                                <div>
+                                    <h2 class="player-title">Avatar: The Way of Water</h2>
+                                    <p class="player-meta-line">Action • Adventure • 2022 • English • 3h 12m • IMDb 8.1</p>
+                                </div>
+                                <div class="player-action-buttons">
+                                    <button type="button" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-thumbs-up me-2"></i>Like</button>
+                                    <button type="button" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-thumbs-down me-2"></i>Dislike</button>
+                                    <button type="button" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-share-nodes me-2"></i>Share</button>
+                                </div>
+                            </div>
+
+                            <div class="mt-3">
+                                <p class="description-text is-collapsed" id="descriptionText">
+                                    Jake Sully and Neytiri form a family, but the peace of Pandora is threatened by a new human threat. As the battle for survival continues, they must protect their home from an ancient force that has awakened beneath the ocean.
+                                </p>
+                                <p><strong>DIRECTOR:</strong> James Cameron</p>
+                                <p><strong>STARRING:</strong> Sam Worthington, Zoe Saldana, Sigourney Weaver, Kate Winslet, Stephen Lang, Chilf Curtis, Michlelle Yeoh, Trinty Bliss, Britain Dalton, Jack Champion, Filip Gejio, Oona Chaplin, Michelle Rodriguez David Thewlis, Jeremy Irwin, Scarlett Fernandez</p>
+                                <a href="#" class="description-toggle" id="descriptionToggle">See less</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="related-section">
+                        <div class="movie-section-header">
+                            <div class="movie-section-title-wrap">
+                                <span class="movie-section-line"></span>
+                                <h3 class="movie-section-title">Recommendation For You</h3>
+                            </div>
+                        </div>
+
+                        <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-6 g-3">
+                            <div class="col">
+                                <div class="movie-card">
+                                    <img src="assets/img/home/card-1.png" alt="Movie Poster">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="movie-card">
+                                    <img src="assets/img/home/card-2.png" alt="Movie Poster">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="movie-card">
+                                    <img src="assets/img/home/card-3.png" alt="Movie Poster">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="movie-card">
+                                    <img src="assets/img/home/card-4.png" alt="Movie Poster">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="movie-card">
+                                    <img src="assets/img/home/card-5.png" alt="Movie Poster">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="movie-card">
+                                    <img src="assets/img/home/card-6.png" alt="Movie Poster">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="container mt-2 pt-3">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="assets/img/logo.png" alt="Logo" class="img-fluid mb-3">
+                    <p class="text-muted">Ensuring an immersive experience for people across the globe, Embo always prioritizes quality and innovation.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <h5>Quick Links</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Pricing Plan</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5>Movies To Watch</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Top Trending</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Recommended</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Popular</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5>About Company</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Contact Us</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Terms & Conditions</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5>Follow Us:</h5>
+                            <div class="social-icons">
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                            <h5 class="mt-3" style="font-size: 18px;">Download Stream Apps</h5>
+                            <div class="d-flex align-items-center mt-2">
+                                <img src="assets/img/play-store.png" alt="Play Store" class="img-fluid me-2">
+                                <img src="assets/img/apple.png" alt="App Store" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 d-flex justify-content-center">
+                    <p>© 2024 Embo. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.7/dist/plyr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/player.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
