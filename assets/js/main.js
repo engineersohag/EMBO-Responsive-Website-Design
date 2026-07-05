@@ -1,25 +1,29 @@
 // Home Search bar
-const searchWrapper=document.querySelector(".search-wrapper");
-const searchToggle=document.querySelector(".search-toggle");
+if (!window.__emboSearchInitialized) {
+    const searchWrapper=document.querySelector(".search-wrapper");
+    const searchToggle=document.querySelector(".search-toggle");
 
-searchToggle.addEventListener("click",()=>{
-    searchWrapper.classList.toggle("active");
-    if(searchWrapper.classList.contains("active")){
-        searchWrapper.querySelector("input").focus();
-    }
-});
+    if (searchWrapper && searchToggle) {
+        searchToggle.addEventListener("click",()=>{
+            searchWrapper.classList.toggle("active");
+            if(searchWrapper.classList.contains("active")){
+                searchWrapper.querySelector("input").focus();
+            }
+        });
 
-document.addEventListener("click",(e)=>{
-    if(!searchWrapper.contains(e.target)){
-        searchWrapper.classList.remove("active");
-    }
-});
+        document.addEventListener("click",(e)=>{
+            if(!searchWrapper.contains(e.target)){
+                searchWrapper.classList.remove("active");
+            }
+        });
 
-document.addEventListener("keydown",(e)=>{
-    if(e.key==="Escape"){
-        searchWrapper.classList.remove("active");
+        document.addEventListener("keydown",(e)=>{
+            if(e.key==="Escape"){
+                searchWrapper.classList.remove("active");
+            }
+        });
     }
-});
+}
 (function () {
     const homeSection = document.querySelector('.home');
     const heroCarousel = $('.hero-thumbnail-carousel');

@@ -5,6 +5,10 @@
     font-family: sans-serif;
 }
 
+a{
+    text-decoration: none;
+}
+
 :root{
  --primary: #0499FB;
  --white: #fff;
