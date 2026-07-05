@@ -1,0 +1,107 @@
+.profile-pin-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(2, 6, 12, 0.78);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.profile-pin-overlay.is-open {
+    display: flex;
+    animation: profilePinFade 0.25s ease both;
+}
+
+.profile-pin-modal {
+    width: min(420px, 100%);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(10, 15, 25, 0.84);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
+    padding: 24px;
+}
+
+.profile-pin-title {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-pin-subtitle {
+    color: var(--secondary);
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.profile-pin-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.profile-pin-input {
+    width: 52px;
+    height: 56px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.06);
+    color: var(--white);
+    text-align: center;
+    font-size: 22px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-pin-input:focus {
+    border-color: rgba(4, 153, 251, 0.85);
+    box-shadow: 0 0 0 2px rgba(4, 153, 251, 0.22);
+}
+
+.profile-pin-error {
+    min-height: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ff6b6b;
+    font-size: 13px;
+}
+
+.profile-pin-btn {
+    width: 100%;
+    border-radius: 999px;
+    padding: 12px 16px;
+    font-weight: 600;
+}
+
+@keyframes profilePinFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-pin-inputs {
+        gap: 8px;
+    }
+
+    .profile-pin-input {
+        width: 46px;
+        height: 50px;
+        font-size: 20px;
+    }
+}

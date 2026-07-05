@@ -9,6 +9,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!modalOverlay || !modal) return;
 
+    function switchProfile(card) {
+        const avatarSrc = card.getAttribute('data-avatar');
+        const profileName = card.getAttribute('data-name');
+
+        profileCards.forEach(function (item) {
+            item.classList.remove('is-active');
+        });
+
+        card.classList.add('is-active');
+
+        navbarAvatar.forEach(function (img) {
+            if (avatarSrc) {
+                img.setAttribute('src', avatarSrc);
+            }
+        });
+
+        dropdownName.forEach(function (element) {
+            if (element.tagName === 'STRONG') {
+                element.textContent = 'Hello,';
+            } else if (element.tagName === 'SPAN') {
+                element.textContent = profileName;
+            }
+        });
+
+        closeModal();
+    }
+
     function closeModal() {
         modalOverlay.classList.remove('is-open');
         document.body.style.overflow = '';
@@ -50,30 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     profileCards.forEach(function (card) {
         card.addEventListener('click', function () {
-            const avatarSrc = card.getAttribute('data-avatar');
-            const profileName = card.getAttribute('data-name');
-
-            profileCards.forEach(function (item) {
-                item.classList.remove('is-active');
-            });
-
-            card.classList.add('is-active');
-
-            navbarAvatar.forEach(function (img) {
-                if (avatarSrc) {
-                    img.setAttribute('src', avatarSrc);
-                }
-            });
-
-            dropdownName.forEach(function (element) {
-                if (element.tagName === 'STRONG') {
-                    element.textContent = 'Hello,';
-                } else if (element.tagName === 'SPAN') {
-                    element.textContent = profileName;
-                }
-            });
-
-            closeModal();
+            switchProfile(card);
         });
     });
+
+    window.EmboProfileSwitcher = {
+        switchProfile: switchProfile,
+        closeModal: closeModal,
+        openModal: openModal
+    };
 });

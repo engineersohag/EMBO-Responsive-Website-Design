@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/css/dropdown-ui.css">
     <link rel="stylesheet" href="assets/css/profile-switcher.css">
+    <link rel="stylesheet" href="assets/css/profile-pin.css">
 </head>
 
 <body>
@@ -549,6 +550,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/profile-switcher.js"></script>
+    <script src="assets/js/profile-pin-modal.js"></script>
     <script src="assets/js/main.js"></script>
     <div class="profile-switcher-overlay" aria-hidden="true">
         <div class="profile-switcher-modal" role="dialog" aria-modal="true">
@@ -589,6 +591,26 @@
                     <div class="profile-switcher-name">Arman Joy</div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="profile-pin-overlay" aria-hidden="true">
+        <div class="profile-pin-modal" role="dialog" aria-modal="true">
+            <div class="profile-switcher-modal-header">
+                <button type="button" class="profile-switcher-back profile-pin-back" aria-label="Back to profile switcher">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+            <h3 class="profile-pin-title">Please enter your PIN for change to kid profile</h3>
+            <p class="profile-pin-subtitle">Use the secure PIN to switch your active profile.</p>
+            <div class="profile-pin-inputs">
+                <input class="profile-pin-input" type="text" inputmode="numeric" maxlength="1" aria-label="PIN 1">
+                <input class="profile-pin-input" type="text" inputmode="numeric" maxlength="1" aria-label="PIN 2">
+                <input class="profile-pin-input" type="text" inputmode="numeric" maxlength="1" aria-label="PIN 3">
+                <input class="profile-pin-input" type="text" inputmode="numeric" maxlength="1" aria-label="PIN 4">
+            </div>
+            <div class="profile-pin-error"></div>
+            <button type="button" class="btn btn-primary profile-pin-btn">Switch Profiles</button>
         </div>
     </div>
 </body>
