@@ -18,6 +18,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/dropdown-ui.css">
+    <link rel="stylesheet" href="assets/css/profile-switcher.css">
 </head>
 
 <body>
@@ -83,13 +85,85 @@
                                 </form>
                             </div>
 
-                            <a href="#" class="btn btn-primary ms-3">
-                                Subscribe Now
-                            </a>
+                            <div class="dropdown user-dropdown ms-3">
+                                <a href="#" class="user-dropdown-toggle d-flex align-items-center text-decoration-none"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
 
-                            <a href="#" class="btn btn-outline-light ms-3">
-                                Login
-                            </a>
+                                    <img src="assets/img/logo.png" alt="User">
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end user-dropdown-menu">
+                                    <li>
+                                        <div class="user-dropdown-profile">
+                                            <div class="user-dropdown-profile-avatar">
+                                                <img src="assets/img/logo.png" alt="User avatar">
+                                            </div>
+                                            <div class="user-dropdown-profile-text">
+                                                <strong>Hello,</strong>
+                                                <span>Bilash Roy</span>
+                                            </div>
+                                            <button type="button" class="user-dropdown-profile-arrow" aria-label="Open profile switcher">
+                                        <i class="fa-solid fa-angle-right"></i>
+                                    </button>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-bookmark"></i>
+                                            Watchlist
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-history"></i>
+                                            History
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-user-gear"></i>
+                                            My Account
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-user-group"></i>
+                                            Manage Profile
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-tv"></i>
+                                            Active TV
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="fa-solid fa-right-from-bracket"></i>
+                                            Log Out
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <div class="user-dropdown-footer">
+                                            <a href="#">Privacy Policy</a>
+                                            <span>•</span>
+                                            <a href="#">Terms Of Use</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
                         </div>
                     </div>
@@ -106,47 +180,63 @@
                         <div class="player-wrapper">
                             <div class="player-poster" id="playerPoster">
                                 <img src="assets/img/home/card-1.png" alt="Movie Poster">
-                                <button type="button" class="player-play-trigger" id="playTrigger" aria-label="Play movie">
+                                <button type="button" class="player-play-trigger" id="playTrigger"
+                                    aria-label="Play movie">
                                     <i class="fa-solid fa-play"></i>
                                 </button>
                             </div>
 
-                            <video id="premiumVideo" class="player-video" playsinline controls poster="assets/img/home/card-1.png"
+                            <video id="premiumVideo" class="player-video" playsinline controls
+                                poster="assets/img/home/card-1.png"
                                 data-source="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4"></video>
 
                             <div class="player-quality-wrap">
-                                <select id="videoQualitySelect" class="player-quality-select" aria-label="Video quality">
+                                <select id="videoQualitySelect" class="player-quality-select"
+                                    aria-label="Video quality">
                                     <option value="auto">Auto</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="player-meta">
-                            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-start gap-3">
+                            <div
+                                class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-start gap-3">
                                 <div>
                                     <h2 class="player-title">Avatar: The Way of Water</h2>
-                                    <p class="player-meta-line">Action • Adventure • 2022 • English • 3h 12m • IMDb 8.1</p>
+                                    <p class="player-meta-line">Action • Adventure • 2022 • English • 3h 12m • IMDb 8.1
+                                    </p>
                                 </div>
                                 <div class="player-action-buttons">
-                                    <button type="button" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-thumbs-up me-2"></i>Like</button>
-                                    <button type="button" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-thumbs-down me-2"></i>Dislike</button>
-                                    <button type="button" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-share-nodes me-2"></i>Share</button>
+                                    <button type="button" class="btn btn-outline-light btn-sm"><i
+                                            class="fa-solid fa-thumbs-up me-2"></i>Like</button>
+                                    <button type="button" class="btn btn-outline-light btn-sm"><i
+                                            class="fa-solid fa-thumbs-down me-2"></i>Dislike</button>
+                                    <button type="button" class="btn btn-outline-light btn-sm"><i
+                                            class="fa-solid fa-share-nodes me-2"></i>Share</button>
                                 </div>
                             </div>
 
                             <div class="description-block mt-3">
                                 <p class="description-text is-collapsed" id="descriptionText">
-                                    Jake Sully and Neytiri form a family, but the peace of Pandora is threatened by a new human threat. As the battle for survival continues, they must protect their home from an ancient force that has awakened beneath the ocean.
+                                    Jake Sully and Neytiri form a family, but the peace of Pandora is threatened by a
+                                    new human threat. As the battle for survival continues, they must protect their home
+                                    from an ancient force that has awakened beneath the ocean.
                                 </p>
                                 <p><strong>DIRECTOR:</strong> James Cameron</p>
-                                <p><strong>STARRING:</strong> Sam Worthington, Zoe Saldana, Sigourney Weaver, Kate Winslet, Stephen Lang, Chilf Curtis, Michlelle Yeoh, Trinty Bliss, Britain Dalton, Jack Champion, Filip Gejio, Oona Chaplin, Michelle Rodriguez David Thewlis, Jeremy Irwin, Scarlett Fernandez</p>
+                                <p><strong>STARRING:</strong> Sam Worthington, Zoe Saldana, Sigourney Weaver, Kate
+                                    Winslet, Stephen Lang, Chilf Curtis, Michlelle Yeoh, Trinty Bliss, Britain Dalton,
+                                    Jack Champion, Filip Gejio, Oona Chaplin, Michelle Rodriguez David Thewlis, Jeremy
+                                    Irwin, Scarlett Fernandez</p>
                                 <a href="#" class="description-toggle" id="descriptionToggle">See less</a>
                             </div>
 
                             <div class="player-secondary-actions mt-3 d-flex flex-wrap gap-2">
-                                <button type="button" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-bookmark me-2"></i>Add To Watchlist</button>
-                                <button type="button" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-heart me-2"></i>Favorite</button>
-                                <button type="button" class="btn btn-outline-light btn-sm"><i class="fa-solid fa-circle-exclamation me-2"></i>Report</button>
+                                <button type="button" class="btn btn-outline-light btn-sm"><i
+                                        class="fa-solid fa-bookmark me-2"></i>Add To Watchlist</button>
+                                <button type="button" class="btn btn-outline-light btn-sm"><i
+                                        class="fa-solid fa-heart me-2"></i>Favorite</button>
+                                <button type="button" class="btn btn-outline-light btn-sm"><i
+                                        class="fa-solid fa-circle-exclamation me-2"></i>Report</button>
                             </div>
                         </div>
                     </div>
@@ -206,7 +296,8 @@
             <div class="row">
                 <div class="col-lg-4">
                     <img src="assets/img/logo.png" alt="Logo" class="img-fluid mb-3">
-                    <p class="text-muted">Ensuring an immersive experience for people across the globe, Embo always prioritizes quality and innovation.</p>
+                    <p class="text-muted">Ensuring an immersive experience for people across the globe, Embo always
+                        prioritizes quality and innovation.</p>
                 </div>
                 <div class="col-lg-8">
                     <div class="row">
@@ -230,7 +321,8 @@
                             <ul class="nav flex-column">
                                 <li class="nav-item"><a class="nav-link text-secondary" href="#">About Us</a></li>
                                 <li class="nav-item"><a class="nav-link text-secondary" href="#">Contact Us</a></li>
-                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Terms & Conditions</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Terms & Conditions</a>
+                                </li>
                                 <li class="nav-item"><a class="nav-link text-secondary" href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
@@ -269,7 +361,49 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/player.js"></script>
+    <script src="assets/js/profile-switcher.js"></script>
     <script src="assets/js/main.js"></script>
+    <div class="profile-switcher-overlay" aria-hidden="true">
+        <div class="profile-switcher-modal" role="dialog" aria-modal="true">
+            <div class="profile-switcher-modal-header">
+                <button type="button" class="profile-switcher-back" aria-label="Close profile switcher">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+            </div>
+            <div class="profile-switcher-grid">
+                <div class="profile-switcher-card is-active" data-avatar="assets/img/logo.png" data-name="Bilash Roy">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/logo.png" alt="Bilash Roy">
+                    </div>
+                    <div class="profile-switcher-name">Bilash Roy</div>
+                </div>
+                <div class="profile-switcher-card" data-avatar="assets/img/home/card-2.png" data-name="Nadia Khan">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/home/card-2.png" alt="Nadia Khan">
+                    </div>
+                    <div class="profile-switcher-name">Nadia Khan</div>
+                </div>
+                <div class="profile-switcher-card" data-avatar="assets/img/home/card-3.png" data-name="Rafi Rahman">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/home/card-3.png" alt="Rafi Rahman">
+                    </div>
+                    <div class="profile-switcher-name">Rafi Rahman</div>
+                </div>
+                <div class="profile-switcher-card" data-avatar="assets/img/home/card-4.png" data-name="Mina Alam">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/home/card-4.png" alt="Mina Alam">
+                    </div>
+                    <div class="profile-switcher-name">Mina Alam</div>
+                </div>
+                <div class="profile-switcher-card" data-avatar="assets/img/home/frame-1.png" data-name="Arman Joy">
+                    <div class="profile-switcher-avatar">
+                        <img src="assets/img/home/frame-1.png" alt="Arman Joy">
+                    </div>
+                    <div class="profile-switcher-name">Arman Joy</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

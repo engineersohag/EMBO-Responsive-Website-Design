@@ -980,3 +980,7 @@ Search
 .user-dropdown-menu .dropdown-divider{
     border-color:rgba(255,255,255,.08);
 }
+.user-dropdown-profile-arrow{
+    border: none;
+    background: none;
+}
