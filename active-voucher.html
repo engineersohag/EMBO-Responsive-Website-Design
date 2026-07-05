@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | EMBO</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        /* =========================
+   Google Font
+========================= */
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        /* =========================
+   Variables
+========================= */
+
+        :root {
+            --bg: #07090f;
+            /* --card: #111723;
+            --card2: #171f2c; */
+            --border: #2a3446;
+            --text: #ffffff;
+            --muted: #9aa4b2;
+            --primary: #2F80ED;
+            --primary-hover: #1f6fda;
+            --success: #31d67b;
+        }
+
+        /* =========================
+   Reset
+========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* =========================
+   Section
+========================= */
+
+        .payment-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 15px;
+        }
+
+        /* =========================
+   Card
+========================= */
+
+        .payment-card {
+            width: 100%;
+            max-width: 620px;
+            background: var(--card);
+            /* border: 1px solid var(--border); */
+            border-radius: 24px;
+            padding: 35px;
+        }
+
+        .payment-title {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+   Info Box
+========================= */
+
+        .info-box {
+            background: var(--card2);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            padding: 18px 22px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 22px;
+        }
+
+        .info-box h5 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .info-box h5 span {
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .info-box p {
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .info-box a {
+            color: #58a7ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* =========================
+   Payment Method
+========================= */
+
+        .payment-method {
+
+            display: flex;
+            gap: 15px;
+
+            margin-bottom: 22px;
+
+        }
+
+        .method {
+
+            flex: 1;
+
+            height: 58px;
+
+            border-radius: 14px;
+
+            border: 1px solid var(--border);
+
+            background: transparent;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            transition: .3s;
+
+        }
+
+        .method i {
+            font-size: 20px;
+        }
+
+        .method.active {
+
+            background: #1c2738;
+
+            border-color: #4c87ff;
+
+        }
+
+        .method:hover {
+
+            border-color: #4c87ff;
+
+        }
+
+        /* =========================
+   Floating Input
+========================= */
+
+        .floating-group {
+
+            position: relative;
+
+            margin-bottom: 25px;
+
+        }
+
+        .floating-group label {
+
+            position: absolute;
+
+            top: -10px;
+            left: 18px;
+
+            background: var(--card);
+
+            padding: 0 8px;
+
+            color: #c9d3df;
+
+            font-size: 13px;
+
+            z-index: 5;
+
+        }
+
+        .form-control {
+
+            height: 60px;
+
+            background: transparent;
+
+            border: 1px solid var(--border);
+
+            border-radius: 14px;
+
+            color: white;
+
+            padding: 0 18px;
+
+            font-size: 15px;
+
+        }
+
+        .form-control:focus {
+
+            background: transparent;
+
+            color: white;
+
+            border-color: var(--primary);
+
+            box-shadow: none;
+
+        }
+
+        .form-control::placeholder {
+
+            color: #778291;
+
+        }
+
+        /* =========================
+   Card Icons
+========================= */
+
+        .card-input {
+
+            position: relative;
+
+        }
+
+        .card-icons {
+
+            position: absolute;
+
+            right: 18px;
+
+            top: 50%;
+
+            transform: translateY(-20%);
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+        .card-icons img {
+
+            width: 42px;
+
+            height: auto;
+
+        }
+
+        /* =========================
+   Voucher
+========================= */
+
+        .voucher-box {
+
+            margin-top: 10px;
+
+            background: #13251f;
+
+            border: 1px solid #1d7045;
+
+            border-radius: 15px;
+
+            padding: 18px 20px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+        .voucher-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+        }
+
+        .voucher-left i {
+
+            color: var(--success);
+
+            font-size: 28px;
+
+        }
+
+        .voucher-left h6 {
+
+            margin: 0;
+
+            font-weight: 600;
+
+        }
+
+        .voucher-left span {
+
+            color: var(--success);
+
+            font-size: 14px;
+
+        }
+
+        .remove-btn {
+
+            color: #ff6b6b;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+        }
+
+        .remove-btn:hover {
+
+            color: #ff8c8c;
+
+        }
+
+        /* =========================
+   Button
+========================= */
+
+        .pay-btn {
+
+            width: 100%;
+
+            height: 60px;
+
+            margin-top: 28px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            background: var(--primary);
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            transition: .3s;
+
+        }
+
+        .pay-btn:hover {
+
+            background: var(--primary-hover);
+
+        }
+
+        .voucher-modal{
+    background:#101722;
+    border:none;
+    border-radius:16px;
+}
+
+.floating-group{
+    position:relative;
+}
+
+.floating-group label{
+    position:absolute;
+    top:-10px;
+    left:14px;
+    background:#101722;
+    color:#c7ccd5;
+    padding:0 6px;
+    font-size:14px;
+}
+
+.floating-group input{
+    height:46px;
+    background:#101722;
+    border:1px solid #7b818d;
+    color:#fff;
+    border-radius:8px;
+}
+
+.floating-group input:focus{
+    background:#101722;
+    color:#fff;
+    box-shadow:none;
+    border-color:#2995f2;
+}
+
+.apply-btn{
+    height:48px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.btn-close{
+    filter:invert(1);
+}
+
+        /* =========================
+   Responsive
+========================= */
+
+        @media(max-width:768px) {
+
+            .payment-card {
+
+                padding: 24px;
+
+            }
+
+            .payment-title {
+
+                font-size: 24px;
+
+            }
+
+            .payment-method {
+
+                flex-direction: column;
+
+            }
+
+            .info-box {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+
+            }
+
+        }
+
+        @media(max-width:576px) {
+
+            .payment-card {
+
+                padding: 20px;
+
+                border-radius: 18px;
+
+            }
+
+            .payment-title {
+
+                font-size: 21px;
+
+            }
+
+            .form-control {
+
+                height: 56px;
+
+            }
+
+            .voucher-box {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
+
+            }
+
+            .remove-btn {
+
+                align-self: flex-end;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="">
+        <div class="over-layer">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand me-lg-5" href="index.html">
+                        <img src="assets/img/logo.png" alt="Logo" class="img-fluid">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                        aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars text-white"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="nav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Movies
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="movie-category.html">Latest Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Trending Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Popular Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Romance</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Series
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="series-category.html">Latest Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Trending Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Top Rated</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Comedy</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="embo-originals.html">Embo Originals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="redeem.html">Redeem</a>
+                            </li>
+                        </ul>
+                        <div class="d-flex align-items-center navbar-actions">
+                            <div class="search-wrapper d-lg-block d-none">
+                                <button type="button" class="search-toggle">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+
+                                <form class="search-form">
+                                    <input type="text" placeholder="Search for videos">
+                                    <button type="submit">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <a href="#" class="btn btn-primary ms-3">
+                                Subscribe Now
+                            </a>
+
+                            <a href="#" class="btn btn-outline-light ms-3">
+                                Login
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- --- Nav end & Hero section start --- -->
+
+        </div>
+    </section>
+
+
+
+    <section class="payment-section">
+        <div class="payment-card">
+            <!-- Title -->
+            <h1 class="payment-title">
+                Set up your credit or debit card.
+            </h1>
+            <!-- Plan -->
+            <div class="info-box">
+                <div>
+                    <h5>$5 <span>/per device</span></h5>
+                    <p>E-Business plan</p>
+                </div>
+                <a href="#">Change</a>
+            </div>
+            <!-- Payment Method -->
+            <div class="payment-method">
+                <button class="method active">
+                    <i class="bi bi-credit-card-2-front"></i>
+                    Pay by Card
+                </button>
+                <button class="method">
+                    <i class="bi bi-paypal"></i>
+                    Pay by PayPal
+                </button>
+            </div>
+            <!-- Plan -->
+            <div class="info-box">
+                <div>
+                    <h5>$5 <span>/per device</span></h5>
+                    <p>E-Business plan</p>
+                </div>
+                <a href="#">Change</a>
+            </div>
+            <!-- Form -->
+            <form>
+                <!-- Name -->
+                <div class="floating-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" placeholder="Full name on card">
+                </div>
+                <!-- Card -->
+                <div class="floating-group card-input">
+                    <label>Card Number</label>
+                    <input type="text" class="form-control" placeholder="Enter your card number">
+                    <div class="card-icons">
+                        <img src="asset/visa.svg" alt="Visa">
+
+                        <img src="asset/master.svg" alt="Mastercard">
+
+                    </div>
+
+                </div>
+
+                <!-- Exp + CVV -->
+
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+
+                        <div class="floating-group">
+
+                            <label>Expiration Date</label>
+
+                            <input type="text" class="form-control" placeholder="dd/mm/yy">
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="floating-group">
+
+                            <label>CCV</label>
+
+                            <input type="password" class="form-control" placeholder="Enter security code">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Voucher -->
+
+                <div class="voucher-box">
+
+                    <div class="voucher-left">
+
+                        <i class="bi bi-check-circle"></i>
+
+                        <div>
+                            <h6>Voucher applied!</h6>
+                            <span>- $2</span>
+                        </div>
+                    </div>
+                    <a href="#" class="remove-btn">
+                        Remove
+                    </a>
+                </div>
+                <!-- Button -->
+                <button class="pay-btn" data-bs-toggle="modal"data-bs-target="#voucherModal">
+                    Pay Bill
+                </button>
+
+
+                <!-- Voucher Modal -->
+                <div class="modal fade" id="voucherModal" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content voucher-modal">
+
+                            <div class="modal-header border-0 pb-0">
+                                <button type="button" class="btn-close btn-close-white ms-auto"
+                                    data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body px-4 pb-4">
+
+                                <h5 class="text-center text-light mb-4">
+                                    Apply a voucher code
+                                </h5>
+
+                                <div class="floating-group mb-4">
+                                    <label>Voucher</label>
+
+                                    <input type="text" class="form-control" value="W33RS2W">
+                                </div>
+
+                                <button class="btn btn-primary w-100 apply-btn">
+                                    Apply
+                                </button>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <img src="assets/img/logo.png" alt="Logo" class="img-fluid mb-3">
+                    <p class="text-muted">Ensuring an immersive experience for people across the globe, Embo always
+                        prioritizes quality and innovation.</p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <h5>Quick Links</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Pricing Plan</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5>Movies To Watch</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Top Trending</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Recommended</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Popular</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5>About Company</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Contact Us</a></li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Terms & Conditions</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <h5>Follow Us:</h5>
+                            <div class="social-icons">
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="" class="btn btn-primary"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                            <h5 class="mt-3" style="font-size: 18px;">Download Stream Apps</h5>
+                            <div class="d-flex align-items-center mt-2">
+                                <img src="assets/img/play-store.png" alt="Play Store" class="img-fluid me-2">
+                                <img src="assets/img/apple.png" alt="App Store" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 d-flex justify-content-center">
+                    <p>© 2024 Embo. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
