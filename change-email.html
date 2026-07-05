@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/search.css">
     <link rel="stylesheet" href="assets/css/account.css">
     <link rel="stylesheet" href="assets/css/invoice-modal.css">
+    <link rel="stylesheet" href="assets/css/change-account.css">
 </head>
 
 <body>
@@ -181,7 +182,43 @@
    
     <main class="account-page">
         <div class="container">
-           
+            <div class="change-account-shell">
+                <div class="change-account-card">
+                    <div class="change-account-header">
+                        <h1 class="change-account-title">Change Email</h1>
+                    </div>
+
+                    <div class="change-account-body">
+                        <div class="change-account-field">
+                            <label for="currentEmail" class="change-account-label">Current Email</label>
+                            <input id="currentEmail" type="email" class="form-control change-account-input change-account-input--readonly" value="helloworld360@gmail.com" readonly>
+                        </div>
+
+                        <div class="change-account-field">
+                            <label for="newEmail" class="change-account-label">New Email</label>
+                            <input id="newEmail" type="email" class="form-control change-account-input" placeholder="Enter your new email">
+                        </div>
+
+                        <div class="change-account-field">
+                            <label for="changeEmailPassword" class="change-account-label">Password</label>
+                            <div class="change-account-password">
+                                <input id="changeEmailPassword" type="password" class="form-control change-account-input change-account-password-input" placeholder="Enter your password">
+                                <button type="button" class="change-account-toggle" aria-label="Show password" data-password-toggle="#changeEmailPassword">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="change-account-forgot-wrap text-end">
+                                <a href="#" class="change-account-forgot">Forgot password?</a>
+                            </div>
+                        </div>
+
+                        <div class="change-account-actions">
+                            <button type="button" class="btn change-account-btn change-account-btn--cancel">Cancel</button>
+                            <button type="button" class="btn change-account-btn change-account-btn--primary">Change</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -258,6 +295,7 @@
     <script src="assets/js/profile-pin-modal.js"></script>
     <script src="assets/js/active-tv-modal.js"></script>
     <script src="assets/js/search.js"></script>
+    <script src="assets/js/password-toggle.js"></script>
     <script src="assets/js/main.js"></script>
     <div class="profile-switcher-overlay" aria-hidden="true">
         <div class="profile-switcher-modal" role="dialog" aria-modal="true">

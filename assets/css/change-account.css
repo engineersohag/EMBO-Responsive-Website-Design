@@ -1,0 +1,182 @@
+.change-account-shell {
+    min-height: calc(100vh - 220px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 0 72px;
+}
+
+.change-account-shell--compact {
+    min-height: calc(100vh - 220px);
+}
+
+.change-account-card {
+    width: min(100%, 560px);
+    padding: 28px;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
+}
+
+.change-account-shell--compact .change-account-card {
+    width: min(100%, 520px);
+}
+
+.change-account-header {
+    margin-bottom: 24px;
+}
+
+.change-account-title {
+    margin: 0;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.change-account-body {
+    display: grid;
+    gap: 18px;
+}
+
+.change-account-label {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.change-account-input {
+    width: 100%;
+    height: 54px;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    padding: 12px 16px !important;
+}
+
+.change-account-input::placeholder {
+    color: #8f99a8;
+    opacity: 1;
+}
+
+.change-account-input:focus {
+    border-color: #3f8cff !important;
+    box-shadow: 0 0 0 0.2rem rgba(63, 140, 255, 0.16) !important;
+}
+
+.change-account-input--readonly {
+    background: rgba(255, 255, 255, 0.07) !important;
+    color: rgba(255, 255, 255, 0.86) !important;
+}
+
+.change-account-password {
+    position: relative;
+}
+
+.change-account-password-input {
+    padding-right: 52px !important;
+}
+
+.change-account-toggle {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.72);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.change-account-toggle:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.change-account-forgot-wrap {
+    margin-top: 10px;
+}
+
+.change-account-forgot {
+    color: #3f8cff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.change-account-forgot:hover {
+    color: #66a2ff;
+}
+
+.change-account-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.change-account-btn {
+    height: 52px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.change-account-btn:hover {
+    transform: translateY(-1px);
+}
+
+.change-account-btn--cancel {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.change-account-btn--cancel:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+}
+
+.change-account-btn--primary {
+    background: #3f8cff;
+    border: 1px solid #3f8cff;
+    color: #fff;
+}
+
+.change-account-btn--primary:hover {
+    background: #2f79f0;
+    border-color: #2f79f0;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .change-account-shell {
+        padding: 36px 0 64px;
+        min-height: auto;
+    }
+
+    .change-account-card {
+        padding: 22px;
+        border-radius: 22px;
+    }
+
+    .change-account-title {
+        font-size: 22px;
+    }
+
+    .change-account-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
