@@ -1500,7 +1500,7 @@ Search
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.02);
-    padding: 0 16px;
+    padding: 5px 50px;
 }
 
 .login-social-btn img {
@@ -1571,7 +1571,7 @@ Search
 
 
 .form-floating > label{
-    top: -3px !important;
+    top: -2px !important;
     height: 25px !important;
     
 }
