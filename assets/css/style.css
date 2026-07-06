@@ -1290,3 +1290,291 @@ Search
     }
 }
 
+.login-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top right, rgba(47, 123, 255, 0.12), transparent 28%),
+        linear-gradient(180deg, rgba(6, 9, 16, 0.98), rgba(10, 14, 22, 1));
+}
+
+.login-page .all-movies {
+    min-height: 100vh;
+}
+
+.login-page .over-layer {
+    min-height: 100vh;
+}
+
+.login-page .navbar {
+    position: relative;
+    z-index: 1;
+}
+
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: rgba(2, 8, 16, 0.82);
+    backdrop-filter: blur(4px);
+    z-index: 40;
+}
+
+.login-modal {
+    position: relative;
+    width: min(100%, 520px);
+    background: #0f1622;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.48);
+    padding: 30px;
+    color: #fff;
+}
+
+.close-btn {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #fff;
+    transform: scale(1.06);
+}
+
+.login-form {
+    margin-top: 10px;
+}
+
+.login-floating > .login-input {
+    height: 58px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: none;
+    padding-top: 1.4rem;
+    padding-bottom: 0.45rem;
+}
+
+.login-floating > .login-input::placeholder {
+    color: transparent;
+}
+
+.login-floating > .login-input:focus {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(63, 140, 255, 0.65);
+    box-shadow: 0 0 0 1px rgba(63, 140, 255, 0.12);
+    color: #fff;
+}
+
+.login-floating > label {
+    color: rgba(255, 255, 255, 0.56);
+    padding: 1rem 1rem;
+    transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.login-floating > .login-input:focus ~ label,
+.login-floating > .login-input:not(:placeholder-shown) ~ label {
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.login-floating > .login-input:focus ~ label,
+.login-floating > .login-input:not(:placeholder-shown) ~ label,
+.login-floating > .login-input:-webkit-autofill ~ label {
+    transform: scale(0.82) translateY(-0.55rem) translateX(0.15rem);
+    background: #0f1622;
+    padding: 0 0.4rem;
+    border-radius: 999px;
+    opacity: 1;
+}
+
+.login-password-wrap {
+    position: relative;
+}
+
+.login-password-input {
+    padding-right: 52px !important;
+}
+
+.login-eye {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.68);
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.login-eye:hover {
+    color: #fff;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin: 16px 0 18px;
+}
+
+.login-remember {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14px;
+}
+
+.login-remember .form-check-input {
+    margin-top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.login-remember .form-check-input:checked {
+    background-color: #3f8cff;
+    border-color: #3f8cff;
+}
+
+.login-forgot {
+    color: #3f8cff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login-forgot:hover {
+    color: #5aa0ff;
+}
+
+.login-submit {
+    width: 100%;
+    height: 50px;
+    border-radius: 14px;
+    background: #3f8cff;
+    border: 0;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.login-submit:hover {
+    background: #2f79ea;
+    transform: translateY(-1px);
+}
+
+.login-divider {
+    margin: 22px 0;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.login-socials {
+    gap: 12px;
+}
+
+.login-social-btn {
+    justify-content: flex-start;
+    gap: 12px;
+    height: 50px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 0 16px;
+}
+
+.login-social-btn img {
+    width: 18px;
+    height: 18px;
+}
+
+.login-social-btn span {
+    flex: 1;
+    text-align: center;
+}
+
+.login-social-btn:hover {
+    border-color: rgba(63, 140, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.login-bottom-text {
+    margin-top: 22px;
+}
+
+.login-feedback {
+    min-height: 18px;
+    margin-top: 8px;
+    color: #ff6b6b;
+    font-size: 13px;
+}
+
+.login-input.is-invalid {
+    border-color: #ff6b6b !important;
+}
+
+.login-input.is-invalid ~ label {
+    color: #ff6b6b !important;
+}
+
+.login-input.is-valid {
+    border-color: rgba(63, 140, 255, 0.5) !important;
+}
+
+.login-success {
+    margin-top: 12px;
+    color: #3f8cff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media (max-width: 575px) {
+    .login-overlay {
+        padding: 16px 12px;
+    }
+
+    .login-modal {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    .login-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .login-socials {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+.form-floating > label{
+    top: -3px !important;
+    height: 25px !important;
+    
+}
+.form-floating > .form-control:focus ~ label{
+background: #0f1622 !important;
+}

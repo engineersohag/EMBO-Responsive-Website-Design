@@ -502,3 +502,211 @@ if (!window.__emboSearchInitialized) {
         });
     });
 })();
+
+(function () {
+    const loginPage = document.querySelector('.login-page');
+
+    if (!loginPage) {
+        return;
+    }
+
+    const overlay = loginPage.querySelector('.login-overlay');
+    const closeBtn = loginPage.querySelector('[data-login-close]');
+    const form = loginPage.querySelector('[data-login-form]');
+    const emailInput = loginPage.querySelector('[data-login-email]');
+    const passwordInput = loginPage.querySelector('[data-login-password]');
+    const passwordToggle = loginPage.querySelector('[data-login-password-toggle]');
+    const emailFeedback = loginPage.querySelector('[data-login-email-feedback]');
+    const passwordFeedback = loginPage.querySelector('[data-login-password-feedback]');
+    const successFeedback = loginPage.querySelector('[data-login-success]');
+
+    function setError(input, feedback, message) {
+        if (!input || !feedback) {
+            return;
+        }
+
+        input.classList.add('is-invalid');
+        input.classList.remove('is-valid');
+        feedback.textContent = message;
+    }
+
+    function clearError(input, feedback) {
+        if (!input || !feedback) {
+            return;
+        }
+
+        input.classList.remove('is-invalid');
+        if (input.value.trim()) {
+            input.classList.add('is-valid');
+        } else {
+            input.classList.remove('is-valid');
+        }
+        feedback.textContent = '';
+    }
+
+    if (closeBtn && overlay) {
+        closeBtn.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
+    }
+
+    if (passwordToggle && passwordInput) {
+        passwordToggle.addEventListener('click', () => {
+            const icon = passwordToggle.querySelector('i');
+            const isHidden = passwordInput.type === 'password';
+            passwordInput.type = isHidden ? 'text' : 'password';
+            if (icon) {
+                icon.className = isHidden ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash';
+            }
+        });
+    }
+
+    if (emailInput && emailFeedback) {
+        emailInput.addEventListener('input', () => clearError(emailInput, emailFeedback));
+    }
+
+    if (passwordInput && passwordFeedback) {
+        passwordInput.addEventListener('input', () => clearError(passwordInput, passwordFeedback));
+    }
+
+    if (form) {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = emailInput ? emailInput.value.trim() : '';
+            const password = passwordInput ? passwordInput.value : '';
+            const emailOk = email === 'admin@gmail.com';
+            const passwordOk = password === '12345678';
+
+            if (successFeedback) {
+                successFeedback.textContent = '';
+            }
+
+            if (!emailOk) {
+                setError(emailInput, emailFeedback, 'Enter valid email');
+            } else {
+                clearError(emailInput, emailFeedback);
+            }
+
+            if (!passwordOk) {
+                setError(passwordInput, passwordFeedback, 'Enter valid password');
+            } else {
+                clearError(passwordInput, passwordFeedback);
+            }
+
+            if (emailOk && passwordOk) {
+                if (successFeedback) {
+                    successFeedback.textContent = 'Login successful';
+                }
+                form.reset();
+                [emailInput, passwordInput].forEach((input) => {
+                    if (input) {
+                        input.classList.remove('is-valid', 'is-invalid');
+                    }
+                });
+            }
+        });
+    }
+})();
+
+(function () {
+    const modal = document.querySelector('#loginModal');
+
+    if (!modal) {
+        return;
+    }
+
+    const form = modal.querySelector('[data-login-form]');
+    const emailInput = modal.querySelector('[data-login-email]');
+    const passwordInput = modal.querySelector('[data-login-password]');
+    const passwordToggle = modal.querySelector('[data-login-password-toggle]');
+    const emailFeedback = modal.querySelector('[data-login-email-feedback]');
+    const passwordFeedback = modal.querySelector('[data-login-password-feedback]');
+    const successFeedback = modal.querySelector('[data-login-success]');
+
+    function setError(input, feedback, message) {
+        if (!input || !feedback) {
+            return;
+        }
+
+        input.classList.add('is-invalid');
+        input.classList.remove('is-valid');
+        feedback.textContent = message;
+    }
+
+    function clearError(input, feedback) {
+        if (!input || !feedback) {
+            return;
+        }
+
+        input.classList.remove('is-invalid');
+        if (input.value.trim()) {
+            input.classList.add('is-valid');
+        } else {
+            input.classList.remove('is-valid');
+        }
+        feedback.textContent = '';
+    }
+
+    if (passwordToggle && passwordInput) {
+        passwordToggle.addEventListener('click', () => {
+            const icon = passwordToggle.querySelector('i');
+            const isHidden = passwordInput.type === 'password';
+            passwordInput.type = isHidden ? 'text' : 'password';
+            if (icon) {
+                icon.className = isHidden ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash';
+            }
+        });
+    }
+
+    if (emailInput && emailFeedback) {
+        emailInput.addEventListener('input', () => clearError(emailInput, emailFeedback));
+    }
+
+    if (passwordInput && passwordFeedback) {
+        passwordInput.addEventListener('input', () => clearError(passwordInput, passwordFeedback));
+    }
+
+    if (form) {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = emailInput ? emailInput.value.trim() : '';
+            const password = passwordInput ? passwordInput.value : '';
+            const emailOk = email === 'admin@gmail.com';
+            const passwordOk = password === '12345678';
+
+            if (successFeedback) {
+                successFeedback.textContent = '';
+            }
+
+            if (!emailOk) {
+                setError(emailInput, emailFeedback, 'Enter valid email');
+            } else {
+                clearError(emailInput, emailFeedback);
+            }
+
+            if (!passwordOk) {
+                setError(passwordInput, passwordFeedback, 'Enter valid password');
+            } else {
+                clearError(passwordInput, passwordFeedback);
+            }
+
+            if (emailOk && passwordOk) {
+                if (successFeedback) {
+                    successFeedback.textContent = 'Login successful';
+                }
+                const instance = window.bootstrap ? window.bootstrap.Modal.getInstance(modal) || new window.bootstrap.Modal(modal) : null;
+                if (instance) {
+                    instance.hide();
+                }
+                form.reset();
+                [emailInput, passwordInput].forEach((input) => {
+                    if (input) {
+                        input.classList.remove('is-valid', 'is-invalid');
+                    }
+                });
+            }
+        });
+    }
+})();

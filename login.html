@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME | EMBO</title>
+    <title>Login | EMBO</title>
     <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -17,172 +17,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Inter", sans-serif;
-        }
-
-        .overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(2, 8, 16, .78);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .login-box {
-            width: 100%;
-            max-width: 430px;
-            background: #121b28;
-            border-radius: 14px;
-            padding: 28px;
-            color: #fff;
-            position: relative;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, .45);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 16px;
-            right: 18px;
-            font-size: 22px;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        .form-label {
-            color: #d9d9d9;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .form-control {
-            background: transparent;
-            border: 1px solid #2d3848;
-            color: #fff;
-            height: 44px;
-            font-size: 14px;
-        }
-
-        .form-control::placeholder {
-            color: #8b96a8;
-        }
-
-        .form-control:focus {
-            background: transparent;
-            color: #fff;
-            border-color: #2196f3;
-            box-shadow: none;
-        }
-
-        .password-box {
-            position: relative;
-        }
-
-        .password-box i {
-            position: absolute;
-            right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #8b96a8;
-            cursor: pointer;
-        }
-
-        .options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 18px 0;
-            font-size: 14px;
-        }
-
-        .options a {
-            color: #1ea0ff;
-            text-decoration: none;
-        }
-
-        .btn-login {
-            background: #1995f5;
-            border: 0;
-            color: #fff;
-            width: 100%;
-            height: 46px;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        .btn-login:hover {
-            background: #0f86e4;
-        }
-
-        .divider {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin: 22px 0;
-            color: #b7c0ce;
-        }
-
-        .divider::before,
-        .divider::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #2f3947;
-        }
-
-        .socials {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        .social-btn {
-            height: 48px;
-            border: 1px solid #2d3848;
-            background: transparent;
-            color: #fff;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            transition: .3s;
-        }
-
-        .social-btn:hover {
-            border-color: #1995f5;
-            color: #fff;
-        }
-
-        .bottom-text {
-            text-align: center;
-            margin-top: 24px;
-            font-size: 14px;
-            color: #b7c0ce;
-        }
-
-        .bottom-text a {
-            color: #1995f5;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        @media(max-width:576px) {
-            .login-box {
-                padding: 22px;
-            }
-        }
-    </style>
 </head>
 
-<body>
+<body class="login-page">
 
     <section class="">
         <div class="over-layer">
@@ -264,136 +101,62 @@
     </section>
 
 
-    <div style="height: 80vh;"></div>
-    <div class="overlay">
-
-        <div class="login-box">
-
-            <span class="close-btn">&times;</span>
-
-            <form>
-
-                <div class="mb-3">
-
-                    <label class="form-label">Email</label>
-
-                    <input
-                        type="email"
-                        class="form-control"
-                        placeholder="Enter Your Email">
-
-                </div>
-
-                <div class="mb-3">
-
-                    <label class="form-label">Password</label>
-
-                    <div class="password-box">
-
-                        <input
-                            type="password"
-                            class="form-control"
-                            placeholder="Enter password (6-60 characters)">
-
-                        <i class="bi bi-eye-slash"></i>
-
+    <div class="overlay login-overlay">
+        <div class="login-box login-modal">
+            <button type="button" class="close-btn" aria-label="Close login modal" data-login-close>&times;</button>
+            <form class="login-form" novalidate data-login-form>
+                <div class="mb-3 login-field">
+                    <div class="form-floating login-floating">
+                        <input type="email" class="form-control login-input" id="loginEmail" placeholder="Enter Your Email" data-login-email>
+                        <label for="loginEmail">Email</label>
                     </div>
-
+                    <div class="login-feedback" data-login-email-feedback></div>
                 </div>
 
-                <div class="options">
+                <div class="mb-3 login-field">
+                    <div class="form-floating login-floating login-password-wrap">
+                        <input type="password" class="form-control login-input login-password-input" id="loginPassword" placeholder="Enter password (6-60 characters)" data-login-password>
+                        <label for="loginPassword">Password</label>
+                        <button type="button" class="login-eye" aria-label="Toggle password visibility" data-login-password-toggle><i class="fa-solid fa-eye-slash"></i></button>
+                    </div>
+                    <div class="login-feedback" data-login-password-feedback></div>
+                </div>
 
-                    <div class="form-check">
+                <div class="login-options">
+                    <label class="form-check login-remember" for="remember">
                         <input class="form-check-input" type="checkbox" id="remember">
-                        <label class="form-check-label" for="remember">
-                            Remember me
-                        </label>
-                    </div>
-
-                    <a href="#">Forgot password?</a>
-
+                        <span class="form-check-label">Remember me</span>
+                    </label>
+                    <a href="#" class="login-forgot">Forgot password?</a>
                 </div>
 
-                <button class="btn-login">
-                    Log In
-                </button>
+                <button type="submit" class="btn-login login-submit">Log In</button>
+                <div class="login-success" data-login-success></div>
 
-                <div class="divider">
-                    Or
+                <div class="d-flex justify-content-center">
+                    <div class="divider login-divider">Or</div>
+
+                        <div class="socials login-socials">
+                            <a href="#" class="social-btn login-social-btn">
+                                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+                                <span>Google</span>
+                            </a>
+                            <a href="#" class="social-btn login-social-btn">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+                                <span>Apple</span>
+                            </a>
+                        </div>
+
+                        <div class="bottom-text login-bottom-text">
+                            Don't have an account? <a href="#">Sign Up</a>
+                        </div>
                 </div>
-                                <div class="socials">
-
-                    <a href="#" class="social-btn">
-                        <i class="bi bi-google"></i>
-                        Google
-                    </a>
-
-                    <a href="#" class="social-btn">
-                        <i class="bi bi-apple"></i>
-                        Apple
-                    </a>
-
-                </div>
-
-                <div class="bottom-text">
-
-                    Don't have an account?
-
-                    <a href="#">Sign Up</a>
-
-                </div>
-
             </form>
-
         </div>
-
     </div>
 
-    <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-
-        // Password Show / Hide
-
-        const eye = document.querySelector(".password-box i");
-        const pass = document.querySelector(".password-box input");
-
-        eye.addEventListener("click", () => {
-
-            if (pass.type === "password") {
-
-                pass.type = "text";
-
-                eye.classList.remove("bi-eye-slash");
-
-                eye.classList.add("bi-eye");
-
-            } else {
-
-                pass.type = "password";
-
-                eye.classList.remove("bi-eye");
-
-                eye.classList.add("bi-eye-slash");
-
-            }
-
-        });
-
-        // Close Button
-
-        document.querySelector(".close-btn").onclick = () => {
-
-            document.querySelector(".overlay").style.display = "none";
-
-        };
-
-    </script>
-
-
-
-    <!-- footer -->
     <footer>
         <div class="container">
             <div class="row">
