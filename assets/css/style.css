@@ -17,6 +17,7 @@ a{
  --dark: #1b1b1b;
  --black: #010305;
  --border-color: #2d2d2d;
+ --danger: #e70c10;
 }
 
 body{
@@ -987,4 +988,9 @@ Search
 .user-dropdown-profile-arrow{
     border: none;
     background: none;
+}
+.btn-danger{
+    background-color: var(--danger) !important;
+    outline: none !important;
+    border: none !important;
 }
