@@ -533,6 +533,259 @@
     margin-top: 16px;
 }
 
+.kid-pin-page .container,
+.kid-profile-page .container {
+    max-width: 1140px;
+}
+
+.kid-pin-shell {
+    display: flex;
+    justify-content: center;
+}
+
+.kid-pin-card {
+    width: 100%;
+    max-width: 680px;
+    padding: 28px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(17, 23, 33, 0.98), rgba(12, 16, 24, 0.98));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.26);
+}
+
+.kid-pin-desc {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.kid-pin-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.kid-pin-field {
+    position: relative;
+}
+
+.kid-pin-input {
+    padding-right: 52px !important;
+}
+
+.kid-pin-eye {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.kid-pin-forgot {
+    color: #3f8cff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.kid-pin-forgot:hover {
+    color: #5aa0ff;
+}
+
+.kid-pin-next,
+.kid-pin-card .adult-btn-secondary {
+    max-width: 100%;
+}
+
+.kid-profile-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.kid-profile-head h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(38px, 3.4vw, 42px);
+    font-weight: 800;
+    line-height: 1.12;
+}
+
+.kid-profile-head-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.kid-profile-head-links a {
+    color: #3f8cff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.kid-preview-card {
+    min-height: 360px;
+}
+
+.kid-form-card {
+    padding: 22px;
+}
+
+.kid-helper-text {
+    display: block;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.kid-control-card {
+    margin-top: 10px;
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.kid-control-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.kid-rating-group + .kid-rating-group {
+    margin-top: 18px;
+}
+
+.kid-rating-label {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.kid-rating-track {
+    position: relative;
+    padding-top: 10px;
+}
+
+.kid-rating-line {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 22px;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.kid-rating-dots {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.kid-rating-dots--series {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.kid-rating-dot {
+    position: relative;
+    min-height: 44px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #1a1f29;
+    color: rgba(255, 255, 255, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.kid-rating-dot::before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    background: #0f141d;
+}
+
+.kid-rating-dot.is-active {
+    background: #1e67ff;
+    border-color: rgba(63, 140, 255, 0.45);
+    color: #fff;
+}
+
+.kid-rating-dot.is-active::before {
+    background: #3f8cff;
+    border-color: #3f8cff;
+}
+
+.kid-rating-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.kid-rating-track--series .kid-rating-dots {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.kid-profile-page .adult-btn-row {
+    margin-top: 20px;
+}
+
+@media (max-width: 991px) {
+    .kid-profile-head {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 767px) {
+    .kid-profile-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .kid-profile-head-links {
+        justify-content: flex-start;
+    }
+
+    .kid-pin-card,
+    .kid-form-card {
+        padding: 20px;
+    }
+
+    .kid-rating-dots,
+    .kid-rating-track--series .kid-rating-dots {
+        min-width: 640px;
+    }
+
+    .kid-control-card {
+        overflow-x: auto;
+    }
+}
+
 .account-profile-card,
 .account-details-card,
 .account-modal,

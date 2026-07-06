@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Kid | EMBO</title>
+    <title>Set Avatar | EMBO</title>
     <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="assets/css/profile-pin.css">
     <link rel="stylesheet" href="assets/css/active-tv-modal.css">
     <link rel="stylesheet" href="assets/css/search.css">
-    <link rel="stylesheet" href="assets/css/account.css">
     <link rel="stylesheet" href="assets/css/invoice-modal.css">
+    <link rel="stylesheet" href="assets/css/set-avatar.css">
 </head>
 
 <body>
@@ -95,105 +95,40 @@
         </div>
     </section>
 
-    <main class="account-page adult-profile-page kid-profile-page">
+    <main class="set-avatar-page">
         <div class="container">
-            <div class="kid-profile-head">
-                <div>
-                    <h2 class="fw-bold">Add Kid Profile</h2>
-                </div>
-                <div class="kid-profile-head-links">
-                    <a href="#">Forgot PIN?</a>
-                    <a href="add-kid-pin.html">Change PIN</a>
-                </div>
+            <div class="set-avatar-header">
+                <button type="button" class="set-avatar-back" data-set-avatar-back>
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span>Set avatar</span>
+                </button>
             </div>
-            <div class="adult-page-divider"></div>
+            <div class="set-avatar-divider"></div>
 
-            <div class="row g-4 align-items-start kid-profile-layout">
-                <div class="col-lg-4">
-                    <div class="adult-preview-card kid-preview-card h-100">
-                        <div class="adult-preview-inner">
-                            <div class="adult-preview-avatar-wrap">
-                                <div class="adult-preview-avatar">
-                                    <img src="assets/img/home/card-1.png" alt="Kid preview" data-adult-preview-avatar>
-                                </div>
-                            </div>
-                            <h2 class="adult-preview-name" data-adult-preview-name>Profile Name</h2>
-                        </div>
-                    </div>
-                </div>
+            <section class="set-avatar-section" data-set-avatar-section="Classic">
+                <h2 class="set-avatar-title">Classic</h2>
+                <div class="owl-carousel set-avatar-carousel" data-set-avatar-carousel="Classic"></div>
+            </section>
 
-                <div class="col-lg-8">
-                    <div class="adult-form-card kid-form-card h-100">
-                        <div class="adult-cta-row">
-                            <button type="button" class="btn adult-action-btn" data-adult-upload-trigger>Upload Profile Picture</button>
-                            <span class="adult-or-text">OR</span>
-                            <button type="button" class="btn adult-action-btn" data-open-avatar-modal data-bs-toggle="modal" data-bs-target="#avatarModal">Add Vector</button>
-                        </div>
+            <section class="set-avatar-section" data-set-avatar-section="Baby">
+                <h2 class="set-avatar-title">Baby</h2>
+                <div class="owl-carousel set-avatar-carousel" data-set-avatar-carousel="Baby"></div>
+            </section>
 
-                        <input type="file" class="adult-file-input" accept="image/*" data-adult-file-input>
+            <section class="set-avatar-section" data-set-avatar-section="Male">
+                <h2 class="set-avatar-title">Male</h2>
+                <div class="owl-carousel set-avatar-carousel" data-set-avatar-carousel="Male"></div>
+            </section>
 
-                        <div class="mb-3">
-                            <label for="kidProfileName" class="adult-section-label">Profile Name</label>
-                            <input id="kidProfileName" type="text" class="form-control adult-input" placeholder="Enter profile name" data-adult-name-input>
-                        </div>
+            <section class="set-avatar-section" data-set-avatar-section="Female">
+                <h2 class="set-avatar-title">Female</h2>
+                <div class="owl-carousel set-avatar-carousel" data-set-avatar-carousel="Female"></div>
+            </section>
 
-                        <div class="mb-3">
-                            <label for="kidBirthDate" class="adult-section-label">Birth Date</label>
-                            <input id="kidBirthDate" type="text" class="form-control adult-input" placeholder="Enter birth date">
-                            <small class="kid-helper-text">This profile is only for kids. Please make sure the birth date is correct.</small>
-                        </div>
-
-                        <div class="kid-control-card">
-                            <h3 class="kid-control-title">Parental Control</h3>
-
-                            <div class="kid-rating-group">
-                                <div class="kid-rating-label">Movies</div>
-                                <div class="kid-rating-track">
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-g" checked>
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-pg">
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-pg13">
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-r">
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-nc17">
-                                    <div class="kid-rating-line"></div>
-                                    <div class="kid-rating-dots">
-                                        <label for="movie-g" class="kid-rating-dot">G</label>
-                                        <label for="movie-pg" class="kid-rating-dot">PG</label>
-                                        <label for="movie-pg13" class="kid-rating-dot">PG-13</label>
-                                        <label for="movie-r" class="kid-rating-dot">R</label>
-                                        <label for="movie-nc17" class="kid-rating-dot">NC-17</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="kid-rating-group">
-                                <div class="kid-rating-label">Series</div>
-                                <div class="kid-rating-track kid-rating-track--series">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-sy" checked>
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-sg">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-sy7">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-spg">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-s14">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-sma">
-                                    <div class="kid-rating-line"></div>
-                                    <div class="kid-rating-dots kid-rating-dots--series">
-                                        <label for="series-sy" class="kid-rating-dot">S-Y</label>
-                                        <label for="series-sg" class="kid-rating-dot">S-G</label>
-                                        <label for="series-sy7" class="kid-rating-dot">S-Y7</label>
-                                        <label for="series-spg" class="kid-rating-dot">S-PG</label>
-                                        <label for="series-s14" class="kid-rating-dot">S14</label>
-                                        <label for="series-sma" class="kid-rating-dot">S-MA</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="adult-btn-row">
-                            <button type="button" class="btn adult-btn-primary">Add Profile</button>
-                            <button type="button" class="btn adult-btn-secondary">Cancel</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <section class="set-avatar-section" data-set-avatar-section="Robot">
+                <h2 class="set-avatar-title">Robot</h2>
+                <div class="owl-carousel set-avatar-carousel" data-set-avatar-carousel="Robot"></div>
+            </section>
         </div>
     </main>
 
@@ -255,33 +190,6 @@
         </div>
     </footer>
 
-    <div class="modal fade" id="avatarModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content adult-modal">
-                <div class="modal-header">
-                    <h5 class="modal-title">Choose Avatar</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="avatar-choice-grid">
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/card-1.png"><img src="assets/img/home/card-1.png" alt="Avatar 1"><span>Avatar 1</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/card-2.png"><img src="assets/img/home/card-2.png" alt="Avatar 2"><span>Avatar 2</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/card-3.png"><img src="assets/img/home/card-3.png" alt="Avatar 3"><span>Avatar 3</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/card-4.png"><img src="assets/img/home/card-4.png" alt="Avatar 4"><span>Avatar 4</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/card-5.png"><img src="assets/img/home/card-5.png" alt="Avatar 5"><span>Avatar 5</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/card-6.png"><img src="assets/img/home/card-6.png" alt="Avatar 6"><span>Avatar 6</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/card-7.png"><img src="assets/img/home/card-7.png" alt="Avatar 7"><span>Avatar 7</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/card-8.png"><img src="assets/img/home/card-8.png" alt="Avatar 8"><span>Avatar 8</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/frame-1.png"><img src="assets/img/home/frame-1.png" alt="Avatar 9"><span>Avatar 9</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/frame-2.png"><img src="assets/img/home/frame-2.png" alt="Avatar 10"><span>Avatar 10</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/frame-3.png"><img src="assets/img/home/frame-3.png" alt="Avatar 11"><span>Avatar 11</span></button>
-                        <button type="button" class="avatar-choice" data-avatar-choice data-avatar-src="assets/img/home/frame-4.png"><img src="assets/img/home/frame-4.png" alt="Avatar 12"><span>Avatar 12</span></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -289,7 +197,7 @@
     <script src="assets/js/profile-pin-modal.js"></script>
     <script src="assets/js/active-tv-modal.js"></script>
     <script src="assets/js/search.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/set-avatar.js"></script>
 </body>
 
 </html>

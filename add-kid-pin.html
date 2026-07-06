@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Kid | EMBO</title>
+    <title>Add Kid | Enter PIN | EMBO</title>
     <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -95,102 +95,42 @@
         </div>
     </section>
 
-    <main class="account-page adult-profile-page kid-profile-page">
+    <main class="account-page kid-pin-page">
         <div class="container">
-            <div class="kid-profile-head">
-                <div>
-                    <h2 class="fw-bold">Add Kid Profile</h2>
-                </div>
-                <div class="kid-profile-head-links">
-                    <a href="#">Forgot PIN?</a>
-                    <a href="add-kid-pin.html">Change PIN</a>
-                </div>
-            </div>
+            <h2 class="fw-bold">Enter PIN</h2>
             <div class="adult-page-divider"></div>
 
-            <div class="row g-4 align-items-start kid-profile-layout">
-                <div class="col-lg-4">
-                    <div class="adult-preview-card kid-preview-card h-100">
-                        <div class="adult-preview-inner">
-                            <div class="adult-preview-avatar-wrap">
-                                <div class="adult-preview-avatar">
-                                    <img src="assets/img/home/card-1.png" alt="Kid preview" data-adult-preview-avatar>
-                                </div>
-                            </div>
-                            <h2 class="adult-preview-name" data-adult-preview-name>Profile Name</h2>
+            <div class="kid-pin-shell">
+                <div class="kid-pin-card">
+                    <p class="kid-pin-desc">Before create kid profile add a pin. This pin need for switch, when you want Kid to adult profile</p>
+
+                    <div class="mb-3">
+                        <label class="kid-pin-label" for="setPin">Set PIN</label>
+                        <div class="kid-pin-field">
+                            <input id="setPin" type="password" class="form-control adult-input kid-pin-input" placeholder="Enter PIN">
+                            <button type="button" class="kid-pin-eye" data-pin-toggle aria-label="Show PIN">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
                         </div>
                     </div>
-                </div>
 
-                <div class="col-lg-8">
-                    <div class="adult-form-card kid-form-card h-100">
-                        <div class="adult-cta-row">
-                            <button type="button" class="btn adult-action-btn" data-adult-upload-trigger>Upload Profile Picture</button>
-                            <span class="adult-or-text">OR</span>
-                            <button type="button" class="btn adult-action-btn" data-open-avatar-modal data-bs-toggle="modal" data-bs-target="#avatarModal">Add Vector</button>
+                    <div class="mb-2">
+                        <label class="kid-pin-label" for="confirmPin">Confirm PIN</label>
+                        <div class="kid-pin-field">
+                            <input id="confirmPin" type="password" class="form-control adult-input kid-pin-input" placeholder="Confirm PIN">
+                            <button type="button" class="kid-pin-eye" data-pin-toggle aria-label="Show PIN">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
                         </div>
+                    </div>
 
-                        <input type="file" class="adult-file-input" accept="image/*" data-adult-file-input>
+                    <div class="text-end mb-4">
+                        <a href="#" class="kid-pin-forgot">Forgot PIN?</a>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="kidProfileName" class="adult-section-label">Profile Name</label>
-                            <input id="kidProfileName" type="text" class="form-control adult-input" placeholder="Enter profile name" data-adult-name-input>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="kidBirthDate" class="adult-section-label">Birth Date</label>
-                            <input id="kidBirthDate" type="text" class="form-control adult-input" placeholder="Enter birth date">
-                            <small class="kid-helper-text">This profile is only for kids. Please make sure the birth date is correct.</small>
-                        </div>
-
-                        <div class="kid-control-card">
-                            <h3 class="kid-control-title">Parental Control</h3>
-
-                            <div class="kid-rating-group">
-                                <div class="kid-rating-label">Movies</div>
-                                <div class="kid-rating-track">
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-g" checked>
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-pg">
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-pg13">
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-r">
-                                    <input type="radio" class="kid-rating-input" name="movies-rating" id="movie-nc17">
-                                    <div class="kid-rating-line"></div>
-                                    <div class="kid-rating-dots">
-                                        <label for="movie-g" class="kid-rating-dot">G</label>
-                                        <label for="movie-pg" class="kid-rating-dot">PG</label>
-                                        <label for="movie-pg13" class="kid-rating-dot">PG-13</label>
-                                        <label for="movie-r" class="kid-rating-dot">R</label>
-                                        <label for="movie-nc17" class="kid-rating-dot">NC-17</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="kid-rating-group">
-                                <div class="kid-rating-label">Series</div>
-                                <div class="kid-rating-track kid-rating-track--series">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-sy" checked>
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-sg">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-sy7">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-spg">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-s14">
-                                    <input type="radio" class="kid-rating-input" name="series-rating" id="series-sma">
-                                    <div class="kid-rating-line"></div>
-                                    <div class="kid-rating-dots kid-rating-dots--series">
-                                        <label for="series-sy" class="kid-rating-dot">S-Y</label>
-                                        <label for="series-sg" class="kid-rating-dot">S-G</label>
-                                        <label for="series-sy7" class="kid-rating-dot">S-Y7</label>
-                                        <label for="series-spg" class="kid-rating-dot">S-PG</label>
-                                        <label for="series-s14" class="kid-rating-dot">S14</label>
-                                        <label for="series-sma" class="kid-rating-dot">S-MA</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="adult-btn-row">
-                            <button type="button" class="btn adult-btn-primary">Add Profile</button>
-                            <button type="button" class="btn adult-btn-secondary">Cancel</button>
-                        </div>
+                    <div class="adult-btn-row">
+                        <button type="button" class="btn adult-btn-primary kid-pin-next" data-kid-pin-next>Next</button>
+                        <button type="button" class="btn adult-btn-secondary">Cancel</button>
                     </div>
                 </div>
             </div>

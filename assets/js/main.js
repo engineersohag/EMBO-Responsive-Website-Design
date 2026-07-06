@@ -394,3 +394,84 @@ if (!window.__emboSearchInitialized) {
         });
     });
 })();
+
+(function () {
+    const pinPage = document.querySelector('.kid-pin-page');
+
+    if (!pinPage) {
+        return;
+    }
+
+    pinPage.querySelectorAll('[data-pin-toggle]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const field = button.closest('.kid-pin-field');
+            const input = field ? field.querySelector('input') : null;
+            const icon = button.querySelector('i');
+
+            if (!input) {
+                return;
+            }
+
+            const isHidden = input.type === 'password';
+            input.type = isHidden ? 'text' : 'password';
+            if (icon) {
+                icon.className = isHidden ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+            }
+        });
+    });
+
+    const nextBtn = pinPage.querySelector('[data-kid-pin-next]');
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            window.location.href = 'add-kid.html';
+        });
+    }
+})();
+
+(function () {
+    const kidPage = document.querySelector('.kid-profile-page');
+
+    if (!kidPage) {
+        return;
+    }
+
+    function updateRatingTrack(track, selectedIndex) {
+        const dots = Array.from(track.querySelectorAll('.kid-rating-dot'));
+        const line = track.querySelector('.kid-rating-line');
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('is-active', index <= selectedIndex);
+        });
+
+        if (line) {
+            const count = dots.length || 1;
+            const percent = count > 1 ? (selectedIndex / (count - 1)) * 100 : 0;
+            line.style.background = `linear-gradient(90deg, #1e67ff 0%, #1e67ff ${Math.max(percent, 8)}%, rgba(255,255,255,0.08) ${Math.max(percent, 8)}%, rgba(255,255,255,0.08) 100%)`;
+        }
+    }
+
+    kidPage.querySelectorAll('.kid-rating-track').forEach((track) => {
+        const inputs = Array.from(track.querySelectorAll('.kid-rating-input'));
+        const dots = Array.from(track.querySelectorAll('.kid-rating-dot'));
+
+        const sync = () => {
+            const checkedIndex = inputs.findIndex((input) => input.checked);
+            updateRatingTrack(track, checkedIndex < 0 ? 0 : checkedIndex);
+        };
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                if (inputs[index]) {
+                    inputs[index].checked = true;
+                    sync();
+                }
+            });
+        });
+
+        inputs.forEach((input) => {
+            input.addEventListener('change', sync);
+        });
+
+        sync();
+    });
+})();
