@@ -475,3 +475,30 @@ if (!window.__emboSearchInitialized) {
         sync();
     });
 })();
+
+(function () {
+    const authPage = document.querySelector('.tv-login-email-page');
+
+    if (!authPage) {
+        return;
+    }
+
+    authPage.querySelectorAll('[data-tv-password-toggle]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const wrapper = button.closest('.tv-login-password');
+            const input = wrapper ? wrapper.querySelector('[data-tv-password]') : null;
+            const icon = button.querySelector('i');
+
+            if (!input) {
+                return;
+            }
+
+            const isPassword = input.type === 'password';
+            input.type = isPassword ? 'text' : 'password';
+
+            if (icon) {
+                icon.className = isPassword ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye';
+            }
+        });
+    });
+})();

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Login Email | EMBO</title>
+    <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+
+<body>
+    <main class="tv-login-page tv-login-email-page">
+        <div class="container">
+            <div class="tv-login-shell">
+                <img class="tv-login-logo" src="assets/img/logo.png" alt="EMBO logo">
+
+                <h1 class="tv-login-title">Login to TV</h1>
+
+                <section class="tv-login-card tv-login-email-card" aria-labelledby="tvLoginEmailTitle">
+                    <form class="tv-login-form">
+                        <div class="tv-login-field">
+                            <label class="tv-login-label" for="tvLoginEmail">Email</label>
+                            <input id="tvLoginEmail" type="email" class="tv-login-input" placeholder="Enter Your Email">
+                        </div>
+
+                        <div class="tv-login-field">
+                            <label class="tv-login-label" for="tvLoginPassword">Password</label>
+                            <div class="tv-login-password">
+                                <input id="tvLoginPassword" type="password" class="tv-login-input tv-login-password-input" placeholder="Enter password (6-60 characters)" data-tv-password>
+                                <button type="button" class="tv-login-eye" data-tv-password-toggle aria-label="Toggle password visibility">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="tv-login-meta">
+                            <label class="tv-login-remember">
+                                <input type="checkbox" class="form-check-input">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="tv-login-forgot">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="tv-login-submit">Log In</button>
+
+                        <div class="tv-login-divider"><span>Or</span></div>
+
+                        <div class="tv-login-socials">
+                            <a href="#" class="tv-login-social-btn">
+                                <i class="fa-brands fa-google"></i>
+                                <span>Google</span>
+                            </a>
+                            <a href="#" class="tv-login-social-btn">
+                                <i class="fa-brands fa-apple"></i>
+                                <span>Apple</span>
+                            </a>
+                        </div>
+
+                        <div class="tv-login-signup">
+                            Don't have an account? <a href="#">Sing Up</a>
+                        </div>
+                    </form>
+                </section>
+
+                <a href="tv-login.html" class="tv-login-email-link">LOG IN BY CODE</a>
+
+                <div class="tv-login-help">
+                    Need any help? <a href="#">Contact us.</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
