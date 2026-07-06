@@ -301,3 +301,96 @@ if (!window.__emboSearchInitialized) {
         });
     });
 })();
+
+(function () {
+    const page = document.querySelector('.adult-profile-page');
+
+    if (!page) {
+        return;
+    }
+
+    const previewImage = page.querySelector('[data-adult-preview-avatar]');
+    const previewName = page.querySelector('[data-adult-preview-name]');
+    const nameInput = page.querySelector('[data-adult-name-input]');
+    const fileInput = page.querySelector('[data-adult-file-input]');
+    const uploadButtons = page.querySelectorAll('[data-adult-upload-trigger]');
+    const avatarChoices = page.querySelectorAll('[data-avatar-choice]');
+    const openAvatarModalButtons = page.querySelectorAll('[data-open-avatar-modal]');
+    const deleteModalEl = page.querySelector('#deleteProfileModal');
+    const deleteButtons = page.querySelectorAll('[data-open-delete-modal]');
+    let objectUrl = null;
+
+    function setPreviewImage(src) {
+        if (previewImage && src) {
+            previewImage.src = src;
+        }
+    }
+
+    function setPreviewName(value) {
+        if (previewName) {
+            previewName.textContent = value && value.trim() ? value.trim() : 'Profile Name';
+        }
+    }
+
+    uploadButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (fileInput) {
+                fileInput.click();
+            }
+        });
+    });
+
+    if (nameInput) {
+        nameInput.addEventListener('input', () => setPreviewName(nameInput.value));
+    }
+
+    if (fileInput) {
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files && fileInput.files[0];
+
+            if (!file || !file.type || !file.type.startsWith('image/')) {
+                return;
+            }
+
+            if (objectUrl) {
+                URL.revokeObjectURL(objectUrl);
+            }
+
+            objectUrl = URL.createObjectURL(file);
+            setPreviewImage(objectUrl);
+        });
+    }
+
+    avatarChoices.forEach((choice) => {
+        choice.addEventListener('click', () => {
+            const src = choice.getAttribute('data-avatar-src');
+            const modalEl = document.querySelector('#avatarModal');
+            if (src) {
+                setPreviewImage(src);
+            }
+            if (modalEl && window.bootstrap) {
+                const instance = window.bootstrap.Modal.getInstance(modalEl) || new window.bootstrap.Modal(modalEl);
+                instance.hide();
+            }
+        });
+    });
+
+    openAvatarModalButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const modalEl = document.querySelector('#avatarModal');
+            if (modalEl && window.bootstrap) {
+                const instance = window.bootstrap.Modal.getInstance(modalEl) || new window.bootstrap.Modal(modalEl);
+                instance.show();
+            }
+        });
+    });
+
+    deleteButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (deleteModalEl && window.bootstrap) {
+                const instance = window.bootstrap.Modal.getInstance(deleteModalEl) || new window.bootstrap.Modal(deleteModalEl);
+                instance.show();
+            }
+        });
+    });
+})();
