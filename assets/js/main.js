@@ -252,3 +252,52 @@ if (!window.__emboSearchInitialized) {
         });
     }
 })();
+
+(function () {
+    const page = document.querySelector('.edit-profile-page');
+
+    if (!page) {
+        return;
+    }
+
+    page.querySelectorAll('[data-profile-file]').forEach((input) => {
+        const card = input.closest('.edit-profile-card');
+        const avatarImg = card ? card.querySelector('[data-profile-avatar]') : null;
+        let objectUrl = null;
+
+        if (!card || !avatarImg) {
+            return;
+        }
+
+        const openPicker = () => input.click();
+        const trigger = card.querySelector('.edit-profile-avatar-trigger');
+        const editButton = card.querySelector('.edit-profile-edit-btn');
+
+        if (trigger) {
+            trigger.addEventListener('click', openPicker);
+        }
+
+        if (editButton) {
+            editButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                openPicker();
+            });
+        }
+
+        input.addEventListener('change', () => {
+            const file = input.files && input.files[0];
+
+            if (!file || !file.type || !file.type.startsWith('image/')) {
+                return;
+            }
+
+            if (objectUrl) {
+                URL.revokeObjectURL(objectUrl);
+            }
+
+            objectUrl = URL.createObjectURL(file);
+            avatarImg.src = objectUrl;
+        });
+    });
+})();
