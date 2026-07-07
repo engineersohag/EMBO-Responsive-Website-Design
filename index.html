@@ -643,9 +643,73 @@
                         </div>
 
                         <div class="bottom-text login-bottom-text">
-                            Don't have an account? <a href="#">Sign Up</a>
+                            Don't have an account? <a href="#"  data-bs-toggle="modal" data-bs-target="#signup">Sign Up</a>
                         </div>
                 </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="signup" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content login-modal">
+                <button type="button" class="close-btn" aria-label="Close login modal" data-login-close data-bs-dismiss="modal">&times;</button>
+                <form class="login-form" novalidate data-login-form>
+                    <div class="mb-3 login-field">
+                        <div class="form-floating login-floating">
+                            <input type="text" class="form-control login-input" id="loginName" placeholder="Enter Your Name" data-login-name>
+                            <label for="loginName">Name</label>
+                        </div>
+                        <div class="login-feedback" data-login-name-feedback></div>
+                    </div>
+
+                    <div class="mb-3 login-field">
+                        <div class="form-floating login-floating">
+                            <input type="email" class="form-control login-input" id="loginEmail" placeholder="Enter Your Email" data-login-email>
+                            <label for="loginEmail">Email</label>
+                        </div>
+                        <div class="login-feedback" data-login-email-feedback></div>
+                    </div>
+
+                    <div class="mb-3 login-field">
+                        <div class="form-floating login-floating login-password-wrap">
+                            <input type="password" class="form-control login-input login-password-input" id="loginPassword" placeholder="Enter password (6-60 characters)" data-login-password>
+                            <label for="loginPassword">Password</label>
+                            <button type="button" class="login-eye" aria-label="Toggle password visibility" data-login-password-toggle><i class="fa-solid fa-eye-slash"></i></button>
+                        </div>
+                        <div class="login-feedback" data-login-password-feedback></div>
+                    </div>
+
+                    <div class="login-options">
+                        <label class="form-check login-remember" for="agree">
+                            <input class="form-check-input" type="checkbox" id="agree">
+                            <span class="form-check-label">By singing up, you are agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-login login-submit">Sing Up</button>
+                    <div class="login-success" data-login-success></div>
+
+                    <div class="text-center">
+                    <div class="divider login-divider">Or</div>
+
+                        <div class="socials login-socials">
+                            <a href="#" class="social-btn me-2 text-white login-social-btn">
+                                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+                                <span class="ms-2">Google</span>
+                            </a>
+                            <a href="#" class="social-btn text-white login-social-btn">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+                                <span class="ms-2">Apple</span>
+                            </a>
+                        </div>
+
+                        <div class="bottom-text login-bottom-text">
+                            Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Log In</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
