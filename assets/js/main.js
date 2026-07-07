@@ -1098,6 +1098,317 @@ if (!window.__emboSearchInitialized) {
 })();
 
 (function () {
+    const pricingPage = document.querySelector('.pricing-page');
+
+    if (!pricingPage) {
+        return;
+    }
+
+    const tabs = Array.from(pricingPage.querySelectorAll('[data-pricing-tab]'));
+    const panels = Array.from(pricingPage.querySelectorAll('[data-pricing-panel]'));
+
+    function activateTab(name) {
+        tabs.forEach((tab) => {
+            const isActive = tab.getAttribute('data-pricing-tab') === name;
+            tab.classList.toggle('active', isActive);
+            tab.setAttribute('aria-pressed', String(isActive));
+        });
+
+        panels.forEach((panel) => {
+            const isActive = panel.getAttribute('data-pricing-panel') === name;
+            panel.classList.toggle('active', isActive);
+        });
+    }
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            activateTab(tab.getAttribute('data-pricing-tab'));
+        });
+    });
+
+    activateTab('monthly');
+})();
+
+(function () {
+    const businessPage = document.querySelector('.e-business-page');
+
+    if (!businessPage) {
+        return;
+    }
+
+    const qtyInput = businessPage.querySelector('[data-device-qty]');
+    const totalEl = businessPage.querySelector('[data-device-total]');
+    const continueBtn = businessPage.querySelector('[data-device-continue]');
+    const feedback = businessPage.querySelector('[data-device-feedback]');
+    const changeLink = businessPage.querySelector('[data-business-change]');
+    const PRICE_PER_DEVICE = 5;
+    const MIN = 10;
+    const MAX = 1000;
+
+    function setError(message) {
+        if (!qtyInput || !feedback) {
+            return;
+        }
+        qtyInput.classList.add('is-invalid');
+        qtyInput.classList.remove('is-valid');
+        feedback.textContent = message;
+    }
+
+    function clearError() {
+        if (!qtyInput || !feedback) {
+            return;
+        }
+        qtyInput.classList.remove('is-invalid');
+        qtyInput.classList.remove('is-valid');
+        feedback.textContent = '';
+    }
+
+    function updateTotal() {
+        if (!qtyInput || !totalEl) {
+            return;
+        }
+        const qty = parseInt(qtyInput.value, 10);
+        if (!Number.isFinite(qty)) {
+            totalEl.textContent = 'Total Price: $0';
+            return;
+        }
+        totalEl.textContent = `Total Price: $${qty * PRICE_PER_DEVICE}`;
+    }
+
+    function validateQuantity() {
+        if (!qtyInput) {
+            return false;
+        }
+        const qty = parseInt(qtyInput.value, 10);
+
+        if (!Number.isFinite(qty) || qty < MIN) {
+            setError(`Minimum device is ${MIN}`);
+            return false;
+        }
+
+        if (qty > MAX) {
+            setError(`Maximum device is ${MAX}`);
+            return false;
+        }
+
+        clearError();
+        return true;
+    }
+
+    if (qtyInput) {
+        qtyInput.addEventListener('input', () => {
+            qtyInput.value = qtyInput.value.replace(/[^\d]/g, '');
+            clearError();
+            updateTotal();
+        });
+
+        qtyInput.addEventListener('blur', () => {
+            if (!qtyInput.value) {
+                qtyInput.value = String(MIN);
+            }
+            updateTotal();
+            validateQuantity();
+        });
+
+        qtyInput.addEventListener('keydown', (event) => {
+            const allowed = ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'Home', 'End'];
+            if (allowed.includes(event.key) || event.ctrlKey || event.metaKey) {
+                return;
+            }
+            if (!/^\d$/.test(event.key)) {
+                event.preventDefault();
+            }
+        });
+    }
+
+    if (continueBtn) {
+        continueBtn.addEventListener('click', () => {
+            if (!validateQuantity()) {
+                return;
+            }
+            alert('Continue');
+        });
+    }
+
+    if (changeLink) {
+        changeLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = 'price.html';
+        });
+    }
+
+    if (qtyInput) {
+        updateTotal();
+    }
+})();
+
+(function () {
+    const page = document.querySelector('.voucher-actions');
+    const modal = document.querySelector('#voucherModal');
+
+    if (!page || !modal) {
+        return;
+    }
+
+    const openBtn = page.querySelector('[data-voucher-open]');
+    const appliedCard = page.querySelector('[data-voucher-applied]');
+    const removeBtn = page.querySelector('[data-voucher-remove]');
+    const applyBtn = modal.querySelector('[data-voucher-apply]');
+    const voucherInput = modal.querySelector('[data-voucher-input]');
+    const voucherFeedback = modal.querySelector('[data-voucher-feedback]');
+    const modalInstance = window.bootstrap ? window.bootstrap.Modal.getInstance(modal) || new window.bootstrap.Modal(modal) : null;
+
+    function setError(message) {
+        if (!voucherInput || !voucherFeedback) {
+            return;
+        }
+        voucherInput.classList.add('is-invalid');
+        voucherInput.classList.remove('is-valid');
+        voucherFeedback.textContent = message;
+    }
+
+    function clearError() {
+        if (!voucherInput || !voucherFeedback) {
+            return;
+        }
+        voucherInput.classList.remove('is-invalid');
+        voucherInput.classList.remove('is-valid');
+        voucherFeedback.textContent = '';
+    }
+
+    function showApplied() {
+        if (openBtn) {
+            openBtn.classList.add('d-none');
+        }
+        if (appliedCard) {
+            appliedCard.classList.remove('d-none');
+        }
+    }
+
+    function showButton() {
+        if (openBtn) {
+            openBtn.classList.remove('d-none');
+        }
+        if (appliedCard) {
+            appliedCard.classList.add('d-none');
+        }
+    }
+
+    if (openBtn) {
+        openBtn.addEventListener('click', () => {
+            if (modalInstance) {
+                modalInstance.show();
+            }
+            if (voucherInput) {
+                setTimeout(() => voucherInput.focus(), 150);
+            }
+        });
+    }
+
+    if (voucherInput) {
+        voucherInput.addEventListener('input', clearError);
+    }
+
+    if (applyBtn) {
+        applyBtn.addEventListener('click', () => {
+            const value = voucherInput ? voucherInput.value.trim() : '';
+            if (!value) {
+                setError('Enter voucher code');
+                return;
+            }
+            clearError();
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+            showApplied();
+        });
+    }
+
+    if (removeBtn) {
+        removeBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            showButton();
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener('hidden.bs.modal', () => {
+            clearError();
+            if (voucherInput) {
+                voucherInput.value = '';
+            }
+        });
+    }
+})();
+
+(function () {
+    const redeemSection = document.querySelector('.redeem-section');
+    const successModal = document.querySelector('#redeemSuccessModal');
+
+    if (!redeemSection || !successModal) {
+        return;
+    }
+
+    const codeInput = redeemSection.querySelector('[data-redeem-code]');
+    const feedback = redeemSection.querySelector('[data-redeem-feedback]');
+    const validateBtn = redeemSection.querySelector('[data-redeem-validate]');
+    const homeBtn = successModal.querySelector('[data-redeem-home]');
+    const modalInstance = window.bootstrap ? window.bootstrap.Modal.getInstance(successModal) || new window.bootstrap.Modal(successModal) : null;
+    const VALID_CODE = 'EMBO2026';
+
+    function setError(message) {
+        if (!codeInput || !feedback) {
+            return;
+        }
+        codeInput.classList.add('is-invalid');
+        codeInput.classList.remove('is-valid');
+        feedback.textContent = message;
+    }
+
+    function clearError() {
+        if (!codeInput || !feedback) {
+            return;
+        }
+        codeInput.classList.remove('is-invalid');
+        codeInput.classList.remove('is-valid');
+        feedback.textContent = '';
+    }
+
+    if (codeInput) {
+        codeInput.addEventListener('input', clearError);
+    }
+
+    if (validateBtn) {
+        validateBtn.addEventListener('click', () => {
+            const value = codeInput ? codeInput.value.trim() : '';
+            if (value !== VALID_CODE) {
+                setError('Invalid coupon code.');
+                return;
+            }
+
+            clearError();
+            if (modalInstance) {
+                modalInstance.show();
+            }
+        });
+    }
+
+    if (homeBtn) {
+        homeBtn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+    }
+
+    if (successModal) {
+        successModal.addEventListener('hidden.bs.modal', () => {
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+        });
+    }
+})();
+
+(function () {
     const modal = document.querySelector('#loginModal');
 
     if (!modal) {

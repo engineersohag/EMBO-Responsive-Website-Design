@@ -1548,6 +1548,639 @@ Search
     font-weight: 600;
 }
 
+.redeem-section {
+    padding: 48px 0 24px;
+}
+
+.redeem-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.redeem-title {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 auto 14px;
+    max-width: 920px;
+}
+
+.redeem-note {
+    color: rgba(255, 255, 255, 0.56);
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+.redeem-form {
+    width: min(100%, 420px);
+    margin: 0 auto;
+}
+
+.redeem-btn {
+    width: 100%;
+}
+
+.redeem-success-modal .modal-dialog {
+    width: min(100%, 460px);
+}
+
+.redeem-success-content {
+    position: relative;
+    background: #0f1622;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px 26px 26px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.48);
+    color: #fff;
+}
+
+.redeem-success-body {
+    text-align: center;
+}
+
+.redeem-success-icon {
+    font-size: 64px;
+    color: #3f8cff;
+    margin-bottom: 14px;
+}
+
+.redeem-success-body h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 10px;
+}
+
+.redeem-success-body p {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 16px;
+    margin-bottom: 22px;
+}
+
+.redeem-home-btn {
+    width: 100%;
+}
+
+.redeem-section .login-input.is-invalid {
+    border-color: #ff6b6b !important;
+}
+
+.redeem-section .login-input.is-invalid ~ label {
+    color: #ff6b6b !important;
+}
+
+.redeem-section .login-input.is-valid {
+    border-color: rgba(63, 140, 255, 0.5) !important;
+}
+
+.voucher-card-floating {
+    position: relative;
+}
+
+.voucher-card-input {
+    padding-right: 120px !important;
+}
+
+.voucher-card-icons {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.voucher-card-icons img {
+    display: block;
+    height: 18px;
+    width: auto;
+    object-fit: contain;
+}
+
+.voucher-actions {
+    margin: 18px 0 22px;
+}
+
+.voucher-add-btn {
+    width: 100%;
+    min-height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    background: #111723;
+    color: #fff;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.voucher-add-btn i {
+    font-size: 18px;
+}
+
+.voucher-add-btn:hover {
+    background: #151c29;
+    border-color: rgba(255, 255, 255, 0.14);
+    transform: translateY(-1px);
+}
+
+.voucher-box {
+    background: linear-gradient(180deg, #111723 0%, #0e1420 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.voucher-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.voucher-left i {
+    font-size: 24px;
+    color: #2f80ed;
+}
+
+.voucher-left h6 {
+    margin: 0 0 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.voucher-left span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.remove-btn {
+    color: #ff5a5f;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: opacity 0.2s ease;
+}
+
+.remove-btn:hover {
+    opacity: 0.82;
+}
+
+.voucher-modal {
+    background: #0f1622;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.48);
+    padding: 26px 26px 22px;
+    color: #fff;
+}
+
+.voucher-modal .modal-header {
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.voucher-modal .modal-body h5 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.voucher-modal .login-field {
+    margin-bottom: 18px !important;
+}
+
+.voucher-modal .apply-btn {
+    height: 50px;
+    border-radius: 14px;
+    font-weight: 700;
+}
+
+.voucher-modal .login-feedback {
+    margin-top: 8px;
+}
+
+.voucher-modal .login-input.is-invalid {
+    border-color: #ff6b6b !important;
+}
+
+.voucher-modal .login-input.is-invalid ~ label {
+    color: #ff6b6b !important;
+}
+
+.voucher-modal .login-input.is-valid {
+    border-color: rgba(63, 140, 255, 0.5) !important;
+}
+
+.pricing-page {
+    padding: 42px 0 12px;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.pricing-title {
+    color: #fff;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.pricing-toggle {
+    width: fit-content;
+    margin: 0 auto 34px;
+    padding: 6px;
+    display: inline-flex;
+    gap: 6px;
+    background: #171b24;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+}
+
+.pricing-toggle-btn {
+    min-width: 120px;
+    height: 44px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0 20px;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.pricing-toggle-btn.active {
+    background: #0f1622;
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.pricing-panels {
+    position: relative;
+}
+
+.pricing-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.pricing-panel.active {
+    display: block;
+    animation: pricingFade 0.28s ease forwards;
+}
+
+@keyframes pricingFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pricing-card {
+    height: 100%;
+    background: linear-gradient(180deg, #121722 0%, #0f131c 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 28px 24px 24px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card-featured {
+    background: linear-gradient(180deg, #151d2a 0%, #111926 100%);
+    border-color: rgba(63, 140, 255, 0.28);
+    box-shadow: 0 18px 42px rgba(4, 153, 251, 0.12);
+}
+
+.pricing-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 18px;
+}
+
+.pricing-name {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 14px;
+}
+
+.pricing-price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.pricing-price {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.pricing-unit {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.pricing-desc {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    min-height: 48px;
+}
+
+.pricing-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 4px 0 18px;
+}
+
+.pricing-features-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 14px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 22px;
+    display: grid;
+    gap: 12px;
+    flex: 1;
+}
+
+.pricing-features li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.pricing-features i {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 3px;
+    flex: 0 0 auto;
+}
+
+.pricing-btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: transparent;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.pricing-btn:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.pricing-btn-primary {
+    background: #3f8cff;
+    border-color: #3f8cff;
+}
+
+.pricing-btn-primary:hover {
+    background: #2f79ea;
+    border-color: #2f79ea;
+}
+
+.e-business-page {
+    padding: 42px 0 20px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.e-business-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.e-business-title {
+    color: #fff;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.22;
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+}
+
+.e-business-desc,
+.e-business-note {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 720px;
+}
+
+.e-business-note {
+    margin-top: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.e-business-plan-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(180deg, #111722 0%, #0d131c 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    padding: 12px 26px;
+    margin-bottom: 24px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+}
+
+.e-business-plan-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.e-business-plan-price {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.e-business-plan-price small {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.e-business-plan-name {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.e-business-plan-change {
+    color: #3f8cff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.e-business-plan-change:hover {
+    color: #5aa0ff;
+}
+
+.e-business-form {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.e-business-input {
+    height: 58px;
+}
+
+.e-business-total {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+.e-business-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 18px 0 22px;
+}
+
+.e-business-continue {
+    width: 100%;
+}
+
+.e-business-input.is-invalid {
+    border-color: #ff6b6b !important;
+}
+
+.e-business-input.is-invalid ~ label {
+    color: #ff6b6b !important;
+}
+
+.e-business-error {
+    min-height: 18px;
+    margin-top: 8px;
+    color: #ff6b6b;
+    font-size: 13px;
+}
+
+@media (max-width: 991px) {
+    .pricing-page {
+        padding-top: 34px;
+    }
+
+    .pricing-toggle {
+        margin-bottom: 26px;
+    }
+
+    .pricing-card {
+        padding: 26px 22px 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .pricing-title {
+        font-size: clamp(26px, 8vw, 34px);
+    }
+
+    .pricing-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pricing-toggle-btn {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .pricing-card {
+        border-radius: 22px;
+    }
+
+    .pricing-price {
+        font-size: 38px;
+    }
+
+    .e-business-page {
+        padding-top: 34px;
+    }
+
+    .e-business-plan-card {
+        padding: 22px 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .e-business-page {
+        padding-top: 28px;
+    }
+
+    .e-business-plan-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .e-business-plan-change {
+        align-self: flex-end;
+    }
+
+    .e-business-desc,
+    .e-business-note {
+        font-size: 15px;
+    }
+
+    .e-business-total {
+        font-size: 17px;
+    }
+}
+
 .forgot-modal {
     width: min(100%, 520px);
 }
@@ -1697,6 +2330,22 @@ Search
 
     .login-socials {
         grid-template-columns: 1fr;
+    }
+
+    .redeem-section {
+        padding-top: 34px;
+    }
+
+    .redeem-success-content {
+        padding: 24px 18px 20px;
+    }
+
+    .redeem-success-icon {
+        font-size: 56px;
+    }
+
+    .redeem-success-body h3 {
+        font-size: 24px;
     }
 
     .forgot-modal {

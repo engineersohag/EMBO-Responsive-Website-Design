@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment By Card | EMBO</title>
+    <title>Redeem | EMBO</title>
     <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -599,149 +599,40 @@
         </div>
     </section>
 
-    <section class="payment-section">
-        <div class="payment-card">
-            <!-- Title -->
-            <h1 class="payment-title">
-                Set up your credit or debit card.
-            </h1>
-            <!-- Plan -->
-            <div class="info-box">
-                <div>
-                    <h5>$5 <span>/per device</span></h5>
-                    <p>E-Business plan</p>
+    <section class="redeem-section">
+        <div class="container">
+            <div class="redeem-wrap">
+                <h2 class="redeem-title">Enter the coupon code and press the VALIDATE button to activate the subscription.</h2>
+                <p class="redeem-note">Note: The promo code isn't valid here.</p>
+
+                <div class="redeem-form">
+                    <div class="mb-3 login-field">
+                        <div class="form-floating login-floating">
+                            <input type="text" class="form-control login-input" id="redeemCode" placeholder="Enter coupon code" data-redeem-code>
+                            <label for="redeemCode">Redeem Code</label>
+                        </div>
+                        <div class="login-feedback" data-redeem-feedback></div>
+                    </div>
+
+                    <button type="button" class="btn-login login-submit redeem-btn" data-redeem-validate>Validate</button>
                 </div>
-                <a href="#">Change</a>
             </div>
-            <!-- Payment Method -->
-          <div class="payment-method">
-                <button class="method active">
-                    <i class="fa-regular fa-credit-card"></i>
-                    Pay by Card
-                </button>
-
-                <button class="method">
-                    <i class="fa-brands fa-paypal"></i>
-                    Pay by PayPal
-                </button>
-            </div>
-            <!-- Plan -->
-            <div class="info-box">
-                <div>
-                    <h5>$5 <span>/per device</span></h5>
-                    <p>E-Business plan</p>
-                </div>
-                <a href="#">Change</a>
-            </div>
-            <!-- Form -->
-            <form>
-                <div class="mb-3 login-field">
-                    <div class="form-floating login-floating">
-                        <input type="text" class="form-control login-input" id="name" placeholder="Enter Your Name" data-login-email>
-                        <label for="name">Name</label>
-                    </div>
-                    <div class="login-feedback" data-login-email-feedback></div>
-                </div>
-                <div class="mb-3 login-field">
-                    <div class="form-floating login-floating voucher-card-floating">
-                        <input type="text" class="form-control login-input voucher-card-input" id="card" placeholder="Enter Your Card Number" data-voucher-card-number>
-                        <label for="card">Card Number</label>
-                        <div class="voucher-card-icons" aria-hidden="true">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Exp + CVV -->
-
-                <div class="row g-3">
-
-                    <div class="col-md-6">
-                        <div class="mb-3 login-field">
-                            <div class="form-floating login-floating">
-                                <input type="text" class="form-control login-input" id="card" placeholder="Enter Your Expiration Date" data-login-email>
-                                <label for="card">Expiration Date</label>
-                            </div>
-                            <div class="login-feedback" data-login-email-feedback></div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="mb-3 login-field">
-                            <div class="form-floating login-floating">
-                                <input type="text" class="form-control login-input" id="card" placeholder="Enter Your CCV" data-login-email>
-                                <label for="card">CCV</label>
-                            </div>
-                            <div class="login-feedback" data-login-email-feedback></div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Voucher -->
-
-                <div class="voucher-actions">
-                    <button type="button" class="voucher-add-btn" data-voucher-open>
-                        <i class="fa-solid fa-gift"></i>
-                        <span>Add voucher code</span>
-                    </button>
-
-                    <div class="voucher-box d-none" data-voucher-applied>
-                        <div class="voucher-left">
-                            <i class="fa-regular fa-circle-check"></i>
-                            <div>
-                                <h6>Voucher applied!</h6>
-                                <span>- $2</span>
-                            </div>
-                        </div>
-                        <a href="#" class="remove-btn" data-voucher-remove>
-                            Remove
-                        </a>
-                    </div>
-                </div>
-                <!-- Button -->
-                <button class="pay-btn" data-bs-toggle="modal"data-bs-target="#voucherModal">
-                    Pay Bill
-                </button>
-
-
-                <!-- Voucher Modal -->
-                <div class="modal fade" id="voucherModal" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content voucher-modal">
-
-                            <div class="modal-header border-0 pb-0">
-                                <button type="button" class="btn-close btn-close-white ms-auto"
-                                    data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <div class="modal-body px-4 pb-4">
-
-                                <h5 class="text-center text-light mb-4">
-                                    Apply a voucher code
-                                </h5>
-
-                                <div class="mb-4 login-field">
-                                    <div class="form-floating login-floating">
-                                        <input type="text" class="form-control login-input" id="voucherCode" placeholder="Enter voucher code or pin" data-voucher-input>
-                                        <label for="voucherCode">Voucher</label>
-                                    </div>
-                                    <div class="login-feedback" data-voucher-feedback></div>
-                                </div>
-
-                                <button type="button" class="btn btn-primary w-100 apply-btn" data-voucher-apply>
-                                    Apply
-                                </button>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </form>
         </div>
     </section>
+
+    <div class="modal fade redeem-success-modal" id="redeemSuccessModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content redeem-success-content">
+                <button type="button" class="close-btn redeem-success-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                <div class="redeem-success-body">
+                    <i class="fa-solid fa-circle-check redeem-success-icon"></i>
+                    <h3>Successful !</h3>
+                    <p>Enjoy your account on Embo</p>
+                    <button type="button" class="btn-login login-submit" data-redeem-home>Back To Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
