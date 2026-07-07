@@ -254,6 +254,291 @@ if (!window.__emboSearchInitialized) {
 })();
 
 (function () {
+    const signupModal = document.querySelector('#signup');
+    const otpModal = document.querySelector('#otpModal');
+
+    if (!signupModal || !otpModal) {
+        return;
+    }
+
+    const form = signupModal.querySelector('[data-signup-form]');
+    const nameInput = signupModal.querySelector('[data-signup-name]');
+    const emailInput = signupModal.querySelector('[data-signup-email]');
+    const passwordInput = signupModal.querySelector('[data-signup-password]');
+    const passwordToggle = signupModal.querySelector('[data-signup-password-toggle]');
+    const nameFeedback = signupModal.querySelector('[data-signup-name-feedback]');
+    const emailFeedback = signupModal.querySelector('[data-signup-email-feedback]');
+    const passwordFeedback = signupModal.querySelector('[data-signup-password-feedback]');
+    const otpEmail = otpModal.querySelector('[data-otp-email]');
+    const otpInputs = Array.from(otpModal.querySelectorAll('.otp-input'));
+    const otpFeedback = otpModal.querySelector('[data-otp-feedback]');
+    const verifyBtn = otpModal.querySelector('[data-otp-verify]');
+    const resendBtn = otpModal.querySelector('[data-otp-resend]');
+    const OTP_CODE = '123456';
+    const RESEND_SECONDS = 57;
+    let timerId = null;
+    let secondsLeft = RESEND_SECONDS;
+
+    function setFieldError(input, feedback, message) {
+        if (!input || !feedback) {
+            return;
+        }
+        input.classList.add('is-invalid');
+        input.classList.remove('is-valid');
+        feedback.textContent = message;
+    }
+
+    function clearFieldState(input, feedback) {
+        if (!input || !feedback) {
+            return;
+        }
+        input.classList.remove('is-invalid');
+        input.classList.remove('is-valid');
+        feedback.textContent = '';
+    }
+
+    function resetOtpError() {
+        otpInputs.forEach((input) => input.classList.remove('is-invalid'));
+        if (otpFeedback) {
+            otpFeedback.textContent = '';
+        }
+    }
+
+    function clearOtpInputs() {
+        otpInputs.forEach((input) => {
+            input.value = '';
+            input.classList.remove('is-invalid');
+        });
+        resetOtpError();
+    }
+
+    function getOtpValue() {
+        return otpInputs.map((input) => input.value.trim()).join('');
+    }
+
+    function updateResendLabel() {
+        if (!resendBtn) {
+            return;
+        }
+        if (secondsLeft > 0) {
+            resendBtn.textContent = `Resend OTP -${secondsLeft}`;
+            resendBtn.disabled = true;
+            resendBtn.classList.remove('is-active');
+        } else {
+            resendBtn.textContent = 'Resend OTP';
+            resendBtn.disabled = false;
+            resendBtn.classList.add('is-active');
+        }
+    }
+
+    function startResendTimer() {
+        if (timerId) {
+            clearInterval(timerId);
+        }
+        secondsLeft = RESEND_SECONDS;
+        updateResendLabel();
+        timerId = window.setInterval(() => {
+            secondsLeft -= 1;
+            updateResendLabel();
+            if (secondsLeft <= 0) {
+                clearInterval(timerId);
+                timerId = null;
+            }
+        }, 1000);
+    }
+
+    function openOtpModal(email) {
+        if (otpEmail) {
+            otpEmail.textContent = email;
+        }
+        if (!window.bootstrap) {
+            return;
+        }
+        const signupInstance = window.bootstrap.Modal.getInstance(signupModal) || new window.bootstrap.Modal(signupModal);
+        const otpInstance = window.bootstrap.Modal.getInstance(otpModal) || new window.bootstrap.Modal(otpModal);
+        const showOtp = () => {
+            signupModal.removeEventListener('hidden.bs.modal', showOtp);
+            otpInstance.show();
+        };
+        signupModal.addEventListener('hidden.bs.modal', showOtp, { once: true });
+        signupInstance.hide();
+    }
+
+    function focusFirstOtp() {
+        if (otpInputs[0]) {
+            otpInputs[0].focus();
+            otpInputs[0].select();
+        }
+    }
+
+    if (passwordToggle && passwordInput) {
+        passwordToggle.addEventListener('click', () => {
+            const icon = passwordToggle.querySelector('i');
+            const isHidden = passwordInput.type === 'password';
+            passwordInput.type = isHidden ? 'text' : 'password';
+            if (icon) {
+                icon.className = isHidden ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash';
+            }
+        });
+    }
+
+    [nameInput, emailInput, passwordInput].forEach((input) => {
+        if (!input) {
+            return;
+        }
+        input.addEventListener('input', () => {
+            if (input === nameInput) {
+                clearFieldState(nameInput, nameFeedback);
+            } else if (input === emailInput) {
+                clearFieldState(emailInput, emailFeedback);
+            } else {
+                clearFieldState(passwordInput, passwordFeedback);
+            }
+        });
+    });
+
+    otpInputs.forEach((input, index) => {
+        input.addEventListener('input', () => {
+            resetOtpError();
+            input.value = input.value.replace(/\D/g, '').slice(0, 1);
+            if (input.value && otpInputs[index + 1]) {
+                otpInputs[index + 1].focus();
+                otpInputs[index + 1].select();
+            }
+        });
+
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'Backspace') {
+                if (!input.value && otpInputs[index - 1]) {
+                    otpInputs[index - 1].focus();
+                    otpInputs[index - 1].value = '';
+                }
+                resetOtpError();
+                return;
+            }
+            if (event.key === 'ArrowLeft' && otpInputs[index - 1]) {
+                otpInputs[index - 1].focus();
+                otpInputs[index - 1].select();
+            }
+            if (event.key === 'ArrowRight' && otpInputs[index + 1]) {
+                otpInputs[index + 1].focus();
+                otpInputs[index + 1].select();
+            }
+            if (event.key.length === 1 && /\D/.test(event.key)) {
+                event.preventDefault();
+            }
+        });
+
+        input.addEventListener('paste', (event) => {
+            event.preventDefault();
+            const pasted = (event.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '').slice(0, otpInputs.length);
+            if (!pasted) {
+                return;
+            }
+            pasted.split('').forEach((char, pastedIndex) => {
+                if (otpInputs[index + pastedIndex]) {
+                    otpInputs[index + pastedIndex].value = char;
+                }
+            });
+            const nextIndex = Math.min(index + pasted.length, otpInputs.length - 1);
+            if (otpInputs[nextIndex]) {
+                otpInputs[nextIndex].focus();
+                otpInputs[nextIndex].select();
+            }
+            resetOtpError();
+        });
+    });
+
+    if (verifyBtn) {
+        verifyBtn.addEventListener('click', () => {
+            const entered = getOtpValue();
+            if (entered === OTP_CODE) {
+                resetOtpError();
+                alert('OTP Verified Successfully');
+                if (window.bootstrap) {
+                    const instance = window.bootstrap.Modal.getInstance(otpModal) || new window.bootstrap.Modal(otpModal);
+                    instance.hide();
+                }
+                clearOtpInputs();
+                return;
+            }
+
+            otpInputs.forEach((input) => input.classList.add('is-invalid'));
+            if (otpFeedback) {
+                otpFeedback.textContent = 'Enter valid code';
+            }
+        });
+    }
+
+    if (resendBtn) {
+        resendBtn.addEventListener('click', () => {
+            if (resendBtn.disabled) {
+                return;
+            }
+            clearOtpInputs();
+            startResendTimer();
+            focusFirstOtp();
+        });
+    }
+
+    if (form) {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const name = nameInput ? nameInput.value.trim() : '';
+            const email = emailInput ? emailInput.value.trim() : '';
+            const password = passwordInput ? passwordInput.value : '';
+            let valid = true;
+
+            if (!name) {
+                valid = false;
+                setFieldError(nameInput, nameFeedback, 'Enter valid name');
+            } else {
+                clearFieldState(nameInput, nameFeedback);
+            }
+
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                valid = false;
+                setFieldError(emailInput, emailFeedback, 'Enter valid email');
+            } else {
+                clearFieldState(emailInput, emailFeedback);
+            }
+
+            if (!password || password.length < 6) {
+                valid = false;
+                setFieldError(passwordInput, passwordFeedback, 'Enter valid password');
+            } else {
+                clearFieldState(passwordInput, passwordFeedback);
+            }
+
+            if (!valid) {
+                return;
+            }
+
+            openOtpModal(email);
+        });
+    }
+
+    if (otpModal) {
+        otpModal.addEventListener('shown.bs.modal', () => {
+            clearOtpInputs();
+            startResendTimer();
+            focusFirstOtp();
+        });
+
+        otpModal.addEventListener('hidden.bs.modal', () => {
+            clearOtpInputs();
+            if (timerId) {
+                clearInterval(timerId);
+                timerId = null;
+            }
+            secondsLeft = RESEND_SECONDS;
+            updateResendLabel();
+        });
+    }
+})();
+
+(function () {
     const page = document.querySelector('.edit-profile-page');
 
     if (!page) {

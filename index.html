@@ -655,31 +655,31 @@
     <div class="modal fade" id="signup" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content login-modal">
-                <button type="button" class="close-btn" aria-label="Close login modal" data-login-close data-bs-dismiss="modal">&times;</button>
-                <form class="login-form" novalidate data-login-form>
+                <button type="button" class="close-btn" aria-label="Close signup modal" data-signup-close data-bs-dismiss="modal">&times;</button>
+                <form class="login-form" novalidate data-signup-form>
                     <div class="mb-3 login-field">
                         <div class="form-floating login-floating">
-                            <input type="text" class="form-control login-input" id="loginName" placeholder="Enter Your Name" data-login-name>
-                            <label for="loginName">Name</label>
+                            <input type="text" class="form-control login-input" id="signupName" placeholder="Enter Your Name" data-signup-name>
+                            <label for="signupName">Name</label>
                         </div>
-                        <div class="login-feedback" data-login-name-feedback></div>
+                        <div class="login-feedback" data-signup-name-feedback></div>
                     </div>
 
                     <div class="mb-3 login-field">
                         <div class="form-floating login-floating">
-                            <input type="email" class="form-control login-input" id="loginEmail" placeholder="Enter Your Email" data-login-email>
-                            <label for="loginEmail">Email</label>
+                            <input type="email" class="form-control login-input" id="signupEmail" placeholder="Enter Your Email" data-signup-email>
+                            <label for="signupEmail">Email</label>
                         </div>
-                        <div class="login-feedback" data-login-email-feedback></div>
+                        <div class="login-feedback" data-signup-email-feedback></div>
                     </div>
 
                     <div class="mb-3 login-field">
                         <div class="form-floating login-floating login-password-wrap">
-                            <input type="password" class="form-control login-input login-password-input" id="loginPassword" placeholder="Enter password (6-60 characters)" data-login-password>
-                            <label for="loginPassword">Password</label>
-                            <button type="button" class="login-eye" aria-label="Toggle password visibility" data-login-password-toggle><i class="fa-solid fa-eye-slash"></i></button>
+                            <input type="password" class="form-control login-input login-password-input" id="signupPassword" placeholder="Enter password (6-60 characters)" data-signup-password>
+                            <label for="signupPassword">Password</label>
+                            <button type="button" class="login-eye" aria-label="Toggle password visibility" data-signup-password-toggle><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
-                        <div class="login-feedback" data-login-password-feedback></div>
+                        <div class="login-feedback" data-signup-password-feedback></div>
                     </div>
 
                     <div class="login-options">
@@ -689,8 +689,8 @@
                         </label>
                     </div>
 
-                    <button type="submit" class="btn-login login-submit">Sing Up</button>
-                    <div class="login-success" data-login-success></div>
+                    <button type="submit" class="btn-login login-submit" data-signup-submit>Sing Up</button>
+                    <div class="login-success" data-signup-success></div>
 
                     <div class="text-center">
                     <div class="divider login-divider">Or</div>
@@ -711,6 +711,33 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade otp-modal" id="otpModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content otp-modal-content">
+                <button type="button" class="close-btn otp-close-btn" aria-label="Close OTP modal" data-otp-close data-bs-dismiss="modal">&times;</button>
+                <div class="otp-modal-body">
+                    <p class="otp-title">Please enter the code we send to your email</p>
+                    <p class="otp-email" data-otp-email>bilashroy@gmail.com</p>
+
+                    <div class="otp-inputs" data-otp-inputs>
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="OTP digit 1">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="OTP digit 2">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="OTP digit 3">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="OTP digit 4">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="OTP digit 5">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="OTP digit 6">
+                    </div>
+
+                    <div class="otp-feedback" data-otp-feedback></div>
+
+                    <button type="button" class="btn-login login-submit" data-otp-verify>Verify Code</button>
+
+                    <button type="button" class="otp-resend" data-otp-resend disabled>Resend OTP -57</button>
+                </div>
             </div>
         </div>
     </div>

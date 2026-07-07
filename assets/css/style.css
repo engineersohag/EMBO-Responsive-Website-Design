@@ -1548,6 +1548,112 @@ Search
     font-weight: 600;
 }
 
+.otp-modal .modal-dialog {
+    width: min(100%, 460px);
+}
+
+.otp-modal-content {
+    position: relative;
+    width: min(100%, 460px);
+    background: #0f1622;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.48);
+    padding: 30px 28px 24px;
+    color: #fff;
+}
+
+.otp-modal-body {
+    text-align: center;
+}
+
+.otp-title {
+    margin: 12px auto 10px;
+    max-width: 320px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.otp-email {
+    margin-bottom: 22px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: nowrap;
+}
+
+.otp-input {
+    width: 54px;
+    height: 58px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.02);
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    outline: none;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.otp-input:focus {
+    border-color: rgba(63, 140, 255, 0.75);
+    box-shadow: 0 0 0 1px rgba(63, 140, 255, 0.14);
+}
+
+.otp-input.is-invalid {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 0 1px rgba(255, 107, 107, 0.12);
+}
+
+.otp-feedback {
+    min-height: 18px;
+    margin-bottom: 14px;
+    color: #ff6b6b;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.otp-submit {
+    margin-top: 2px;
+    width: 100%;
+}
+
+.otp-resend {
+    display: inline-block;
+    margin-top: 18px;
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: not-allowed;
+}
+
+.otp-resend.is-active {
+    color: #3f8cff;
+    cursor: pointer;
+}
+
+.otp-resend:disabled {
+    opacity: 1;
+}
+
+.otp-input.is-invalid:focus {
+    box-shadow: 0 0 0 1px rgba(255, 107, 107, 0.16);
+}
+
 @media (max-width: 575px) {
     .login-overlay {
         padding: 16px 12px;
@@ -1565,6 +1671,25 @@ Search
 
     .login-socials {
         grid-template-columns: 1fr;
+    }
+
+    .otp-modal-content {
+        padding: 24px 18px 20px;
+    }
+
+    .otp-inputs {
+        gap: 8px;
+    }
+
+    .otp-input {
+        width: 44px;
+        height: 50px;
+        border-radius: 12px;
+        font-size: 18px;
+    }
+
+    .otp-title {
+        font-size: 16px;
     }
 }
 
