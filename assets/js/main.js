@@ -895,6 +895,209 @@ if (!window.__emboSearchInitialized) {
 })();
 
 (function () {
+    const loginModal = document.querySelector('#loginModal');
+    const forgotModal = document.querySelector('#forgotPasswordModal');
+    const resetModal = document.querySelector('#resetPasswordModal');
+
+    if (!loginModal || !forgotModal || !resetModal) {
+        return;
+    }
+
+    const forgotLink = loginModal.querySelector('[data-forgot-open]');
+    const forgotForm = forgotModal.querySelector('[data-forgot-form]');
+    const forgotEmail = forgotModal.querySelector('[data-forgot-email]');
+    const forgotEmailFeedback = forgotModal.querySelector('[data-forgot-email-feedback]');
+    const resetForm = resetModal.querySelector('[data-reset-form]');
+    const resetEmail = resetModal.querySelector('[data-reset-email]');
+    const resetPassword = resetModal.querySelector('[data-reset-password]');
+    const resetConfirmPassword = resetModal.querySelector('[data-reset-confirm-password]');
+    const resetPasswordToggle = resetModal.querySelector('[data-reset-password-toggle]');
+    const resetConfirmToggle = resetModal.querySelector('[data-reset-confirm-password-toggle]');
+    const resetPasswordFeedback = resetModal.querySelector('[data-reset-password-feedback]');
+    const resetConfirmFeedback = resetModal.querySelector('[data-reset-confirm-password-feedback]');
+    const forgotInstance = window.bootstrap ? window.bootstrap.Modal.getInstance(forgotModal) || new window.bootstrap.Modal(forgotModal) : null;
+    const resetInstance = window.bootstrap ? window.bootstrap.Modal.getInstance(resetModal) || new window.bootstrap.Modal(resetModal) : null;
+    const loginInstance = window.bootstrap ? window.bootstrap.Modal.getInstance(loginModal) || new window.bootstrap.Modal(loginModal) : null;
+    const VALID_EMAIL = 'admin@gmail.com';
+    const VALID_PASSWORD = '12345678';
+
+    function setError(input, feedback, message) {
+        if (!input || !feedback) {
+            return;
+        }
+        input.classList.add('is-invalid');
+        input.classList.remove('is-valid');
+        feedback.textContent = message;
+    }
+
+    function clearError(input, feedback) {
+        if (!input || !feedback) {
+            return;
+        }
+        input.classList.remove('is-invalid');
+        input.classList.remove('is-valid');
+        feedback.textContent = '';
+    }
+
+    function toggleVisibility(button, input) {
+        if (!button || !input) {
+            return;
+        }
+        const icon = button.querySelector('i');
+        const isHidden = input.type === 'password';
+        input.type = isHidden ? 'text' : 'password';
+        if (icon) {
+            icon.className = isHidden ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash';
+        }
+    }
+
+    if (forgotLink) {
+        forgotLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            if (window.bootstrap) {
+                const login = window.bootstrap.Modal.getInstance(loginModal) || new window.bootstrap.Modal(loginModal);
+                const forgot = window.bootstrap.Modal.getInstance(forgotModal) || new window.bootstrap.Modal(forgotModal);
+                const showForgot = () => {
+                    loginModal.removeEventListener('hidden.bs.modal', showForgot);
+                    forgot.show();
+                    if (forgotEmail) {
+                        forgotEmail.focus();
+                    }
+                };
+                loginModal.addEventListener('hidden.bs.modal', showForgot, { once: true });
+                login.hide();
+            }
+        });
+    }
+
+    if (forgotEmail) {
+        forgotEmail.addEventListener('input', () => clearError(forgotEmail, forgotEmailFeedback));
+    }
+
+    if (forgotForm) {
+        forgotForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const email = forgotEmail ? forgotEmail.value.trim() : '';
+            if (email !== VALID_EMAIL) {
+                setError(forgotEmail, forgotEmailFeedback, 'Enter valid email');
+                return;
+            }
+
+            clearError(forgotEmail, forgotEmailFeedback);
+
+            if (window.bootstrap) {
+                const forgot = window.bootstrap.Modal.getInstance(forgotModal) || new window.bootstrap.Modal(forgotModal);
+                const reset = window.bootstrap.Modal.getInstance(resetModal) || new window.bootstrap.Modal(resetModal);
+                const showReset = () => {
+                    forgotModal.removeEventListener('hidden.bs.modal', showReset);
+                    if (resetEmail) {
+                        resetEmail.value = email;
+                    }
+                    reset.show();
+                    if (resetPassword) {
+                        resetPassword.focus();
+                    }
+                };
+                forgotModal.addEventListener('hidden.bs.modal', showReset, { once: true });
+                forgot.hide();
+            }
+        });
+    }
+
+    if (resetPasswordToggle && resetPassword) {
+        resetPasswordToggle.addEventListener('click', () => toggleVisibility(resetPasswordToggle, resetPassword));
+    }
+
+    if (resetConfirmToggle && resetConfirmPassword) {
+        resetConfirmToggle.addEventListener('click', () => toggleVisibility(resetConfirmToggle, resetConfirmPassword));
+    }
+
+    [resetPassword, resetConfirmPassword].forEach((input) => {
+        if (!input) {
+            return;
+        }
+        input.addEventListener('input', () => {
+            if (input === resetPassword) {
+                clearError(resetPassword, resetPasswordFeedback);
+            } else {
+                clearError(resetConfirmPassword, resetConfirmFeedback);
+            }
+        });
+    });
+
+    if (resetForm) {
+        resetForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const email = resetEmail ? resetEmail.value.trim() : '';
+            const password = resetPassword ? resetPassword.value : '';
+            const confirmPassword = resetConfirmPassword ? resetConfirmPassword.value : '';
+            let valid = true;
+
+            if (!password || password.length < 8) {
+                valid = false;
+                setError(resetPassword, resetPasswordFeedback, 'Enter valid password');
+            } else {
+                clearError(resetPassword, resetPasswordFeedback);
+            }
+
+            if (!confirmPassword) {
+                valid = false;
+                setError(resetConfirmPassword, resetConfirmFeedback, 'Passwords do not match');
+            } else if (confirmPassword !== password) {
+                valid = false;
+                setError(resetConfirmPassword, resetConfirmFeedback, 'Passwords do not match');
+            } else {
+                clearError(resetConfirmPassword, resetConfirmFeedback);
+            }
+
+            if (!valid) {
+                return;
+            }
+
+            alert('Password Changed Successfully');
+            if (window.bootstrap) {
+                const instance = window.bootstrap.Modal.getInstance(resetModal) || new window.bootstrap.Modal(resetModal);
+                instance.hide();
+            }
+            resetForm.reset();
+            if (resetEmail) {
+                resetEmail.value = email;
+            }
+        });
+    }
+
+    if (forgotModal) {
+        forgotModal.addEventListener('hidden.bs.modal', () => {
+            if (forgotForm) {
+                forgotForm.reset();
+            }
+            clearError(forgotEmail, forgotEmailFeedback);
+        });
+    }
+
+    if (resetModal) {
+        resetModal.addEventListener('hidden.bs.modal', () => {
+            if (resetForm) {
+                resetForm.reset();
+            }
+            [resetPassword, resetConfirmPassword].forEach((input) => {
+                if (input) {
+                    input.type = 'password';
+                }
+            });
+            [resetPasswordToggle, resetConfirmToggle].forEach((button) => {
+                const icon = button ? button.querySelector('i') : null;
+                if (icon) {
+                    icon.className = 'fa-solid fa-eye-slash';
+                }
+            });
+            clearError(resetPassword, resetPasswordFeedback);
+            clearError(resetConfirmPassword, resetConfirmFeedback);
+        });
+    }
+})();
+
+(function () {
     const modal = document.querySelector('#loginModal');
 
     if (!modal) {

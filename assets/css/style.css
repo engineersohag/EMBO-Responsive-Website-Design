@@ -1548,6 +1548,32 @@ Search
     font-weight: 600;
 }
 
+.forgot-modal {
+    width: min(100%, 520px);
+}
+
+.forgot-copy {
+    margin: 18px 0 22px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 16px;
+    line-height: 1.65;
+    text-align: center;
+}
+
+.reset-copy {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.forgot-modal .login-form {
+    margin-top: 0;
+}
+
+.forgot-modal .login-field:last-child {
+    margin-bottom: 0 !important;
+}
+
 .otp-modal .modal-dialog {
     width: min(100%, 460px);
 }
@@ -1671,6 +1697,15 @@ Search
 
     .login-socials {
         grid-template-columns: 1fr;
+    }
+
+    .forgot-modal {
+        padding: 24px 18px;
+    }
+
+    .forgot-copy {
+        font-size: 15px;
+        margin: 16px 0 18px;
     }
 
     .otp-modal-content {

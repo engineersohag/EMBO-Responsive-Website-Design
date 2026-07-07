@@ -622,7 +622,7 @@
                             <input class="form-check-input" type="checkbox" id="remember">
                             <span class="form-check-label">Remember me</span>
                         </label>
-                        <a href="#" class="login-forgot">Forgot password?</a>
+                        <a href="#" class="login-forgot" data-forgot-open>Forgot password?</a>
                     </div>
 
                     <button type="submit" class="btn-login login-submit">Log In</button>
@@ -738,6 +738,69 @@
 
                     <button type="button" class="otp-resend" data-otp-resend disabled>Resend OTP -57</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content login-modal forgot-modal">
+                <button type="button" class="close-btn" aria-label="Close forgot password modal" data-forgot-close data-bs-dismiss="modal">&times;</button>
+                <div class="forgot-copy">
+                    Just let us know your email address and we will email you a password reset code that will allow you to choose a new one.
+                </div>
+
+                <form class="login-form" novalidate data-forgot-form>
+                    <div class="mb-3 login-field">
+                        <div class="form-floating login-floating">
+                            <input type="email" class="form-control login-input" id="forgotEmail" placeholder="Enter Your Email" data-forgot-email>
+                            <label for="forgotEmail">Email</label>
+                        </div>
+                        <div class="login-feedback" data-forgot-email-feedback></div>
+                    </div>
+
+                    <button type="submit" class="btn-login login-submit" data-forgot-send>Send Code</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="resetPasswordModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content login-modal forgot-modal">
+                <button type="button" class="close-btn" aria-label="Close reset password modal" data-reset-close data-bs-dismiss="modal">&times;</button>
+                <div class="forgot-copy reset-copy">
+                    Set a new password for your account.
+                </div>
+
+                <form class="login-form" novalidate data-reset-form>
+                    <div class="mb-3 login-field">
+                        <div class="form-floating login-floating">
+                            <input type="email" class="form-control login-input" id="resetEmail" placeholder="Enter Your Email" data-reset-email readonly>
+                            <label for="resetEmail">Current Email</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 login-field">
+                        <div class="form-floating login-floating login-password-wrap">
+                            <input type="password" class="form-control login-input login-password-input" id="resetPassword" placeholder="Enter password" data-reset-password>
+                            <label for="resetPassword">Password</label>
+                            <button type="button" class="login-eye" aria-label="Toggle password visibility" data-reset-password-toggle><i class="fa-solid fa-eye-slash"></i></button>
+                        </div>
+                        <div class="login-feedback" data-reset-password-feedback></div>
+                    </div>
+
+                    <div class="mb-3 login-field">
+                        <div class="form-floating login-floating login-password-wrap">
+                            <input type="password" class="form-control login-input login-password-input" id="resetConfirmPassword" placeholder="Confirm password" data-reset-confirm-password>
+                            <label for="resetConfirmPassword">Confirm Password</label>
+                            <button type="button" class="login-eye" aria-label="Toggle confirm password visibility" data-reset-confirm-password-toggle><i class="fa-solid fa-eye-slash"></i></button>
+                        </div>
+                        <div class="login-feedback" data-reset-confirm-password-feedback></div>
+                    </div>
+
+                    <button type="submit" class="btn-login login-submit" data-reset-confirm>Confirmed</button>
+                </form>
             </div>
         </div>
     </div>
