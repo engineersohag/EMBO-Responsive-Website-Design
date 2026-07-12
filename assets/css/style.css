@@ -47,8 +47,8 @@ body{
 ========================== */
 
 .navbar .dropdown-menu {
-    background: var(--dark);
-    border: 1px solid var(--border-color);
+    background: #0F1B2B;
+    border: none;
     border-radius: 10px;
     min-width: 220px;
     padding: 8px 0;
