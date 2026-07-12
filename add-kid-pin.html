@@ -37,21 +37,37 @@
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Movies</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Movies
+                                </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="movie-category.html">Latest Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Trending Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Popular Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Romance</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">All Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Romantic</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Dramatic</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Comedy</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Family</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Action</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Non-Fiction</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Behind The Scenes</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Series</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Series
+                                </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="series-category.html">Latest Series</a></li>
-                                    <li><a class="dropdown-item" href="series-category.html">Trending Series</a></li>
-                                    <li><a class="dropdown-item" href="series-category.html">Top Rated</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">All Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Romantic</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Dramatic</a></li>
                                     <li><a class="dropdown-item" href="series-category.html">Comedy</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Family</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Action</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Non-Fiction</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Behind The Scenes</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="embo-originals.html">Embo Originals</a></li>
@@ -97,30 +113,29 @@
 
     <main class="account-page kid-pin-page">
         <div class="container">
-            <h2 class="fw-bold">Enter PIN</h2>
-            <div class="adult-page-divider"></div>
+            <div class="kid-pin-title-card">
+                <h2 class="fw-bold">Enter PIN</h2>
+                <div class="adult-page-divider"></div>
+            </div>
 
             <div class="kid-pin-shell">
                 <div class="kid-pin-card">
                     <p class="kid-pin-desc">Before create kid profile add a pin. This pin need for switch, when you want Kid to adult profile</p>
 
+                    
                     <div class="mb-3">
-                        <label class="kid-pin-label" for="setPin">Set PIN</label>
-                        <div class="kid-pin-field">
-                            <input id="setPin" type="password" class="form-control adult-input kid-pin-input" placeholder="Enter PIN">
-                            <button type="button" class="kid-pin-eye" data-pin-toggle aria-label="Show PIN">
-                                <i class="fa-regular fa-eye"></i>
-                            </button>
+                        <div class="form-floating login-floating login-password-wrap">
+                            <input type="password" class="form-control login-input kid-pin-input" id="setPin" placeholder="Enter PIN">
+                            <label for="setPin">Set PIN</label>
+                            <button type="button" class="login-eye" aria-label="Show PIN" data-pin-toggle><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
                     </div>
 
                     <div class="mb-2">
-                        <label class="kid-pin-label" for="confirmPin">Confirm PIN</label>
-                        <div class="kid-pin-field">
-                            <input id="confirmPin" type="password" class="form-control adult-input kid-pin-input" placeholder="Confirm PIN">
-                            <button type="button" class="kid-pin-eye" data-pin-toggle aria-label="Show PIN">
-                                <i class="fa-regular fa-eye"></i>
-                            </button>
+                        <div class="form-floating login-floating login-password-wrap">
+                            <input type="password" class="form-control login-input kid-pin-input" id="confirmPin" placeholder="Confirm PIN">
+                            <label for="confirmPin">Confirm PIN</label>
+                            <button type="button" class="login-eye" aria-label="Show PIN" data-pin-toggle><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
                     </div>
 
@@ -137,8 +152,9 @@
         </div>
     </main>
 
+    <!-- footer -->
     <footer>
-        <div class="container mt-2 pt-3">
+        <div class="container pt-3">
             <div class="row">
                 <div class="col-lg-4">
                     <img src="assets/img/logo.png" alt="Logo" class="img-fluid mb-3">
@@ -172,7 +188,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <h5>Follow Us:</h5>
-                            <div class="social-icons">
+                            <div class="social-icons d-flex gap-2">
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-facebook"></i></a>
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-twitter"></i></a>
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-instagram"></i></a>
@@ -189,7 +205,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 d-flex justify-content-center">
-                    <p>Â© 2024Â Embo. All Rights Reserved.</p>
+                    <p>© 2024 Embo. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
@@ -230,6 +246,31 @@
     <script src="assets/js/active-tv-modal.js"></script>
     <script src="assets/js/search.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const toggleButtons = document.querySelectorAll("[data-pin-toggle]");
+
+    toggleButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const input = this.parentElement.querySelector("input");
+            const icon = this.querySelector("i");
+
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+                this.setAttribute("aria-label", "Hide PIN");
+            } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+                this.setAttribute("aria-label", "Show PIN");
+            }
+        });
+    });
+});
+    </script>
 </body>
 
 </html>
