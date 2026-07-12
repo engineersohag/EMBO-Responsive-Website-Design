@@ -171,7 +171,9 @@ Search
     outline: none !important;
     border: none !important;
 }
-
+.movie-section{
+    margin-bottom: 45px !important;
+}
 .home{
     width: 100%;
     height: 80vh;
@@ -2386,4 +2388,21 @@ Search
 }
 .form-floating > .form-control:focus ~ label{
 background: #0f1622 !important;
+}
+
+
+footer .nav-item .nav-link{
+    padding-left: 0 !important;
+}
+
+footer .social-icons a.btn{
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #BEC1C8 !important;
+    background: #262E37 !important;
+    
 }
