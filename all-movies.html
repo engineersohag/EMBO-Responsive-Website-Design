@@ -22,6 +22,19 @@
     <link rel="stylesheet" href="assets/css/profile-pin.css">
     <link rel="stylesheet" href="assets/css/active-tv-modal.css">
     <link rel="stylesheet" href="assets/css/search.css">
+    <style>
+        .hero-thumbnail-carousel {
+            min-width: none;
+        }
+        .hero-thumbnail-carousel .owl-item{
+            width: 150px !important;
+            height: 100px !important;
+        }
+        .hero-thumbnail-carousel .hero-thumb-item {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,10 +61,15 @@
                                     Movies
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="movie-category.html">Latest Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Trending Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Popular Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Romance</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">All Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Romantic</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Dramatic</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Comedy</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Family</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Action</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Non-Fiction</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Behind The Scenes</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -60,10 +78,15 @@
                                     Series
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="series-category.html">Latest Series</a></li>
-                                    <li><a class="dropdown-item" href="series-category.html">Trending Series</a></li>
-                                    <li><a class="dropdown-item" href="series-category.html">Top Rated</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">All Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Romantic</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Dramatic</a></li>
                                     <li><a class="dropdown-item" href="series-category.html">Comedy</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Family</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Action</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Non-Fiction</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Behind The Scenes</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -86,6 +109,9 @@
                                     </button>
                                 </form>
                             </div>
+                            <a href="#" class="btn btn-primary ms-3">
+                                Subscribe Now
+                            </a>
 
                             <div class="dropdown user-dropdown ms-3">
                                 <a href="#" class="user-dropdown-toggle d-flex align-items-center text-decoration-none"
@@ -485,12 +511,11 @@
 
     <!-- footer -->
     <footer>
-        <div class="container">
+        <div class="container pt-3">
             <div class="row">
                 <div class="col-lg-4">
                     <img src="assets/img/logo.png" alt="Logo" class="img-fluid mb-3">
-                    <p class="text-muted">Ensuring an immersive experience for people across the globe, Embo always
-                        prioritizes quality and innovation.</p>
+                    <p class="text-muted">Ensuring an immersive experience for people across the globe, Embo always prioritizes quality and innovation.</p>
                 </div>
                 <div class="col-lg-8">
                     <div class="row">
@@ -514,14 +539,13 @@
                             <ul class="nav flex-column">
                                 <li class="nav-item"><a class="nav-link text-secondary" href="#">About Us</a></li>
                                 <li class="nav-item"><a class="nav-link text-secondary" href="#">Contact Us</a></li>
-                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Terms & Conditions</a>
-                                </li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Terms & Conditions</a></li>
                                 <li class="nav-item"><a class="nav-link text-secondary" href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <h5>Follow Us:</h5>
-                            <div class="social-icons">
+                            <div class="social-icons d-flex gap-2">
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-facebook"></i></a>
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-twitter"></i></a>
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-instagram"></i></a>
@@ -556,6 +580,8 @@
     <script src="assets/js/active-tv-modal.js"></script>
     <script src="assets/js/search.js"></script>
     <script src="assets/js/main.js"></script>
+
+
     <div class="profile-switcher-overlay" aria-hidden="true">
         <div class="profile-switcher-modal" role="dialog" aria-modal="true">
             <div class="profile-switcher-modal-header">
