@@ -542,10 +542,15 @@
                                     Movies
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="movie-category.html">Latest Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Trending Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Popular Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Romance</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">All Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Romantic</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Dramatic</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Comedy</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Family</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Action</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Non-Fiction</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Behind The Scenes</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -554,10 +559,15 @@
                                     Series
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="series-category.html">Latest Series</a></li>
-                                    <li><a class="dropdown-item" href="series-category.html">Trending Series</a></li>
-                                    <li><a class="dropdown-item" href="series-category.html">Top Rated</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">All Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Romantic</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Dramatic</a></li>
                                     <li><a class="dropdown-item" href="series-category.html">Comedy</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Family</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Action</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Non-Fiction</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Behind The Scenes</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -585,7 +595,7 @@
                                 Subscribe Now
                             </a>
 
-                            <a href="#" class="btn btn-outline-light ms-3">
+                            <a href="#" class="btn btn-outline-light ms-3" data-bs-toggle="modal" data-bs-target="#loginModal">
                                 Login
                             </a>
 
@@ -593,9 +603,6 @@
                     </div>
                 </div>
             </nav>
-
-            <!-- --- Nav end & Hero section start --- -->
-
         </div>
     </section>
 
@@ -647,7 +654,7 @@
                         <input type="text" class="form-control login-input voucher-card-input" id="card" placeholder="Enter Your Card Number" data-voucher-card-number>
                         <label for="card">Card Number</label>
                         <div class="voucher-card-icons" aria-hidden="true">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Visa_Inc._logo_%282005%E2%80%932014%29.svg" alt="Visa">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard">
                         </div>
                     </div>
@@ -658,7 +665,7 @@
                 <div class="row g-3">
 
                     <div class="col-md-6">
-                        <div class="mb-3 login-field">
+                        <div class="login-field">
                             <div class="form-floating login-floating">
                                 <input type="text" class="form-control login-input" id="card" placeholder="Enter Your Expiration Date" data-login-email>
                                 <label for="card">Expiration Date</label>
@@ -668,7 +675,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <div class="mb-3 login-field">
+                        <div class="login-field">
                             <div class="form-floating login-floating">
                                 <input type="text" class="form-control login-input" id="card" placeholder="Enter Your CCV" data-login-email>
                                 <label for="card">CCV</label>
@@ -747,12 +754,11 @@
 
     <!-- footer -->
     <footer>
-        <div class="container">
+        <div class="container pt-3">
             <div class="row">
                 <div class="col-lg-4">
                     <img src="assets/img/logo.png" alt="Logo" class="img-fluid mb-3">
-                    <p class="text-muted">Ensuring an immersive experience for people across the globe, Embo always
-                        prioritizes quality and innovation.</p>
+                    <p class="text-muted">Ensuring an immersive experience for people across the globe, Embo always prioritizes quality and innovation.</p>
                 </div>
                 <div class="col-lg-8">
                     <div class="row">
@@ -776,14 +782,13 @@
                             <ul class="nav flex-column">
                                 <li class="nav-item"><a class="nav-link text-secondary" href="#">About Us</a></li>
                                 <li class="nav-item"><a class="nav-link text-secondary" href="#">Contact Us</a></li>
-                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Terms & Conditions</a>
-                                </li>
+                                <li class="nav-item"><a class="nav-link text-secondary" href="#">Terms & Conditions</a></li>
                                 <li class="nav-item"><a class="nav-link text-secondary" href="#">Privacy Policy</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <h5>Follow Us:</h5>
-                            <div class="social-icons">
+                            <div class="social-icons d-flex gap-2">
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-facebook"></i></a>
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-twitter"></i></a>
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-instagram"></i></a>
@@ -807,13 +812,9 @@
     </footer>
 
 
-
-
-
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
-
 </html>

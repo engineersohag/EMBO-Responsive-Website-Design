@@ -1658,13 +1658,10 @@ Search
 
 .voucher-card-icons img {
     display: block;
-    height: 18px;
+    width: auto;
+    height: 15px;
     width: auto;
     object-fit: contain;
-}
-
-.voucher-actions {
-    margin: 18px 0 22px;
 }
 
 .voucher-add-btn {
@@ -2413,4 +2410,23 @@ footer .social-icons a.btn{
     padding: 10px 16px !important;
     gap: 0 !important;
     border-radius: 10px !important;
+}
+
+.payment-section{
+    align-items: start !important;
+}
+
+.payment-method{
+    background: #0B121C !important;
+    padding: 10px 16px !important;
+    border-radius: 10px !important;
+}
+
+.payment-method .method{
+    background: transparent !important;
+    border: none !important;
+}
+.payment-method .method.active{
+    background: #000305 !important;
+    border: none;
 }
