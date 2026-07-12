@@ -2406,3 +2406,11 @@ footer .social-icons a.btn{
     background: #262E37 !important;
     
 }
+.account-row-left{
+    flex-direction: column !important;
+    align-items: start !important;
+    background: #0B121C !important;
+    padding: 10px 16px !important;
+    gap: 0 !important;
+    border-radius: 10px !important;
+}
