@@ -23,6 +23,45 @@
     <link rel="stylesheet" href="assets/css/active-tv-modal.css">
     <link rel="stylesheet" href="assets/css/search.css">
     <link rel="stylesheet" href="assets/css/watchlist.css">
+    <style>
+        .navbar-mobile-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            z-index: 1040;
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 1050;
+        }
+
+        .navbar .navbar-collapse {
+            position: relative;
+            z-index: 1055;
+        }
+
+        .navbar-mobile-overlay.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .navbar .navbar-toggler {
+            position: relative;
+            z-index: 1055;
+        }
+
+        .navbar .navbar-toggler .fa-solid {
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -365,6 +404,68 @@
     <script src="assets/js/active-tv-modal.js"></script>
     <script src="assets/js/search.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var collapseEl = document.getElementById('nav');
+            var toggler = document.querySelector('.navbar-toggler');
+
+            if (!collapseEl || !toggler) return;
+
+            var icon = toggler.querySelector('i');
+            var overlay = document.createElement('div');
+            overlay.className = 'navbar-mobile-overlay';
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.appendChild(overlay);
+
+            var originalBodyOverflow = '';
+            var originalBodyPaddingRight = '';
+
+            function setIcon(isOpen) {
+                if (!icon) return;
+                icon.classList.remove('fa-bars', 'fa-xmark');
+                icon.classList.add(isOpen ? 'fa-xmark' : 'fa-bars');
+            }
+
+            function lockScroll() {
+                originalBodyOverflow = document.body.style.overflow;
+                originalBodyPaddingRight = document.body.style.paddingRight;
+
+                var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                document.body.style.overflow = 'hidden';
+                if (scrollbarWidth > 0) {
+                    document.body.style.paddingRight = scrollbarWidth + 'px';
+                }
+
+                overlay.classList.add('is-visible');
+            }
+
+            function unlockScroll() {
+                document.body.style.overflow = originalBodyOverflow;
+                document.body.style.paddingRight = originalBodyPaddingRight;
+                overlay.classList.remove('is-visible');
+            }
+
+            collapseEl.addEventListener('shown.bs.collapse', function () {
+                setIcon(true);
+                lockScroll();
+            });
+
+            collapseEl.addEventListener('hidden.bs.collapse', function () {
+                setIcon(false);
+                unlockScroll();
+            });
+
+            overlay.addEventListener('click', function () {
+                if (window.bootstrap && bootstrap.Collapse) {
+                    bootstrap.Collapse.getOrCreateInstance(collapseEl, { toggle: false }).hide();
+                } else {
+                    toggler.click();
+                }
+            });
+
+            setIcon(collapseEl.classList.contains('show'));
+        });
+    </script>
 
 
     <div class="profile-switcher-overlay" aria-hidden="true">
