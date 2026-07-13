@@ -149,14 +149,18 @@
                         <input type="file" class="adult-file-input" accept="image/*" data-adult-file-input>
 
                         <div class="mb-3">
-                            <label for="kidProfileName" class="adult-section-label">Profile Name</label>
-                            <input id="kidProfileName" type="text" class="form-control adult-input" placeholder="Enter profile name" data-adult-name-input>
+                            <div class="form-floating login-floating">
+                                <input type="text" class="form-control login-input" id="kidProfileName" placeholder="Enter profile name" data-adult-name-input>
+                                <label for="kidProfileName">Profile Name</label>
+                            </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="kidBirthDate" class="adult-section-label">Birth Date</label>
-                            <input id="kidBirthDate" type="text" class="form-control adult-input" placeholder="Enter birth date">
-                            <small class="kid-helper-text">This profile is only for kids. Please make sure the birth date is correct.</small>
+                            <div class="form-floating login-floating">
+                                <input type="text" class="form-control login-input" id="kidBirthDate" placeholder="Enter birth date" data-adult-birth-date-input>
+                                <label for="kidBirthDate">Birth Date</label>
+                            </div>
+                            <small class="kid-helper-text">We use your birthdate to personalize this profile's features and content.</small>
                         </div>
 
                         <div class="kid-control-card">

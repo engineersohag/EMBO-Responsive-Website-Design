@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME | EMBO</title>
+    <title>Movie Category | EMBO</title>
     <link rel="icon" href="assets/img/logo.png" type="image/x-icon">
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -16,7 +16,35 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <link rel="stylesheet" href="assets/css/search.css">
+    <link rel="stylesheet" href="assets/css/account.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="stylesheet" href="assets/css/profile-switcher.css">
+    <link rel="stylesheet" href="assets/css/profile-pin.css">
+    <link rel="stylesheet" href="assets/css/dropdown-ui.css">
+    <link rel="stylesheet" href="assets/css/profile-switcher.css">
+    <link rel="stylesheet" href="assets/css/profile-pin.css">
+    <link rel="stylesheet" href="assets/css/active-tv-modal.css">
+    <link rel="stylesheet" href="assets/css/invoice-modal.css">
+    <link rel="stylesheet" href="assets/css/change-account.css">
+     <style>
+        .hero-thumbnail-carousel {
+            min-width: none;
+        }
+        .hero-thumbnail-carousel .owl-item{
+            width: 150px !important;
+            height: 100px !important;
+        }
+        .hero-thumbnail-carousel .hero-thumb-item {
+            width: 100%;
+            height: 100%;
+        }
+        .recomendate-movies .movie-card{
+            margin-bottom: 20px !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,28 +53,28 @@
         <div class="over-layer">
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
-                    <a class="navbar-brand me-lg-5" href="index.html">
-                        <img src="assets/img/logo.png" alt="Logo" class="img-fluid">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-                        aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand me-lg-5" href="index.html"><img src="assets/img/logo.png" alt="Logo" class="img-fluid"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa-solid fa-bars text-white"></i>
                     </button>
                     <div class="collapse navbar-collapse" id="nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="index.html">Home</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Movies
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="movie-category.html">Latest Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Trending Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Popular Movies</a></li>
-                                    <li><a class="dropdown-item" href="movie-category.html">Romance</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">All Movies</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Romantic</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Dramatic</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Comedy</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Family</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Action</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Non-Fiction</a></li>
+                                    <li><a class="dropdown-item" href="movie-category.html">Behind The Scenes</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -55,41 +83,51 @@
                                     Series
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="series-category.html">Latest Series</a></li>
-                                    <li><a class="dropdown-item" href="series-category.html">Trending Series</a></li>
-                                    <li><a class="dropdown-item" href="series-category.html">Top Rated</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">All Series</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Romantic</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Dramatic</a></li>
                                     <li><a class="dropdown-item" href="series-category.html">Comedy</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Family</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Action</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Thriller</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Non-Fiction</a></li>
+                                    <li><a class="dropdown-item" href="series-category.html">Behind The Scenes</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="embo-originals.html">Embo Originals</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="redeem.html">Redeem</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="embo-originals.html">Embo Originals</a></li>
+                            <li class="nav-item"><a class="nav-link" href="redeem.html">Redeem</a></li>
                         </ul>
                         <div class="d-flex align-items-center navbar-actions">
                             <div class="search-wrapper d-lg-block d-none">
-                                <button type="button" class="search-toggle">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-
+                                <button type="button" class="search-toggle"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 <form class="search-form">
                                     <input type="text" placeholder="Search for videos">
-                                    <button type="submit">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
+                                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 </form>
                             </div>
-
-                            <a href="#" class="btn btn-primary ms-3">
-                                Subscribe Now
-                            </a>
-
-                            <a href="#" class="btn btn-outline-light ms-3">
-                                Login
-                            </a>
-
+                            <div class="dropdown user-dropdown ms-3">
+                                <a href="#" class="user-dropdown-toggle d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="assets/img/logo.png" alt="User">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end user-dropdown-menu">
+                                    <li>
+                                        <div class="user-dropdown-profile">
+                                            <div class="user-dropdown-profile-avatar"><img src="assets/img/logo.png" alt="User avatar"></div>
+                                            <div class="user-dropdown-profile-text"><strong>Hello,</strong><span>Bilash Roy</span></div>
+                                            <button type="button" class="user-dropdown-profile-arrow" aria-label="Open profile switcher"><i class="fa-solid fa-angle-right"></i></button>
+                                        </div>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-bookmark"></i>Watchlist</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-history"></i>History</a></li>
+                                    <li><a class="dropdown-item" href="account.html"><i class="fa-solid fa-user-gear"></i>My Account</a></li>
+                                    <li><a class="dropdown-item" href="manage-profile.html"><i class="fa-solid fa-user-group"></i>Manage Profile</a></li>
+                                    <li><a class="dropdown-item active-tv-trigger" href="#"><i class="fa-solid fa-tv"></i>Active TV</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a></li>
+                                    <li><div class="user-dropdown-footer"><a href="#">Privacy Policy</a><span>â€¢</span><a href="#">Terms Of Use</a></div></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -162,7 +200,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-2 mb-2 col-md-4 col-6">
+                    <div class="col-lg-2 col-md-4 col-6">
                         <div class="movie-card">
                             <a href="">
                                 <img src="assets/img/home/card-1.png" alt="Movie Poster">
@@ -368,7 +406,7 @@
 
     <!-- footer -->
     <footer>
-        <div class="container">
+        <div class="container pt-3">
             <div class="row">
                 <div class="col-lg-4">
                     <img src="assets/img/logo.png" alt="Logo" class="img-fluid mb-3">
@@ -402,7 +440,7 @@
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <h5>Follow Us:</h5>
-                            <div class="social-icons">
+                            <div class="social-icons d-flex gap-2">
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-facebook"></i></a>
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-twitter"></i></a>
                                 <a href="" class="btn btn-primary"><i class="fa-brands fa-instagram"></i></a>
@@ -424,7 +462,6 @@
             </div>
         </div>
     </footer>
-
 
 
 
