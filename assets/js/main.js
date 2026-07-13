@@ -375,10 +375,10 @@ if (!window.__emboSearchInitialized) {
             }
         }, { passive: true });
 
-        let autoRotate = setInterval(nextSlide, 5000000);
+        let autoRotate = setInterval(nextSlide, 5000);
         coverCarousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
         coverCarousel.addEventListener('mouseleave', () => {
-            autoRotate = setInterval(nextSlide, 5000000);
+            autoRotate = setInterval(nextSlide, 5000);
         });
     }
 })();
