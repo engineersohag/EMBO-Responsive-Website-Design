@@ -10,7 +10,26 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/auth.css">
+    <style>
+        .google-icon {
+            font-size: 20px;
+            background: linear-gradient(45deg,
+                    #4285F4 0%,
+                    #4285F4 25%,
+                    #34A853 25%,
+                    #34A853 50%,
+                    #FBBC05 50%,
+                    #FBBC05 75%,
+                    #EA4335 75%,
+                    #EA4335 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,19 +42,19 @@
 
                 <section class="tv-login-card tv-login-email-card" aria-labelledby="tvLoginEmailTitle">
                     <form class="tv-login-form">
-                        <div class="tv-login-field">
-                            <label class="tv-login-label" for="tvLoginEmail">Email</label>
-                            <input id="tvLoginEmail" type="email" class="tv-login-input" placeholder="Enter Your Email">
+                        <div class="form-floating mb-3 login-floating">
+                            <input type="email" class="form-control login-input" id="loginEmail"
+                                placeholder="Enter Your Email" data-login-email>
+                            <label for="loginEmail">Email</label>
                         </div>
 
-                        <div class="tv-login-field">
-                            <label class="tv-login-label" for="tvLoginPassword">Password</label>
-                            <div class="tv-login-password">
-                                <input id="tvLoginPassword" type="password" class="tv-login-input tv-login-password-input" placeholder="Enter password (6-60 characters)" data-tv-password>
-                                <button type="button" class="tv-login-eye" data-tv-password-toggle aria-label="Toggle password visibility">
-                                    <i class="fa-regular fa-eye"></i>
-                                </button>
-                            </div>
+
+                        <div class="form-floating login-floating mb-3 login-password-wrap">
+                            <input type="password" class="form-control login-input login-password-input"
+                                id="tvLoginPassword" placeholder="Enter password (6-60 characters)" data-login-password>
+                            <label for="tvLoginPassword">Password</label>
+                            <button type="button" class="login-eye" aria-label="Toggle password visibility"
+                                data-tv-password-toggle><i class="fa-solid fa-eye-slash"></i></button>
                         </div>
 
                         <div class="tv-login-meta">
@@ -52,7 +71,7 @@
 
                         <div class="tv-login-socials">
                             <a href="#" class="tv-login-social-btn">
-                                <i class="fa-brands fa-google"></i>
+                                <i class="fa-brands fa-google google-icon"></i>
                                 <span>Google</span>
                             </a>
                             <a href="#" class="tv-login-social-btn">
@@ -78,6 +97,34 @@
 
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // ===============================
+// TV Login Password Show / Hide
+// ===============================
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButtons = document.querySelectorAll("[data-tv-password-toggle]");
+
+    toggleButtons.forEach((button) => {
+        const wrapper = button.closest(".login-password-wrap");
+        if (!wrapper) return;
+
+        const input = wrapper.querySelector(".login-password-input");
+        const icon = button.querySelector("i");
+
+        if (!input || !icon) return;
+
+        button.addEventListener("click", function () {
+            const isPassword = input.type === "password";
+
+            input.type = isPassword ? "text" : "password";
+
+            icon.classList.toggle("fa-eye");
+            icon.classList.toggle("fa-eye-slash");
+        });
+    });
+});
+    </script>
 </body>
 
 </html>
