@@ -1,3 +1,133 @@
+// Shared mobile navbar behavior
+(function () {
+    function injectNavbarStyles() {
+        if (document.getElementById('embo-mobile-navbar-styles')) {
+            return;
+        }
+
+        const style = document.createElement('style');
+        style.id = 'embo-mobile-navbar-styles';
+        style.textContent = `
+            .navbar-mobile-overlay {
+                position: fixed;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.35);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.25s ease;
+                z-index: 1040;
+            }
+
+            .navbar-mobile-overlay.is-visible {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+            .navbar {
+                position: relative;
+                z-index: 1050;
+            }
+
+            .navbar .navbar-collapse {
+                position: relative;
+                z-index: 1055;
+            }
+
+            .navbar .navbar-toggler {
+                position: relative;
+                z-index: 1055;
+            }
+
+            .navbar .navbar-toggler .fa-solid {
+                transition: opacity 0.2s ease, transform 0.2s ease;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    function initMobileNavbar() {
+        const collapseEl = document.getElementById('nav');
+        const togglers = Array.from(document.querySelectorAll('.navbar-toggler[data-bs-toggle="collapse"][data-bs-target="#nav"]'));
+
+        if (!collapseEl || !togglers.length) {
+            return;
+        }
+
+        injectNavbarStyles();
+
+        const overlay = document.createElement('div');
+        overlay.className = 'navbar-mobile-overlay';
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(overlay);
+
+        let originalBodyOverflow = '';
+        let originalBodyPaddingRight = '';
+
+        function setIcons(isOpen) {
+            togglers.forEach((toggler) => {
+                const icon = toggler.querySelector('i');
+                if (!icon) {
+                    return;
+                }
+
+                icon.classList.remove('fa-bars', 'fa-xmark');
+                icon.classList.add(isOpen ? 'fa-xmark' : 'fa-bars');
+            });
+        }
+
+        function lockScroll() {
+            originalBodyOverflow = document.body.style.overflow;
+            originalBodyPaddingRight = document.body.style.paddingRight;
+
+            const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+            document.body.style.overflow = 'hidden';
+
+            if (scrollbarWidth > 0) {
+                document.body.style.paddingRight = `${scrollbarWidth}px`;
+            }
+
+            overlay.classList.add('is-visible');
+        }
+
+        function unlockScroll() {
+            document.body.style.overflow = originalBodyOverflow;
+            document.body.style.paddingRight = originalBodyPaddingRight;
+            overlay.classList.remove('is-visible');
+        }
+
+        collapseEl.addEventListener('shown.bs.collapse', function () {
+            setIcons(true);
+            lockScroll();
+        });
+
+        collapseEl.addEventListener('hidden.bs.collapse', function () {
+            setIcons(false);
+            unlockScroll();
+        });
+
+        overlay.addEventListener('click', function () {
+            if (window.bootstrap && bootstrap.Collapse) {
+                bootstrap.Collapse.getOrCreateInstance(collapseEl, { toggle: false }).hide();
+                return;
+            }
+
+            togglers[0].click();
+        });
+
+        setIcons(collapseEl.classList.contains('show'));
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileNavbar);
+    } else {
+        initMobileNavbar();
+    }
+})();
+
 // Home Search bar
 if (!window.__emboSearchInitialized) {
     const searchWrapper=document.querySelector(".search-wrapper");
@@ -245,10 +375,10 @@ if (!window.__emboSearchInitialized) {
             }
         }, { passive: true });
 
-        let autoRotate = setInterval(nextSlide, 5000);
+        let autoRotate = setInterval(nextSlide, 5000000);
         coverCarousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
         coverCarousel.addEventListener('mouseleave', () => {
-            autoRotate = setInterval(nextSlide, 5000);
+            autoRotate = setInterval(nextSlide, 5000000);
         });
     }
 })();

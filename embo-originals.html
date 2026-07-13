@@ -26,13 +26,100 @@
         .big-carosel .big-carousel-controls{
             top: 60% !important;
         }
+        @media (max-width: 767px) {
+            .big-carosel {
+                padding: 0 0 0 !important;
+            }
+            .big-carosel .big-carousel-shell,
+            .big-carosel .big-carousel-stage {
+                height: 60vh !important;
+                min-height: 0 !important;
+            }
+            .big-carosel .big-carousel-track {
+                height: 90% !important;
+                min-height: 0 !important;
+                padding-bottom: 12px !important;
+            }
+            .big-carosel .big-carousel-controls{
+                display: none !important;
+            }
+            .big-carosel .big-carousel-card {
+                /* border-radius: 30px !important; */
+                overflow: hidden !important;
+                border-radius: 24px !important;
+            }
+            .big-carosel .big-carousel-card .layer {
+                position: absolute;
+                inset: 0;
+                height: 100% !important;
+                min-height: 100% !important;
+                display: flex;
+                align-items: flex-end;
+            }
+            .big-carosel .big-carousel-card .layer .container-fluid {
+                width: 100%;
+                height: 100%;
+            }
+            .big-carosel .big-carousel-card .layer .row {
+                height: 100%;
+                align-items: flex-end;
+            }
+            .big-carosel .big-carousel-card .layer .row {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            .big-carosel .big-carousel-card .layer .row > div {
+                width: 100% !important;
+                max-width: 100% !important;
+                flex: 0 0 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .big-carosel .big-carousel-card .layer .div,
+            .big-carosel .big-carousel-card .layer .p-3 {
+                width: 100% !important;
+            }
+            .big-carosel .big-carousel-card .layer img {
+                max-width: 180px;
+                border-radius: 30px !important;
+                width: 100%;
+                height: auto;
+            }
+            .big-carosel .big-carousel-card .layer h5 {
+                font-size: 14px !important;
+                line-height: 1.35 !important;
+                margin-top: 10px !important;
+            }
+            .big-carosel .big-carousel-card .layer p {
+                font-size: 14px !important;
+                line-height: 1.6 !important;
+                word-break: normal !important;
+                overflow-wrap: anywhere;
+            }
+            .big-carosel .big-carousel-card .layer .button {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .big-carosel .big-carousel-card .layer .button .btn {
+                margin-right: 0 !important;
+            }
+            .big-carosel .big-carousel-card.position-center,
+            .big-carosel .big-carousel-card.position-left-2,
+            .big-carosel .big-carousel-card.position-right-2 {
+                width: calc(100vw - 32px) !important;
+                max-width: 360px !important;
+                height: auto !important;
+                min-height: 360px !important;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <!-- -- big carosel -- -->
-    <section class="big-carosel embo-originals d-lg-block d-none">
+    <section class="big-carosel embo-originals d-lg-block">
         <div class="container-fluid">
             <div class="big-carousel-shell">
 
@@ -414,7 +501,6 @@
             </div>
         </div>
     </footer>
-
 
 
 

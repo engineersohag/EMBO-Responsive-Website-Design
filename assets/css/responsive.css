@@ -46,4 +46,10 @@
     .dropdown-menu-end[data-bs-popper]{
         right: auto !important;
     }
+    .kid-rating-line{
+        width: 204% !important;
+    }
+    .navbar-toggler:focus{
+        box-shadow: none !important;
+    }
 }
