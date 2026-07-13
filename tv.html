@@ -21,6 +21,94 @@
         .hero-thumbnail-carousel .owl-nav.disabled{
             display: none !important;
         }
+        @media (max-width: 767px) {
+            .home {
+                overflow-x: hidden;
+            }
+            .home .navbar {
+                position: relative;
+                z-index: 1060;
+            }
+            .home .navbar .navbar-toggler {
+                position: relative;
+                z-index: 1065;
+            }
+            .home .navbar .navbar-collapse {
+                position: relative;
+                z-index: 1065;
+            }
+            .home .navbar .dropdown-menu {
+                z-index: 1066;
+            }
+            .home .hero {
+                height: auto !important;
+                min-height: 0 !important;
+                padding: 24px 0 20px !important;
+                overflow: hidden;
+            }
+            .home .hero .container {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+            .home .hero .row {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                row-gap: 22px;
+            }
+            .home .hero .row > div {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            .home .hero .col-lg-4,
+            .home .hero .col-lg-8 {
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .home .hero .div {
+                text-align: center;
+                max-width: 100%;
+            }
+            .home .hero .div img {
+                width: min(220px, 70vw);
+                height: auto;
+                margin: 0 auto 14px;
+                display: block;
+            }
+            .home .hero .div h5 {
+                font-size: 14px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 10px !important;
+            }
+            .home .hero .div p {
+                font-size: 14px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 14px !important;
+                overflow-wrap: anywhere;
+            }
+            .home .hero .div .button {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .home .hero .div .button .btn {
+                margin-right: 0 !important;
+            }
+            .home .hero .hero-thumbnail-carousel {
+                width: 100%;
+                max-width: 100%;
+            }
+            .home .hero .hero-thumbnail-carousel .hero-thumb-item img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+            .home .recomendate-movies {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+        }
     </style>
 </head>
 
