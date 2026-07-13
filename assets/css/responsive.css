@@ -43,4 +43,7 @@
     .hero-thumbnail-carousel{
         margin-bottom: 110px;
     }
+    .dropdown-menu-end[data-bs-popper]{
+        right: auto !important;
+    }
 }
